@@ -1,0 +1,2053 @@
+# Pages CMS-configuratie voor slaapcongres.nl (SLAAP2027)
+# Beheer: https://app.pagescms.org  (inloggen met GitHub, repo pvijgeboom12/slaap)
+# Elke opslag is een commit. Op main gaat de wijziging na 2 à 4 minuten live via Cloudflare.
+# Op een andere branch krijg je eerst een preview. Zie docs/beheerinstructie.md.
+
+media:
+  - name: sponsors
+    label: Sponsorlogo's
+    input: src/assets/uploads/sponsors
+    output: /src/assets/uploads/sponsors
+    categories: [image]
+    rename: safe
+  - name: sprekers
+    label: Sprekersfoto's
+    input: src/assets/uploads/sprekers
+    output: /src/assets/uploads/sprekers
+    categories: [image]
+    rename: safe
+  - name: downloads
+    label: Downloads (PDF)
+    input: public/downloads
+    output: /downloads
+    categories: [document]
+    rename: safe
+
+content:
+  - name: instellingen
+    label: Instellingen congres
+    type: file
+    path: src/content/settings.yml
+    format: yaml
+    fields:
+      - name: congres
+        label: Congres
+        type: object
+        fields:
+          - { name: naam, label: Naam congres, type: string, required: true }
+          - name: ondertitel
+            label: Ondertitel
+            type: object
+            fields:
+              - { name: nl, label: Nederlands, type: string }
+              - { name: en, label: Engels, type: string }
+          - { name: startdatum, label: Eerste congresdag, type: date, required: true }
+          - { name: einddatum, label: Laatste congresdag, type: date, required: true }
+          - { name: locatie, label: Locatie, type: string, required: true }
+          - { name: locatie_kort, label: Locatie (kort), type: string }
+          - { name: locatie_volledig, label: Locatie (volledige naam), type: string }
+          - { name: adres, label: Straat en huisnummer, type: string }
+          - { name: postcode, label: Postcode, type: string }
+          - { name: plaats, label: Plaats, type: string }
+          - { name: verwachte_deelnemers, label: Verwacht aantal deelnemers, type: number }
+      - name: registratie
+        label: Registratie
+        type: object
+        fields:
+          - &status
+            name: status
+            label: Status
+            description: "Binnenkort = openingsdatum tonen. Open = knoppen naar het platform van JCC. Gesloten = korte melding."
+            type: select
+            required: true
+            options:
+              values:
+                - { value: binnenkort, label: Binnenkort }
+                - { value: open, label: Open }
+                - { value: gesloten, label: Gesloten }
+          - { name: opent_op, label: Registratie opent op, type: date }
+          - { name: vroegboek_tot, label: Vroegboektarief tot en met, type: date }
+          - { name: link_individueel, label: Link registratieplatform (individueel), type: string }
+          - { name: link_groep, label: Link groepsregistratie, type: string }
+          - { name: link_dinerticket, label: Link ticket congresdiner, type: string }
+          - &melding_binnenkort
+            name: melding_binnenkort
+            label: Tekst bij status binnenkort
+            type: object
+            fields:
+              - { name: nl, label: Nederlands, type: string }
+              - { name: en, label: Engels, type: string }
+          - &melding_gesloten
+            name: melding_gesloten
+            label: Tekst bij status gesloten
+            type: object
+            fields:
+              - { name: nl, label: Nederlands, type: string }
+              - { name: en, label: Engels, type: string }
+      - name: abstracts
+        label: Abstracts
+        type: object
+        fields:
+          - *status
+          - { name: opent_op, label: Indienen kan vanaf, type: date }
+          - { name: deadline_abstracts, label: Deadline abstracts, type: date }
+          - { name: deadline_symposia, label: Deadline symposiumvoorstellen, type: date }
+          - { name: bericht_acceptatie, label: Bericht over acceptatie, type: date }
+          - { name: link_abstract, label: Link abstractplatform, type: string }
+          - { name: link_symposium, label: Link symposiumvoorstel, type: string }
+          - *melding_binnenkort
+          - *melding_gesloten
+      - name: downloads
+        label: Downloads (PDF)
+        type: object
+        fields:
+          - { name: programma_pdf, label: Programma, type: file, options: { media: downloads } }
+          - { name: posteroverzicht_pdf, label: Posteroverzicht, type: file, options: { media: downloads } }
+          - { name: voorwaarden_registratie_pdf, label: Algemene voorwaarden registratie, type: file, options: { media: downloads } }
+          - { name: voorwaarden_abstracts_pdf, label: Voorwaarden abstracts, type: file, options: { media: downloads } }
+      - name: links
+        label: Overige links
+        type: object
+        fields:
+          - { name: hotel_boeken, label: Link hotelkamer boeken, type: string }
+          - { name: algemene_voorwaarden, label: Link algemene voorwaarden (footer), type: string }
+          - { name: privacyverklaring, label: Link privacyverklaring (footer), type: string }
+      - name: contact
+        label: Contact
+        type: object
+        fields:
+          - { name: email, label: E-mailadres congresorganisatie, type: string, required: true }
+          - { name: sponsoring_contactpersoon, label: Contactpersoon sponsoring, type: string }
+
+  - name: programma
+    label: Programma
+    type: file
+    path: src/content/programma.yml
+    format: yaml
+    fields:
+      - name: dagen
+        label: Congresdagen
+        type: object
+        list: true
+        fields:
+          - { name: datum, label: Datum, type: date, required: true }
+          - name: sessies
+            label: Sessies
+            type: object
+            list: true
+            fields:
+              - { name: tijd, label: Tijd, description: "Bijv. 09.00–10.30", type: string }
+              - name: type
+                label: Soort sessie
+                type: select
+                required: true
+                options:
+                  values:
+                    - { value: keynote, label: Keynote }
+                    - { value: symposia, label: Symposia }
+                    - { value: posters, label: Posters / Data Blitz }
+                    - { value: plenair, label: Plenair (ook pauze en registratie) }
+                    - { value: sociaal, label: Sociaal (diner) }
+              - name: titel
+                label: Titel
+                type: object
+                fields:
+                  - { name: nl, label: Nederlands, type: string, required: true }
+                  - { name: en, label: Engels, type: string }
+              - { name: zaal, label: Zaal, type: string }
+              - { name: sprekers, label: Spreker(s), description: Meerdere sprekers scheiden met een komma, type: string }
+              - { name: voorzitter, label: Voorzitter, type: string }
+      - name: diner
+        label: Congresdiner
+        type: object
+        fields:
+          - { name: datum, label: Datum, type: date }
+          - { name: tijd, label: Vanaf (tijd), type: string }
+          - { name: zaal, label: Zaal, type: string }
+          - { name: bedrag, label: Prijs in euro, description: "Alleen het bedrag, bijv. 85", type: string }
+
+  - name: sprekers
+    label: Sprekers
+    type: file
+    path: src/content/sprekers.yml
+    format: yaml
+    fields:
+      - name: sprekers
+        label: Uitgelichte sprekers
+        type: object
+        list: true
+        fields:
+          - { name: naam, label: Naam, type: string }
+          - name: type
+            label: Soort
+            type: select
+            options:
+              values:
+                - { value: keynote, label: Keynote }
+                - { value: symposia, label: Symposium }
+          - name: functie
+            label: Functie en instelling
+            type: object
+            fields:
+              - { name: nl, label: Nederlands, type: string }
+              - { name: en, label: Engels, type: string }
+          - name: lezing
+            label: Titel lezing
+            type: object
+            fields:
+              - { name: nl, label: Nederlands, type: string }
+              - { name: en, label: Engels, type: string }
+          - { name: foto, label: Foto, description: "Vierkant werkt het best", type: image, options: { media: sprekers } }
+          - name: bio
+            label: Korte bio
+            type: object
+            fields:
+              - { name: nl, label: Nederlands, type: text }
+              - { name: en, label: Engels, type: text }
+
+  - name: sponsors
+    label: Sponsors
+    type: file
+    path: src/content/sponsors.yml
+    format: yaml
+    fields:
+      - name: sponsors
+        label: Sponsors en exposanten
+        description: Zolang een niveau leeg is, toont de site lege logotegels.
+        type: object
+        list: true
+        fields:
+          - { name: naam, label: Naam, type: string, required: true }
+          - name: niveau
+            label: Niveau
+            type: select
+            required: true
+            options:
+              values:
+                - { value: platinum, label: Platinum }
+                - { value: goud, label: Goud }
+                - { value: zilver, label: Zilver }
+                - { value: exposant, label: Exposant }
+          - { name: logo, label: Logo, description: "Liefst SVG of PNG met transparante achtergrond", type: image, options: { media: sponsors } }
+          - { name: link, label: Website (URL), type: string }
+
+  - name: comite
+    label: Organisatiecomité
+    type: file
+    path: src/content/comite.yml
+    format: yaml
+    fields:
+      - name: leden
+        label: Leden
+        type: object
+        list: true
+        fields:
+          - { name: naam, label: Naam, type: string }
+          - name: functie
+            label: Functie en instelling
+            type: object
+            fields:
+              - { name: nl, label: Nederlands, type: string }
+              - { name: en, label: Engels, type: string }
+
+  - name: accreditatie
+    label: Accreditatie
+    type: file
+    path: src/content/accreditatie.yml
+    format: yaml
+    fields:
+      - name: verenigingen
+        label: Beroepsverenigingen
+        type: object
+        list: true
+        fields:
+          - name: naam
+            label: Naam vereniging
+            type: object
+            fields:
+              - { name: nl, label: Nederlands, type: string, required: true }
+              - { name: en, label: Engels, type: string }
+          - { name: punten, label: Aantal punten, type: string }
+
+  # Teksten per pagina en taal (gegenereerd uit de YAML-structuur, zie docs/README)
+  - name: tekst-home-nl
+    label: Tekst Home (NL)
+    type: file
+    path: src/content/pages/nl/home.yml
+    format: yaml
+    fields:
+    - name: seo
+      label: Zoekmachines (Google)
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: omschrijving
+        label: Omschrijving
+        type: text
+        description: Zichtbaar in Google onder de titel. Houd het tussen 120 en 160 tekens.
+    - name: hero
+      label: Bovenste blok (beeld)
+      type: object
+      fields:
+      - name: kicker
+        label: Regel boven de titel
+        type: string
+      - name: lead
+        label: Intro
+        type: text
+      - name: knop_registreren
+        label: Knop registreren
+        type: string
+      - name: knop_abstract
+        label: Knop abstract
+        type: string
+      - name: status
+        label: Tekst per status
+        type: object
+        fields:
+        - name: binnenkort
+          label: Status binnenkort
+          type: string
+          description: Tekst tussen [haken] wordt een gele open plek. Codes zoals {deadline_abstracts} vullen een datum uit Instellingen congres in.
+        - name: open
+          label: Status open
+          type: string
+          description: Tekst tussen [haken] wordt een gele open plek. Codes zoals {deadline_abstracts} vullen een datum uit Instellingen congres in.
+        - name: gesloten
+          label: Status gesloten
+          type: string
+      - name: link_route
+        label: Link route
+        type: string
+    - name: blokken
+      label: Blokken
+      type: object
+      list: true
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: tekst
+        label: Tekst
+        type: string
+      - name: link
+        label: Linktekst
+        type: string
+    - name: over
+      label: Over het congres
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: lead
+        label: Intro
+        type: text
+      - name: tekst
+        label: Tekst
+        type: text
+        description: Tekst tussen [haken] wordt een gele open plek. Codes zoals {deadline_abstracts} vullen een datum uit Instellingen congres in.
+    - name: voor_wie
+      label: Voor wie
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: punten
+        label: Punten
+        type: string
+        list: true
+    - name: beeld
+      label: Fotoblok
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: lead
+        label: Intro
+        type: text
+      - name: alt
+        label: Beschrijving foto’s (alt-tekst)
+        type: string
+        list: true
+    - name: meedoen
+      label: Doe mee
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: acties
+        label: Acties
+        type: object
+        list: true
+        fields:
+        - name: titel
+          label: Titel
+          type: string
+        - name: tekst
+          label: Tekst
+          type: string
+    - name: comite
+      label: Comité
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+    - name: sponsors
+      label: Sponsors
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: link
+        label: Linktekst
+        type: string
+    - name: afsluiter
+      label: Afsluitend blok
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: tekst
+        label: Tekst
+        type: object
+        fields:
+        - name: binnenkort
+          label: Status binnenkort
+          type: text
+          description: Tekst tussen [haken] wordt een gele open plek. Codes zoals {deadline_abstracts} vullen een datum uit Instellingen congres in.
+        - name: open
+          label: Status open
+          type: string
+        - name: gesloten
+          label: Status gesloten
+          type: string
+      - name: knop_registreren
+        label: Knop registreren
+        type: string
+      - name: knop_contact
+        label: Knop contact
+        type: string
+  - name: tekst-programma-nl
+    label: Tekst Programma (NL)
+    type: file
+    path: src/content/pages/nl/programma.yml
+    format: yaml
+    fields:
+    - name: seo
+      label: Zoekmachines (Google)
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: omschrijving
+        label: Omschrijving
+        type: text
+        description: Zichtbaar in Google onder de titel. Houd het tussen 120 en 160 tekens.
+    - name: hero
+      label: Bovenste blok (beeld)
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: lead
+        label: Intro
+        type: text
+        description: Tekst tussen [haken] wordt een gele open plek. Codes zoals {deadline_abstracts} vullen een datum uit Instellingen congres in.
+      - name: ankers
+        label: Snelkoppelingen (knoppen in beeld)
+        type: string
+        list: true
+    - name: overzicht
+      label: Programma-overzicht
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: lead
+        label: Intro
+        type: string
+      - name: knop_pdf
+        label: Knop pdf
+        type: string
+      - name: kies_dag
+        label: Kies dag
+        type: string
+      - name: spreker
+        label: Spreker
+        type: string
+      - name: sprekers
+        label: Sprekers
+        type: string
+      - name: voorzitter
+        label: Voorzitter
+        type: string
+    - name: sprekers
+      label: Sprekers
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+    - name: posters
+      label: Posters
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: lead
+        label: Intro
+        type: text
+      - name: tekst
+        label: Tekst
+        type: text
+      - name: knop_pdf
+        label: Knop pdf
+        type: string
+      - name: knop_info
+        label: Knop info
+        type: string
+    - name: diner
+      label: Congresdiner
+      type: object
+      fields:
+      - name: kicker
+        label: Regel boven de titel
+        type: string
+      - name: titel
+        label: Titel
+        type: string
+      - name: lead
+        label: Intro
+        type: text
+      - name: tekst
+        label: Tekst
+        type: text
+      - name: knop
+        label: Knoptekst
+        type: string
+      - name: label_datum
+        label: Label datum
+        type: string
+      - name: label_tijd
+        label: Label tijd
+        type: string
+      - name: label_locatie
+        label: Label locatie
+        type: string
+      - name: label_kosten
+        label: Label kosten
+        type: string
+      - name: vanaf
+        label: Vanaf
+        type: string
+      - name: btw
+        label: Btw
+        type: string
+      - name: alt
+        label: Beschrijving foto’s (alt-tekst)
+        type: string
+        list: true
+  - name: tekst-registratie-nl
+    label: Tekst Registratie (NL)
+    type: file
+    path: src/content/pages/nl/registratie.yml
+    format: yaml
+    fields:
+    - name: seo
+      label: Zoekmachines (Google)
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: omschrijving
+        label: Omschrijving
+        type: text
+        description: Zichtbaar in Google onder de titel. Houd het tussen 120 en 160 tekens.
+    - name: hero
+      label: Bovenste blok (beeld)
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: lead
+        label: Intro
+        type: text
+        description: Tekst tussen [haken] wordt een gele open plek. Codes zoals {deadline_abstracts} vullen een datum uit Instellingen congres in.
+      - name: knop_individueel
+        label: Knop individueel
+        type: string
+      - name: knop_groep
+        label: Knop groep
+        type: string
+    - name: tarieven
+      label: Tarieven
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: lead
+        label: Intro
+        type: string
+      - name: bijschrift
+        label: Bijschrift (voor schermlezers)
+        type: string
+      - name: kolom_categorie
+        label: Kolom categorie
+        type: string
+      - name: kolom_vroegboek
+        label: Kolom vroegboek
+        type: string
+        description: Tekst tussen [haken] wordt een gele open plek. Codes zoals {deadline_abstracts} vullen een datum uit Instellingen congres in.
+      - name: kolom_regulier
+        label: Kolom regulier
+        type: string
+      - name: rijen
+        label: Tariefregels
+        type: object
+        list: true
+        fields:
+        - name: categorie
+          label: Categorie
+          type: string
+        - name: vroegboek
+          label: Vroegboektarief (€)
+          type: string
+        - name: regulier
+          label: Regulier tarief (€)
+          type: string
+      - name: diner
+        label: Congresdiner
+        type: string
+      - name: voetnoot
+        label: Voetnoot
+        type: text
+        description: Tekst tussen [haken] wordt een gele open plek. Codes zoals {deadline_abstracts} vullen een datum uit Instellingen congres in.
+    - name: groep
+      label: Groepsregistratie
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: tekst
+        label: Tekst
+        type: text
+      - name: knop
+        label: Knoptekst
+        type: string
+    - name: voorwaarden
+      label: Voorwaarden
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: tekst
+        label: Tekst
+        type: text
+      - name: knop
+        label: Knoptekst
+        type: string
+    - name: lid_worden
+      label: Lid worden
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: lead
+        label: Intro
+        type: text
+      - name: nswo
+        label: NSWO
+        type: object
+        fields:
+        - name: naam
+          label: Naam
+          type: string
+        - name: tekst
+          label: Tekst
+          type: string
+        - name: knop
+          label: Knoptekst
+          type: string
+      - name: svnl
+        label: SVNL
+        type: object
+        fields:
+        - name: naam
+          label: Naam
+          type: string
+        - name: tekst
+          label: Tekst
+          type: string
+        - name: knop
+          label: Knoptekst
+          type: string
+  - name: tekst-abstracts-nl
+    label: Tekst Abstracts & posters (NL)
+    type: file
+    path: src/content/pages/nl/abstracts.yml
+    format: yaml
+    fields:
+    - name: seo
+      label: Zoekmachines (Google)
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: omschrijving
+        label: Omschrijving
+        type: text
+        description: Zichtbaar in Google onder de titel. Houd het tussen 120 en 160 tekens.
+    - name: hero
+      label: Bovenste blok (beeld)
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: lead
+        label: Intro
+        type: text
+      - name: knop_abstract
+        label: Knop abstract
+        type: string
+      - name: knop_symposium
+        label: Knop symposium
+        type: string
+      - name: ankers
+        label: Snelkoppelingen (knoppen in beeld)
+        type: string
+        list: true
+    - name: deadlines
+      label: Deadlines (labels)
+      type: object
+      fields:
+      - name: abstracts
+        label: Abstracts
+        type: string
+      - name: symposia
+        label: Symposia
+        type: string
+      - name: acceptatie
+        label: Acceptatie
+        type: string
+    - name: richtlijnen
+      label: Richtlijnen
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: punten
+        label: Punten
+        type: string
+        list: true
+      - name: knop_abstract
+        label: Knop abstract
+        type: string
+      - name: knop_voorwaarden
+        label: Knop voorwaarden
+        type: string
+    - name: opbouw
+      label: Opbouw abstract
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: onderdelen
+        label: Onderdelen
+        type: string
+        list: true
+      - name: voetnoot
+        label: Voetnoot
+        type: string
+      - name: symposium_titel
+        label: Symposium titel
+        type: string
+      - name: symposium_tekst
+        label: Symposium tekst
+        type: text
+        description: Tekst tussen [haken] wordt een gele open plek. Codes zoals {deadline_abstracts} vullen een datum uit Instellingen congres in.
+    - name: posters
+      label: Posters
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: lead
+        label: Intro
+        type: string
+        description: Tekst tussen [haken] wordt een gele open plek. Codes zoals {deadline_abstracts} vullen een datum uit Instellingen congres in.
+      - name: foto_alt
+        label: Beschrijving foto (alt-tekst)
+        type: string
+      - name: blokken
+        label: Blokken
+        type: object
+        list: true
+        fields:
+        - name: titel
+          label: Titel
+          type: string
+        - name: tekst
+          label: Tekst
+          type: string
+    - name: data_blitz
+      label: Data Blitz
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: lead
+        label: Intro
+        type: string
+      - name: tekst
+        label: Tekst
+        type: text
+        description: Tekst tussen [haken] wordt een gele open plek. Codes zoals {deadline_abstracts} vullen een datum uit Instellingen congres in.
+      - name: feiten
+        label: Feiten
+        type: object
+        list: true
+        fields:
+        - name: waarde
+          label: Waarde
+          type: string
+        - name: label
+          label: Label
+          type: string
+    - name: prijzen
+      label: Posterprijzen
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: lead
+        label: Intro
+        type: string
+        description: Tekst tussen [haken] wordt een gele open plek. Codes zoals {deadline_abstracts} vullen een datum uit Instellingen congres in.
+      - name: publiek_titel
+        label: Publiek titel
+        type: string
+      - name: publiek_tekst
+        label: Publiek tekst
+        type: string
+      - name: pv_titel
+        label: Pv titel
+        type: string
+      - name: pv_tekst
+        label: Pv tekst
+        type: string
+      - name: pv_voorwaarde
+        label: Pv voorwaarde
+        type: string
+      - name: pv_link
+        label: Pv link
+        type: string
+      - name: foto_alt
+        label: Beschrijving foto (alt-tekst)
+        type: string
+      - name: foto_bijschrift
+        label: Bijschrift foto
+        type: string
+  - name: tekst-praktisch-nl
+    label: Tekst Praktisch (NL)
+    type: file
+    path: src/content/pages/nl/praktisch.yml
+    format: yaml
+    fields:
+    - name: seo
+      label: Zoekmachines (Google)
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: omschrijving
+        label: Omschrijving
+        type: text
+        description: Zichtbaar in Google onder de titel. Houd het tussen 120 en 160 tekens.
+    - name: hero
+      label: Bovenste blok (beeld)
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: lead
+        label: Intro
+        type: text
+      - name: ankers
+        label: Snelkoppelingen (knoppen in beeld)
+        type: string
+        list: true
+    - name: locatie
+      label: Locatie
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: telefoon
+        label: Telefoon
+        type: string
+      - name: email
+        label: E-mailadres
+        type: string
+      - name: website_label
+        label: Website label
+        type: string
+      - name: website
+        label: Website (URL)
+        type: string
+      - name: kaart
+        label: Tekst in kaartvak
+        type: string
+        description: Tekst tussen [haken] wordt een gele open plek. Codes zoals {deadline_abstracts} vullen een datum uit Instellingen congres in.
+      - name: knop_maps
+        label: Knop maps
+        type: string
+    - name: hotel
+      label: Hotel
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: lead
+        label: Intro
+        type: text
+      - name: knop
+        label: Knoptekst
+        type: string
+    - name: route
+      label: Route
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: knop
+        label: Knoptekst
+        type: string
+      - name: auto_titel
+        label: Auto titel
+        type: string
+      - name: auto_tekst
+        label: Auto tekst
+        type: string
+        description: Tekst tussen [haken] wordt een gele open plek. Codes zoals {deadline_abstracts} vullen een datum uit Instellingen congres in.
+      - name: ov_titel
+        label: Ov titel
+        type: string
+      - name: ov_tekst
+        label: Ov tekst
+        type: text
+        description: Tekst tussen [haken] wordt een gele open plek. Codes zoals {deadline_abstracts} vullen een datum uit Instellingen congres in.
+    - name: accreditatie
+      label: Accreditatie
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: lead
+        label: Intro
+        type: text
+      - name: bijschrift
+        label: Bijschrift (voor schermlezers)
+        type: string
+      - name: kolom_vereniging
+        label: Kolom vereniging
+        type: string
+      - name: kolom_punten
+        label: Kolom punten
+        type: string
+      - name: punten
+        label: Punten
+        type: string
+      - name: voetnoot
+        label: Voetnoot
+        type: text
+  - name: tekst-sponsors-nl
+    label: Tekst Sponsors (NL)
+    type: file
+    path: src/content/pages/nl/sponsors.yml
+    format: yaml
+    fields:
+    - name: seo
+      label: Zoekmachines (Google)
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: omschrijving
+        label: Omschrijving
+        type: text
+        description: Zichtbaar in Google onder de titel. Houd het tussen 120 en 160 tekens.
+    - name: hero
+      label: Bovenste blok (beeld)
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: lead
+        label: Intro
+        type: text
+        description: Tekst tussen [haken] wordt een gele open plek. Codes zoals {deadline_abstracts} vullen een datum uit Instellingen congres in.
+      - name: knop
+        label: Knoptekst
+        type: string
+    - name: niveaus
+      label: Koppen sponsorniveaus
+      type: object
+      fields:
+      - name: platinum
+        label: Platinum
+        type: string
+      - name: goud
+        label: Goud
+        type: string
+      - name: zilver
+        label: Zilver
+        type: string
+      - name: exposant
+        label: Exposant
+        type: string
+    - name: sponsor_worden
+      label: Sponsor worden
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: lead
+        label: Intro
+        type: text
+        description: Tekst tussen [haken] wordt een gele open plek. Codes zoals {deadline_abstracts} vullen een datum uit Instellingen congres in.
+      - name: mail_onderwerp
+        label: Mail onderwerp
+        type: string
+    - name: cgr
+      label: CGR-gedragscode
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: tekst1
+        label: Tekst alinea 1
+        type: text
+      - name: tekst2
+        label: Tekst alinea 2
+        type: text
+        description: Tekst tussen [haken] wordt een gele open plek. Codes zoals {deadline_abstracts} vullen een datum uit Instellingen congres in.
+  - name: tekst-contact-nl
+    label: Tekst Contact (NL)
+    type: file
+    path: src/content/pages/nl/contact.yml
+    format: yaml
+    fields:
+    - name: seo
+      label: Zoekmachines (Google)
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: omschrijving
+        label: Omschrijving
+        type: text
+        description: Zichtbaar in Google onder de titel. Houd het tussen 120 en 160 tekens.
+    - name: hero
+      label: Bovenste blok (beeld)
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: lead
+        label: Intro
+        type: text
+    - name: formulier
+      label: Contactformulier
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: verplicht
+        label: Verplicht
+        type: string
+      - name: voornaam
+        label: Voornaam
+        type: string
+      - name: achternaam
+        label: Achternaam
+        type: string
+      - name: email
+        label: E-mailadres
+        type: string
+      - name: organisatie
+        label: Organisatie
+        type: string
+      - name: bericht
+        label: Bericht
+        type: string
+      - name: knop
+        label: Knoptekst
+        type: string
+      - name: bezig
+        label: Bezig
+        type: string
+      - name: bedankt
+        label: Bedankt
+        type: string
+      - name: bevestiging
+        label: Bevestiging
+        type: string
+      - name: opnieuw
+        label: Opnieuw
+        type: string
+      - name: fout_ontbreekt
+        label: Fout ontbreekt
+        type: string
+      - name: fout_email
+        label: Fout email
+        type: string
+      - name: fout_verzenden
+        label: Fout verzenden
+        type: string
+      - name: fout_spam
+        label: Fout spam
+        type: string
+    - name: zijbalk
+      label: Zijbalk
+      type: object
+      fields:
+      - name: organisatie_titel
+        label: Organisatie titel
+        type: string
+      - name: snel_titel
+        label: Snel titel
+        type: string
+      - name: snel
+        label: Snelle links
+        type: string
+        list: true
+  - name: tekst-home-en
+    label: Tekst Home (EN)
+    type: file
+    path: src/content/pages/en/home.yml
+    format: yaml
+    fields:
+    - name: seo
+      label: Zoekmachines (Google)
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: omschrijving
+        label: Omschrijving
+        type: text
+        description: Zichtbaar in Google onder de titel. Houd het tussen 120 en 160 tekens.
+    - name: hero
+      label: Bovenste blok (beeld)
+      type: object
+      fields:
+      - name: kicker
+        label: Regel boven de titel
+        type: string
+      - name: lead
+        label: Intro
+        type: string
+      - name: knop_registreren
+        label: Knop registreren
+        type: string
+      - name: knop_abstract
+        label: Knop abstract
+        type: string
+      - name: status
+        label: Tekst per status
+        type: object
+        fields:
+        - name: binnenkort
+          label: Status binnenkort
+          type: string
+          description: Tekst tussen [haken] wordt een gele open plek. Codes zoals {deadline_abstracts} vullen een datum uit Instellingen congres in.
+        - name: open
+          label: Status open
+          type: string
+          description: Tekst tussen [haken] wordt een gele open plek. Codes zoals {deadline_abstracts} vullen een datum uit Instellingen congres in.
+        - name: gesloten
+          label: Status gesloten
+          type: string
+      - name: link_route
+        label: Link route
+        type: string
+    - name: blokken
+      label: Blokken
+      type: object
+      list: true
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: tekst
+        label: Tekst
+        type: string
+      - name: link
+        label: Linktekst
+        type: string
+    - name: over
+      label: Over het congres
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: lead
+        label: Intro
+        type: text
+      - name: tekst
+        label: Tekst
+        type: text
+        description: Tekst tussen [haken] wordt een gele open plek. Codes zoals {deadline_abstracts} vullen een datum uit Instellingen congres in.
+    - name: voor_wie
+      label: Voor wie
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: punten
+        label: Punten
+        type: string
+        list: true
+    - name: beeld
+      label: Fotoblok
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: lead
+        label: Intro
+        type: text
+      - name: alt
+        label: Beschrijving foto’s (alt-tekst)
+        type: string
+        list: true
+    - name: meedoen
+      label: Doe mee
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: acties
+        label: Acties
+        type: object
+        list: true
+        fields:
+        - name: titel
+          label: Titel
+          type: string
+        - name: tekst
+          label: Tekst
+          type: string
+    - name: comite
+      label: Comité
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+    - name: sponsors
+      label: Sponsors
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: link
+        label: Linktekst
+        type: string
+    - name: afsluiter
+      label: Afsluitend blok
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: tekst
+        label: Tekst
+        type: object
+        fields:
+        - name: binnenkort
+          label: Status binnenkort
+          type: text
+          description: Tekst tussen [haken] wordt een gele open plek. Codes zoals {deadline_abstracts} vullen een datum uit Instellingen congres in.
+        - name: open
+          label: Status open
+          type: string
+        - name: gesloten
+          label: Status gesloten
+          type: string
+      - name: knop_registreren
+        label: Knop registreren
+        type: string
+      - name: knop_contact
+        label: Knop contact
+        type: string
+  - name: tekst-programma-en
+    label: Tekst Programma (EN)
+    type: file
+    path: src/content/pages/en/programma.yml
+    format: yaml
+    fields:
+    - name: seo
+      label: Zoekmachines (Google)
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: omschrijving
+        label: Omschrijving
+        type: text
+        description: Zichtbaar in Google onder de titel. Houd het tussen 120 en 160 tekens.
+    - name: hero
+      label: Bovenste blok (beeld)
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: lead
+        label: Intro
+        type: text
+        description: Tekst tussen [haken] wordt een gele open plek. Codes zoals {deadline_abstracts} vullen een datum uit Instellingen congres in.
+      - name: ankers
+        label: Snelkoppelingen (knoppen in beeld)
+        type: string
+        list: true
+    - name: overzicht
+      label: Programma-overzicht
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: lead
+        label: Intro
+        type: string
+      - name: knop_pdf
+        label: Knop pdf
+        type: string
+      - name: kies_dag
+        label: Kies dag
+        type: string
+      - name: spreker
+        label: Spreker
+        type: string
+      - name: sprekers
+        label: Sprekers
+        type: string
+      - name: voorzitter
+        label: Voorzitter
+        type: string
+    - name: sprekers
+      label: Sprekers
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+    - name: posters
+      label: Posters
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: lead
+        label: Intro
+        type: text
+      - name: tekst
+        label: Tekst
+        type: text
+      - name: knop_pdf
+        label: Knop pdf
+        type: string
+      - name: knop_info
+        label: Knop info
+        type: string
+    - name: diner
+      label: Congresdiner
+      type: object
+      fields:
+      - name: kicker
+        label: Regel boven de titel
+        type: string
+      - name: titel
+        label: Titel
+        type: string
+      - name: lead
+        label: Intro
+        type: text
+      - name: tekst
+        label: Tekst
+        type: text
+      - name: knop
+        label: Knoptekst
+        type: string
+      - name: label_datum
+        label: Label datum
+        type: string
+      - name: label_tijd
+        label: Label tijd
+        type: string
+      - name: label_locatie
+        label: Label locatie
+        type: string
+      - name: label_kosten
+        label: Label kosten
+        type: string
+      - name: vanaf
+        label: Vanaf
+        type: string
+      - name: btw
+        label: Btw
+        type: string
+      - name: alt
+        label: Beschrijving foto’s (alt-tekst)
+        type: string
+        list: true
+  - name: tekst-registratie-en
+    label: Tekst Registratie (EN)
+    type: file
+    path: src/content/pages/en/registratie.yml
+    format: yaml
+    fields:
+    - name: seo
+      label: Zoekmachines (Google)
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: omschrijving
+        label: Omschrijving
+        type: text
+        description: Zichtbaar in Google onder de titel. Houd het tussen 120 en 160 tekens.
+    - name: hero
+      label: Bovenste blok (beeld)
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: lead
+        label: Intro
+        type: text
+        description: Tekst tussen [haken] wordt een gele open plek. Codes zoals {deadline_abstracts} vullen een datum uit Instellingen congres in.
+      - name: knop_individueel
+        label: Knop individueel
+        type: string
+      - name: knop_groep
+        label: Knop groep
+        type: string
+    - name: tarieven
+      label: Tarieven
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: lead
+        label: Intro
+        type: string
+      - name: bijschrift
+        label: Bijschrift (voor schermlezers)
+        type: string
+      - name: kolom_categorie
+        label: Kolom categorie
+        type: string
+      - name: kolom_vroegboek
+        label: Kolom vroegboek
+        type: string
+        description: Tekst tussen [haken] wordt een gele open plek. Codes zoals {deadline_abstracts} vullen een datum uit Instellingen congres in.
+      - name: kolom_regulier
+        label: Kolom regulier
+        type: string
+      - name: rijen
+        label: Tariefregels
+        type: object
+        list: true
+        fields:
+        - name: categorie
+          label: Categorie
+          type: string
+        - name: vroegboek
+          label: Vroegboektarief (€)
+          type: string
+        - name: regulier
+          label: Regulier tarief (€)
+          type: string
+      - name: diner
+        label: Congresdiner
+        type: string
+      - name: voetnoot
+        label: Voetnoot
+        type: text
+        description: Tekst tussen [haken] wordt een gele open plek. Codes zoals {deadline_abstracts} vullen een datum uit Instellingen congres in.
+    - name: groep
+      label: Groepsregistratie
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: tekst
+        label: Tekst
+        type: text
+      - name: knop
+        label: Knoptekst
+        type: string
+    - name: voorwaarden
+      label: Voorwaarden
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: tekst
+        label: Tekst
+        type: text
+      - name: knop
+        label: Knoptekst
+        type: string
+    - name: lid_worden
+      label: Lid worden
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: lead
+        label: Intro
+        type: text
+      - name: nswo
+        label: NSWO
+        type: object
+        fields:
+        - name: naam
+          label: Naam
+          type: string
+        - name: tekst
+          label: Tekst
+          type: string
+        - name: knop
+          label: Knoptekst
+          type: string
+      - name: svnl
+        label: SVNL
+        type: object
+        fields:
+        - name: naam
+          label: Naam
+          type: string
+        - name: tekst
+          label: Tekst
+          type: string
+        - name: knop
+          label: Knoptekst
+          type: string
+  - name: tekst-abstracts-en
+    label: Tekst Abstracts & posters (EN)
+    type: file
+    path: src/content/pages/en/abstracts.yml
+    format: yaml
+    fields:
+    - name: seo
+      label: Zoekmachines (Google)
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: omschrijving
+        label: Omschrijving
+        type: text
+        description: Zichtbaar in Google onder de titel. Houd het tussen 120 en 160 tekens.
+    - name: hero
+      label: Bovenste blok (beeld)
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: lead
+        label: Intro
+        type: text
+      - name: knop_abstract
+        label: Knop abstract
+        type: string
+      - name: knop_symposium
+        label: Knop symposium
+        type: string
+      - name: ankers
+        label: Snelkoppelingen (knoppen in beeld)
+        type: string
+        list: true
+    - name: deadlines
+      label: Deadlines (labels)
+      type: object
+      fields:
+      - name: abstracts
+        label: Abstracts
+        type: string
+      - name: symposia
+        label: Symposia
+        type: string
+      - name: acceptatie
+        label: Acceptatie
+        type: string
+    - name: richtlijnen
+      label: Richtlijnen
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: punten
+        label: Punten
+        type: string
+        list: true
+      - name: knop_abstract
+        label: Knop abstract
+        type: string
+      - name: knop_voorwaarden
+        label: Knop voorwaarden
+        type: string
+    - name: opbouw
+      label: Opbouw abstract
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: onderdelen
+        label: Onderdelen
+        type: string
+        list: true
+      - name: voetnoot
+        label: Voetnoot
+        type: string
+      - name: symposium_titel
+        label: Symposium titel
+        type: string
+      - name: symposium_tekst
+        label: Symposium tekst
+        type: text
+        description: Tekst tussen [haken] wordt een gele open plek. Codes zoals {deadline_abstracts} vullen een datum uit Instellingen congres in.
+    - name: posters
+      label: Posters
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: lead
+        label: Intro
+        type: string
+        description: Tekst tussen [haken] wordt een gele open plek. Codes zoals {deadline_abstracts} vullen een datum uit Instellingen congres in.
+      - name: foto_alt
+        label: Beschrijving foto (alt-tekst)
+        type: string
+      - name: blokken
+        label: Blokken
+        type: object
+        list: true
+        fields:
+        - name: titel
+          label: Titel
+          type: string
+        - name: tekst
+          label: Tekst
+          type: string
+    - name: data_blitz
+      label: Data Blitz
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: lead
+        label: Intro
+        type: string
+      - name: tekst
+        label: Tekst
+        type: string
+        description: Tekst tussen [haken] wordt een gele open plek. Codes zoals {deadline_abstracts} vullen een datum uit Instellingen congres in.
+      - name: feiten
+        label: Feiten
+        type: object
+        list: true
+        fields:
+        - name: waarde
+          label: Waarde
+          type: string
+        - name: label
+          label: Label
+          type: string
+    - name: prijzen
+      label: Posterprijzen
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: lead
+        label: Intro
+        type: string
+        description: Tekst tussen [haken] wordt een gele open plek. Codes zoals {deadline_abstracts} vullen een datum uit Instellingen congres in.
+      - name: publiek_titel
+        label: Publiek titel
+        type: string
+      - name: publiek_tekst
+        label: Publiek tekst
+        type: string
+      - name: pv_titel
+        label: Pv titel
+        type: string
+      - name: pv_tekst
+        label: Pv tekst
+        type: string
+      - name: pv_voorwaarde
+        label: Pv voorwaarde
+        type: string
+      - name: pv_link
+        label: Pv link
+        type: string
+      - name: foto_alt
+        label: Beschrijving foto (alt-tekst)
+        type: string
+      - name: foto_bijschrift
+        label: Bijschrift foto
+        type: string
+  - name: tekst-praktisch-en
+    label: Tekst Praktisch (EN)
+    type: file
+    path: src/content/pages/en/praktisch.yml
+    format: yaml
+    fields:
+    - name: seo
+      label: Zoekmachines (Google)
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: omschrijving
+        label: Omschrijving
+        type: text
+        description: Zichtbaar in Google onder de titel. Houd het tussen 120 en 160 tekens.
+    - name: hero
+      label: Bovenste blok (beeld)
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: lead
+        label: Intro
+        type: string
+      - name: ankers
+        label: Snelkoppelingen (knoppen in beeld)
+        type: string
+        list: true
+    - name: locatie
+      label: Locatie
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: telefoon
+        label: Telefoon
+        type: string
+      - name: email
+        label: E-mailadres
+        type: string
+      - name: website_label
+        label: Website label
+        type: string
+      - name: website
+        label: Website (URL)
+        type: string
+      - name: kaart
+        label: Tekst in kaartvak
+        type: string
+        description: Tekst tussen [haken] wordt een gele open plek. Codes zoals {deadline_abstracts} vullen een datum uit Instellingen congres in.
+      - name: knop_maps
+        label: Knop maps
+        type: string
+    - name: hotel
+      label: Hotel
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: lead
+        label: Intro
+        type: text
+      - name: knop
+        label: Knoptekst
+        type: string
+    - name: route
+      label: Route
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: knop
+        label: Knoptekst
+        type: string
+      - name: auto_titel
+        label: Auto titel
+        type: string
+      - name: auto_tekst
+        label: Auto tekst
+        type: string
+        description: Tekst tussen [haken] wordt een gele open plek. Codes zoals {deadline_abstracts} vullen een datum uit Instellingen congres in.
+      - name: ov_titel
+        label: Ov titel
+        type: string
+      - name: ov_tekst
+        label: Ov tekst
+        type: text
+        description: Tekst tussen [haken] wordt een gele open plek. Codes zoals {deadline_abstracts} vullen een datum uit Instellingen congres in.
+    - name: accreditatie
+      label: Accreditatie
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: lead
+        label: Intro
+        type: text
+      - name: bijschrift
+        label: Bijschrift (voor schermlezers)
+        type: string
+      - name: kolom_vereniging
+        label: Kolom vereniging
+        type: string
+      - name: kolom_punten
+        label: Kolom punten
+        type: string
+      - name: punten
+        label: Punten
+        type: string
+      - name: voetnoot
+        label: Voetnoot
+        type: text
+  - name: tekst-sponsors-en
+    label: Tekst Sponsors (EN)
+    type: file
+    path: src/content/pages/en/sponsors.yml
+    format: yaml
+    fields:
+    - name: seo
+      label: Zoekmachines (Google)
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: omschrijving
+        label: Omschrijving
+        type: text
+        description: Zichtbaar in Google onder de titel. Houd het tussen 120 en 160 tekens.
+    - name: hero
+      label: Bovenste blok (beeld)
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: lead
+        label: Intro
+        type: text
+        description: Tekst tussen [haken] wordt een gele open plek. Codes zoals {deadline_abstracts} vullen een datum uit Instellingen congres in.
+      - name: knop
+        label: Knoptekst
+        type: string
+    - name: niveaus
+      label: Koppen sponsorniveaus
+      type: object
+      fields:
+      - name: platinum
+        label: Platinum
+        type: string
+      - name: goud
+        label: Goud
+        type: string
+      - name: zilver
+        label: Zilver
+        type: string
+      - name: exposant
+        label: Exposant
+        type: string
+    - name: sponsor_worden
+      label: Sponsor worden
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: lead
+        label: Intro
+        type: text
+        description: Tekst tussen [haken] wordt een gele open plek. Codes zoals {deadline_abstracts} vullen een datum uit Instellingen congres in.
+      - name: mail_onderwerp
+        label: Mail onderwerp
+        type: string
+    - name: cgr
+      label: CGR-gedragscode
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: tekst1
+        label: Tekst alinea 1
+        type: text
+      - name: tekst2
+        label: Tekst alinea 2
+        type: text
+        description: Tekst tussen [haken] wordt een gele open plek. Codes zoals {deadline_abstracts} vullen een datum uit Instellingen congres in.
+  - name: tekst-contact-en
+    label: Tekst Contact (EN)
+    type: file
+    path: src/content/pages/en/contact.yml
+    format: yaml
+    fields:
+    - name: seo
+      label: Zoekmachines (Google)
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: omschrijving
+        label: Omschrijving
+        type: text
+        description: Zichtbaar in Google onder de titel. Houd het tussen 120 en 160 tekens.
+    - name: hero
+      label: Bovenste blok (beeld)
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: lead
+        label: Intro
+        type: text
+    - name: formulier
+      label: Contactformulier
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: verplicht
+        label: Verplicht
+        type: string
+      - name: voornaam
+        label: Voornaam
+        type: string
+      - name: achternaam
+        label: Achternaam
+        type: string
+      - name: email
+        label: E-mailadres
+        type: string
+      - name: organisatie
+        label: Organisatie
+        type: string
+      - name: bericht
+        label: Bericht
+        type: string
+      - name: knop
+        label: Knoptekst
+        type: string
+      - name: bezig
+        label: Bezig
+        type: string
+      - name: bedankt
+        label: Bedankt
+        type: string
+      - name: bevestiging
+        label: Bevestiging
+        type: text
+      - name: opnieuw
+        label: Opnieuw
+        type: string
+      - name: fout_ontbreekt
+        label: Fout ontbreekt
+        type: string
+      - name: fout_email
+        label: Fout email
+        type: string
+      - name: fout_verzenden
+        label: Fout verzenden
+        type: string
+      - name: fout_spam
+        label: Fout spam
+        type: string
+    - name: zijbalk
+      label: Zijbalk
+      type: object
+      fields:
+      - name: organisatie_titel
+        label: Organisatie titel
+        type: string
+      - name: snel_titel
+        label: Snel titel
+        type: string
+      - name: snel
+        label: Snelle links
+        type: string
+        list: true
+  
