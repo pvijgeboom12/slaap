@@ -1,0 +1,38 @@
+seo:
+  titel: Programme
+  omschrijving: The SLAAP2027 programme with keynotes, parallel symposia, poster presentations, the Data Blitz and the congress dinner, 10 to 12 November 2027.
+hero:
+  titel: Programme
+  lead: Three congress days with keynotes, parallel symposia, poster presentations and a social programme. The full programme will be published here in [month] 2027.
+  ankers: [Overview, Speakers, Posters, Congress dinner]
+overzicht:
+  titel: Programme overview
+  lead: Provisional outline. The final programme with times and rooms will follow.
+  knop_pdf: Programme (PDF)
+  kies_dag: Choose a day
+  spreker: Speaker
+  sprekers: Speakers
+  voorzitter: Chair
+sprekers:
+  titel: Featured speakers
+posters:
+  titel: Poster overview
+  lead: After the abstract review, we will publish all posters here, with title, authors and poster board number.
+  tekst: Presenting a poster yourself? Format, mounting times, the Data Blitz and poster prizes are listed in the information for presenters.
+  knop_pdf: Poster overview (PDF)
+  knop_info: Information for presenters
+diner:
+  kicker: Social programme
+  titel: Congress dinner
+  lead: "End the congress day with the traditional congress dinner: an evening to catch up and network with colleagues in a relaxed atmosphere."
+  tekst: The congress dinner is not included in the registration fee. You order a ticket through the registration platform. Already registered? Log in again to add a ticket.
+  knop: Order a ticket
+  label_datum: Date
+  label_tijd: Time
+  label_locatie: Venue
+  label_kosten: Price
+  vanaf: From
+  btw: including VAT
+  alt:
+    - Performance during the SLAAP2025 congress dinner
+    - Tables set for the congress dinner at NH Koningshof

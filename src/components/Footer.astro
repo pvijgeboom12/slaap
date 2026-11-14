@@ -1,5 +1,6 @@
 ---
 import { path, type Lang } from '../i18n/routes';
+import { settings } from '../lib/content';
 
 interface Props {
   lang: Lang;
@@ -41,6 +42,8 @@ const t = {
     privacy: 'Privacy statement',
   },
 }[lang];
+const s = settings();
+const email = s.contact?.email ?? 'info@jcc-congressen.nl';
 const h2 = 'font-family:inherit;font-size:16px;font-weight:700;color:#FFFFFF;letter-spacing:0';
 const col = 'display:flex;flex-direction:column;gap:10px';
 ---
@@ -61,7 +64,7 @@ const col = 'display:flex;flex-direction:column;gap:10px';
       <div style={col}>
         <h2 style={h2}>{t.pco}</h2>
         <p class="soft" style="font-size:16px">JCC Congress Consultancy &amp; Events</p>
-        <a class="foot-link" href="mailto:info@jcc-congressen.nl">info@jcc-congressen.nl</a>
+        <a class="foot-link" href={`mailto:${email}`}>{email}</a>
         <a class="foot-link" href={path(lang, 'contact')}>{t.form}</a>
       </div>
       <div style={col}>
@@ -75,8 +78,8 @@ const col = 'display:flex;flex-direction:column;gap:10px';
     <div class="soft" style="margin-top:56px;padding-top:24px;border-top:1px solid rgba(233,234,244,0.14);display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;font-size:15px">
       <span>© Stichting Slaapcongres Nederland 2027</span>
       <div style="display:flex;gap:24px;flex-wrap:wrap">
-        <a class="foot-link" href="#">{t.terms}</a>
-        <a class="foot-link" href="#">{t.privacy}</a>
+        <a class="foot-link" href={s.links?.algemene_voorwaarden || '#'}>{t.terms}</a>
+        <a class="foot-link" href={s.links?.privacyverklaring || '#'}>{t.privacy}</a>
       </div>
     </div>
   </div>

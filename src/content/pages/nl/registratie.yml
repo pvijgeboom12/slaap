@@ -1,0 +1,49 @@
+seo:
+  titel: Registratie
+  omschrijving: Registreer voor SLAAP2027. Tarieven voor leden en niet-leden van NSWO en SVNL, groepsregistratie en voorwaarden.
+hero:
+  titel: Registreren voor SLAAP2027
+  lead: Je registreert je via het registratieplatform. Tot en met {vroegboek_tot} geldt het vroegboektarief.
+  knop_individueel: Individueel registreren
+  knop_groep: Groepsregistratie
+tarieven:
+  titel: Registratietarieven
+  lead: Leden van NSWO en SVNL registreren tegen een gereduceerd tarief.
+  bijschrift: Registratietarieven SLAAP2027 per categorie
+  kolom_categorie: Categorie
+  kolom_vroegboek: Vroegboek t/m {vroegboek_tot}
+  kolom_regulier: Regulier
+  rijen:
+    - categorie: Lid NSWO of SVNL
+      vroegboek:
+      regulier:
+    - categorie: Niet-lid
+      vroegboek:
+      regulier:
+    - categorie: (PhD-)student, lid NSWO of SVNL
+      vroegboek:
+      regulier:
+    - categorie: (PhD-)student, niet-lid
+      vroegboek:
+      regulier:
+  diner: Congresdiner (optioneel)
+  voetnoot: Alle tarieven zijn [inclusief / exclusief] btw. Hotelovernachting en congresdiner zijn niet inbegrepen in de registratie.
+groep:
+  titel: Groepsregistratie
+  tekst: Registreer je meerdere collega's van dezelfde organisatie? Met de groepsregistratie meld je iedereen in één keer aan en ontvang je één factuur.
+  knop: Naar groepsregistratie
+voorwaarden:
+  titel: Voorwaarden
+  tekst: Door te registreren ga je akkoord met de algemene voorwaarden van Stichting Slaapcongres Nederland, waaronder de regels voor annuleren en wijzigen.
+  knop: Algemene voorwaarden (PDF)
+lid_worden:
+  titel: Lid worden van NSWO of SVNL
+  lead: SLAAP2027 is een initiatief van beide verenigingen. Leden registreren met korting en alleen leden komen in aanmerking voor de Piet Visser Posterprijs.
+  nswo:
+    naam: Nederlandse Vereniging voor Slaap-Waak Onderzoek
+    tekst: De wetenschappelijke vereniging voor onderzoek naar slaap en waak in Nederland.
+    knop: Word lid van de NSWO
+  svnl:
+    naam: Nederlandse Vereniging voor Slaapgeneeskunde
+    tekst: De vereniging voor professionals in de klinische slaapgeneeskunde.
+    knop: Word lid van de SVNL

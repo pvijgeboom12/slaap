@@ -1,0 +1,4 @@
+# Sponsors – te beheren in Pages CMS onder "Sponsors".
+# niveau: platinum | goud | zilver | exposant
+# Zolang een niveau leeg is, toont de site lege [Logo]-tegels.
+sponsors: []

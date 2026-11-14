@@ -1,0 +1,8 @@
+---
+// Tekst uit het CMS met open plekken, links en codes uit de instellingen. Zie rich() in lib/content.ts.
+import { rich } from '../lib/content';
+import type { Lang } from '../i18n/routes';
+interface Props { t: unknown; lang: Lang }
+const { t, lang } = Astro.props;
+---
+<Fragment set:html={rich(t, lang)} />

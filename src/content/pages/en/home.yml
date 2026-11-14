@@ -1,0 +1,71 @@
+seo:
+  titel: Home
+  omschrijving: SLAAP2027, the biennial Dutch Sleep Congress, 10 to 12 November 2027 at NH Koningshof, Veldhoven. Keynotes, symposia, posters and the congress dinner.
+hero:
+  kicker: Dutch Sleep Congress
+  lead: The biennial congress for everyone working in sleep science and sleep medicine.
+  knop_registreren: Register
+  knop_abstract: Submit an abstract
+  status:
+    binnenkort: Registration and abstract submission open on {opening_registratie}.
+    open: Registration is open. Early-bird fee until {vroegboek_tot}.
+    gesloten: Registration is closed.
+  link_route: Directions and hotel
+blokken:
+  - titel: Date and venue
+    tekst: Wednesday 10 to Friday 12 November 2027 at NH Koningshof, Veldhoven.
+    link: Directions and hotel
+  - titel: Programme
+    tekst: Keynotes, parallel symposia, posters with a Data Blitz, and the congress dinner.
+    link: View the programme
+  - titel: Accreditation
+    tekst: Accreditation is being requested from the relevant professional bodies.
+    link: Points per association
+over:
+  titel: Where sleep research meets sleep care
+  lead: SLAAP2027 brings together researchers, clinicians and healthcare professionals in sleep science and sleep medicine. Three days of keynotes, symposia, poster presentations and time to catch up with colleagues. Sessions are held in Dutch and English.
+  tekst: The congress is organised every two years by the Dutch Society for Sleep-Wake Research (NSWO) and the Dutch Society for Sleep Medicine (SVNL), on behalf of Stichting Slaapcongres Nederland. We expect around {deelnemers} participants.
+voor_wie:
+  titel: Who is it for?
+  punten:
+    - Physicians, researchers and healthcare professionals in sleep medicine and sleep science, members and non-members of NSWO or SVNL
+    - (PhD) students and young professionals
+    - Speakers and symposium chairs
+    - Sponsors and exhibitors from pharma and medtech
+    - Anyone with an interest in sleep and wakefulness
+beeld:
+  titel: SLAAP2025 in pictures
+  lead: "A glimpse of the previous edition at NH Koningshof: keynotes, posters, conversations and the congress dinner."
+  alt:
+    - Keynote in the plenary hall
+    - Participants discussing posters
+    - Networking during the break
+    - Audience during a session
+    - Dance floor and band at the congress dinner
+    - Piet Visser Poster Prize ceremony
+meedoen:
+  titel: Take part in SLAAP2027
+  acties:
+    - titel: Register
+      tekst: Fees per category, group registration and terms.
+    - titel: Submit an abstract or symposium
+      tekst: Present your research as a poster and pitch it in the Data Blitz. Deadline {deadline_abstracts}.
+    - titel: Book a hotel room
+      tekst: Stay at the congress venue. Book early for the widest choice.
+    - titel: Become a sponsor
+      tekst: Meet around {deelnemers} sleep professionals on the congress floor.
+    - titel: Join NSWO or SVNL
+      tekst: Members register at a reduced fee.
+comite:
+  titel: Organising committee
+sponsors:
+  titel: Platinum sponsors
+  link: All sponsors
+afsluiter:
+  titel: "Save the date: 10 to 12 November 2027"
+  tekst:
+    binnenkort: Registration opens on {opening_registratie}. NSWO and SVNL members register at a reduced fee.
+    open: Registration is open. NSWO and SVNL members register at a reduced fee.
+    gesloten: Registration is closed. See you at SLAAP2027!
+  knop_registreren: Register
+  knop_contact: Contact us

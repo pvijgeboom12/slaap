@@ -1,0 +1,34 @@
+seo:
+  titel: Practical information
+  omschrijving: Congress venue NH Koningshof in Veldhoven, booking a hotel room, directions by car and public transport, and accreditation points for SLAAP2027.
+hero:
+  titel: Venue, hotel and accreditation
+  lead: SLAAP2027 takes place at NH Conference Centre Koningshof in Veldhoven, close to Eindhoven.
+  ankers: [Venue, Hotel, Directions, Accreditation]
+locatie:
+  titel: Congress venue
+  telefoon: +31 (0)40 253 74 75
+  email: nhkoningshof@nh-hotels.com
+  website_label: NH Koningshof website
+  website: https://www.nh-hotels.com/en/hotel/nh-eindhoven-conference-centre-koningshof
+  kaart: "[Map]"
+  knop_maps: Open in Google Maps
+hotel:
+  titel: Book a hotel room
+  lead: Hotel accommodation is not included in the registration. Book your room directly with NH Koningshof through the congress link; book early for the widest choice.
+  knop: Book a hotel room
+route:
+  titel: Directions
+  knop: Plan your route
+  auto_titel: By car
+  auto_tekst: "[Directions and parking information]"
+  ov_titel: By public transport
+  ov_tekst: The nearest intercity station is Eindhoven Centraal. [Bus or taxi connection to Koningshof]
+accreditatie:
+  titel: Accreditation
+  lead: Accreditation is being requested. Once points have been awarded, you will find the number per professional association here.
+  bijschrift: Accreditation points per professional association
+  kolom_vereniging: Professional association
+  kolom_punten: Points
+  punten: points
+  voetnoot: "* Other medical specialists: under the current rules, accreditation by one scientific society of medical specialists (here the NVALT) also applies to the other professional associations. The points are then awarded as cross-disciplinary points."

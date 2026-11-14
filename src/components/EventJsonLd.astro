@@ -1,0 +1,37 @@
+---
+// schema.org Event voor Google, gevuld vanuit settings.yml.
+import { settings, tr } from '../lib/content';
+import { site } from '../lib/site';
+import { routes, type Lang } from '../i18n/routes';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const s = settings();
+const c = s.congres;
+const data = {
+  '@context': 'https://schema.org',
+  '@type': 'Event',
+  name: `${c.naam}, ${tr(c.ondertitel, lang)}`,
+  startDate: String(c.startdatum),
+  endDate: String(c.einddatum || c.startdatum),
+  eventStatus: 'https://schema.org/EventScheduled',
+  eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+  inLanguage: ['nl', 'en'],
+  url: new URL(routes.home[lang], site.url).href,
+  image: [new URL('/assets/slaap-hero_foto272.jpg', site.url).href],
+  description: lang === 'nl'
+    ? 'Het tweejaarlijkse congres voor iedereen die werkt in de slaapwetenschap en slaapgeneeskunde.'
+    : 'The biennial congress for everyone working in sleep science and sleep medicine.',
+  location: {
+    '@type': 'Place',
+    name: c.locatie_volledig || c.locatie,
+    address: { '@type': 'PostalAddress', streetAddress: c.adres, postalCode: c.postcode, addressLocality: c.plaats, addressCountry: 'NL' },
+  },
+  organizer: [
+    { '@type': 'Organization', name: 'Stichting Slaapcongres Nederland', url: site.url },
+  ],
+  ...(s.registratie?.status === 'open' && s.registratie?.link_individueel
+    ? { offers: { '@type': 'Offer', url: s.registratie.link_individueel, availability: 'https://schema.org/InStock', priceCurrency: 'EUR' } }
+    : {}),
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(data)} />

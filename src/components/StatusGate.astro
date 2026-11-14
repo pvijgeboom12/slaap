@@ -1,0 +1,20 @@
+---
+// Knoppen naar het registratie- of abstractplatform van JCC, gestuurd door de status in settings.yml:
+//   open       → de knoppen (slot) met de link naar het platform
+//   binnenkort → een regel met de openingsdatum
+//   gesloten   → een korte melding
+import { settings, tr } from '../lib/content';
+import R from './R.astro';
+import type { Lang } from '../i18n/routes';
+interface Props {
+  kind: 'registratie' | 'abstracts';
+  lang: Lang;
+  noteStyle: string;
+}
+const { kind, lang, noteStyle } = Astro.props;
+const cfg = settings()[kind] ?? {};
+const status = cfg.status ?? 'binnenkort';
+---
+{status === 'open'
+  ? <slot />
+  : <p style={noteStyle}><R t={tr(status === 'gesloten' ? cfg.melding_gesloten : cfg.melding_binnenkort, lang)} lang={lang} /></p>}

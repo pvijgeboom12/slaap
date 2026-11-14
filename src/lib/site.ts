@@ -12,4 +12,9 @@ export const site = {
   indexable: false,
   /** Cloudflare Web Analytics-token (cookieloos). Leeg = geen analytics. */
   cfAnalyticsToken: '',
+  /**
+   * Cloudflare Turnstile (spamcheck contactformulier), publieke sitekey.
+   * Leeg = geen widget (handig lokaal). De geheime sleutel staat alleen in Cloudflare (TURNSTILE_SECRET).
+   */
+  turnstileSiteKey: '',
 };

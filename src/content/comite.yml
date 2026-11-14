@@ -1,0 +1,18 @@
+# Organisatiecomité – te beheren in Pages CMS onder "Organisatiecomité".
+# Lege velden tonen een gele open plek.
+leden:
+  - naam:
+    functie: { nl: '', en: '' }
+    foto:
+  - naam:
+    functie: { nl: '', en: '' }
+    foto:
+  - naam:
+    functie: { nl: '', en: '' }
+    foto:
+  - naam:
+    functie: { nl: '', en: '' }
+    foto:
+  - naam:
+    functie: { nl: '', en: '' }
+    foto:

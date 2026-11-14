@@ -1,0 +1,27 @@
+# Uitgelichte sprekers – te beheren in Pages CMS onder "Sprekers".
+# Lege velden tonen een gele open plek.
+sprekers:
+  - naam: ''
+    type: keynote
+    functie: { nl: '', en: '' }
+    lezing: { nl: '', en: '' }
+    foto: ''
+    bio: { nl: '', en: '' }
+  - naam: ''
+    type: keynote
+    functie: { nl: '', en: '' }
+    lezing: { nl: '', en: '' }
+    foto: ''
+    bio: { nl: '', en: '' }
+  - naam: ''
+    type: keynote
+    functie: { nl: '', en: '' }
+    lezing: { nl: '', en: '' }
+    foto: ''
+    bio: { nl: '', en: '' }
+  - naam: ''
+    type: keynote
+    functie: { nl: '', en: '' }
+    lezing: { nl: '', en: '' }
+    foto: ''
+    bio: { nl: '', en: '' }
