@@ -15,7 +15,7 @@ formulier:
   knop: Verstuur bericht
   bezig: Bezig met versturen…
   bedankt: Bedankt,
-  bevestiging: Je bericht is verstuurd. We reageren zo snel mogelijk, meestal binnen twee werkdagen.
+  bevestiging: Je bericht is verstuurd. We reageren zo snel mogelijk.
   opnieuw: Nog een bericht sturen
   fout_ontbreekt: "Vul nog in:"
   fout_email: Controleer je e-mailadres, bijvoorbeeld naam@ziekenhuis.nl.

@@ -15,7 +15,7 @@ formulier:
   knop: Send message
   bezig: Sending…
   bedankt: Thank you,
-  bevestiging: Your message has been sent. We will reply as soon as possible, usually within two working days.
+  bevestiging: Your message has been sent. We will reply as soon as possible.
   opnieuw: Send another message
   fout_ontbreekt: "Please fill in:"
   fout_email: Please check your email address, for example name@hospital.org.

@@ -1,11 +1,24 @@
-// Cloudflare Workers (static assets), zelfde opzet als jcc. Build: npm run build → dist/
+// Cloudflare Workers (static assets + /api/contact), zelfde opzet als jcc.
+// Build: npm run build → dist/. Geheimen (TURNSTILE_SECRET) zet je in het Cloudflare-dashboard, niet hier.
 {
   "name": "slaap",
+  "main": "worker/index.js",
   "compatibility_date": "2026-11-01",
   "assets": {
     "directory": "./dist",
+    "binding": "ASSETS",
     "not_found_handling": "404-page",
-    "html_handling": "auto-trailing-slash"
+    "html_handling": "auto-trailing-slash",
+    // Alleen het contactformulier loopt via de Worker; al het andere is statisch.
+    "run_worker_first": ["/api/*"]
   },
+  // Cloudflare Email Routing. Ontvangers moeten in Email Routing als geverifieerd adres staan.
+  "send_email": [{ "name": "MAIL" }],
+  "vars": {
+    "CONTACT_FROM": "formulier@slaapcongres.nl",
+    "CONTACT_TO": "info@slaapcongres.nl,info@jcc-congressen.nl"
+  },
+  "observability": { "enabled": true },
+  // Nodig voor preview-builds van andere branches
   "previews": {}
 }
