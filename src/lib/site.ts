@@ -5,9 +5,9 @@
 export const site = {
   url: 'https://slaapcongres.nl',
   /**
-   * Livegang-schakelaar. false = elke pagina krijgt noindex (en _headers stuurt X-Robots-Tag).
-   * Bij livegang op true zetten én de X-Robots-Tag-regel in public/_headers weghalen.
-   * Previews op *.pages.dev / *.workers.dev blijven altijd noindex via _headers.
+   * Livegang-schakelaar. false = elke pagina krijgt noindex (meta-tag én X-Robots-Tag-header).
+   * Bij livegang op true zetten; verder hoeft er niets te veranderen.
+   * Previews op *.workers.dev blijven altijd noindex (zie astro.config.mjs).
    */
   indexable: false,
   /** Cloudflare Web Analytics-token (cookieloos). Leeg = geen analytics. */

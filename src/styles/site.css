@@ -84,3 +84,6 @@ a:hover{color:#0E3F63}
 @media (max-width:1180px){.nav-links{display:none !important}.header-cta{display:none !important}.menu-btn{display:inline-flex}.mobile-nav{display:flex}}
 @media (max-width:640px){.site{font-size:17px}.hide-sm{display:none !important}}
 [hidden]{display:none !important}
+/* Toegevoegd voor WCAG 2.4.1: alleen zichtbaar bij toetsenbordfocus */
+.skip-link{position:absolute;left:12px;top:-100px;z-index:100;background:#6EC3EE;color:#12152A;font-weight:700;padding:12px 20px;border-radius:999px;text-decoration:none}
+.skip-link:focus{top:12px}

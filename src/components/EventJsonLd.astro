@@ -2,11 +2,13 @@
 // schema.org Event voor Google, gevuld vanuit settings.yml.
 import { settings, tr } from '../lib/content';
 import { site } from '../lib/site';
+import { ogFoto } from '../lib/images';
 import { routes, type Lang } from '../i18n/routes';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const s = settings();
 const c = s.congres;
+const img = await ogFoto('slaap-hero_foto272.jpg');
 const data = {
   '@context': 'https://schema.org',
   '@type': 'Event',
@@ -17,7 +19,7 @@ const data = {
   eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
   inLanguage: ['nl', 'en'],
   url: new URL(routes.home[lang], site.url).href,
-  image: [new URL('/assets/slaap-hero_foto272.jpg', site.url).href],
+  image: img ? [new URL(img, site.url).href] : undefined,
   description: lang === 'nl'
     ? 'Het tweejaarlijkse congres voor iedereen die werkt in de slaapwetenschap en slaapgeneeskunde.'
     : 'The biennial congress for everyone working in sleep science and sleep medicine.',
