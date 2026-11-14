@@ -1,0 +1,63 @@
+---
+// Archivo zelf gehost (variabele letter met breedte-as, net als in het ontwerp). Geen Google Fonts.
+import '@fontsource-variable/archivo/wdth.css';
+import '../styles/site.css';
+
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { site } from '../lib/site';
+import { routes, type Lang, type RouteKey } from '../i18n/routes';
+
+interface Props {
+  lang: Lang;
+  page: RouteKey;
+  title: string;
+  description?: string;
+  ogImage?: string;
+}
+const { lang, page, title, description = '', ogImage } = Astro.props;
+
+const alt = routes[page];
+const canonical = new URL(alt[lang], site.url).href;
+const fullTitle = `SLAAP2027 | ${title}`;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {!site.indexable && <meta name="robots" content="noindex, nofollow" />}
+    <title>{fullTitle}</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="nl" href={new URL(alt.nl, site.url).href} />
+    <link rel="alternate" hreflang="en" href={new URL(alt.en, site.url).href} />
+    <link rel="alternate" hreflang="x-default" href={new URL(alt.nl, site.url).href} />
+    <link rel="icon" href="/assets/slaap2027-beeldmerk.svg" type="image/svg+xml" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="SLAAP2027" />
+    <meta property="og:title" content={fullTitle} />
+    {description && <meta property="og:description" content={description} />}
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={lang === 'nl' ? 'nl_NL' : 'en_GB'} />
+    {ogImage && <meta property="og:image" content={new URL(ogImage, site.url).href} />}
+    <slot name="head" />
+    {
+      import.meta.env.PROD && site.cfAnalyticsToken && (
+        <script is:inline defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={JSON.stringify({ token: site.cfAnalyticsToken })} />
+      )
+    }
+  </head>
+  <body>
+    <div class="site">
+      <Header lang={lang} page={page} />
+      <main>
+        <slot />
+      </main>
+      <Footer lang={lang} />
+    </div>
+    <script src="../scripts/site.js"></script>
+  </body>
+</html>

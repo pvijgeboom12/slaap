@@ -1,0 +1,42 @@
+---
+import { nav, path, routes, type Lang, type RouteKey } from '../i18n/routes';
+
+interface Props {
+  lang: Lang;
+  page: RouteKey;
+}
+const { lang, page } = Astro.props;
+const t = {
+  nl: { home: 'SLAAP2027, naar de homepage', menu: 'Hoofdmenu', language: 'Taal', open: 'Menu openen', cta: 'Registreren' },
+  en: { home: 'SLAAP2027, to the homepage', menu: 'Main menu', language: 'Language', open: 'Open menu', cta: 'Register' },
+}[lang];
+const langStyle = 'display:inline-flex;align-items:center;justify-content:center;text-decoration:none';
+---
+
+<header style="background:#12152A;color:#E9EAF4;border-bottom:1px solid rgba(233,234,244,0.1)">
+  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:80px;max-width:1320px">
+    <a href={path(lang, 'home')} style="display:inline-flex;align-items:center;min-height:48px;flex:0 0 auto"><img alt={t.home} height="24" src="/assets/slaap2027-woordmerk-donker.svg" style="display:block;width:187px;height:24px" width="187" /></a>
+    <nav aria-label={t.menu} class="nav-links" style="display:flex;align-items:center;gap:clamp(14px,1.8vw,26px)">
+      {nav.map((n) => (
+        <a class:list={['nav-link', { 'is-active': n.key === page }]} aria-current={n.key === page ? 'page' : undefined} href={path(lang, n.key)}>{n[lang]}</a>
+      ))}
+    </nav>
+    <div style="display:flex;align-items:center;gap:12px">
+      <div aria-label={t.language} role="group" style="display:inline-flex;gap:2px;padding:3px;border:1px solid rgba(233,234,244,0.28);border-radius:999px">
+        {(['nl', 'en'] as const).map((l) => (
+          <a class:list={['lang-btn', { on: l === lang }]} aria-current={l === lang ? 'true' : undefined} href={routes[page][l]} lang={l} hreflang={l} style={langStyle}>{l.toUpperCase()}</a>
+        ))}
+      </div>
+      <a class="btn btn-primary header-cta" href={path(lang, 'registratie')} style="min-height:44px;padding:10px 20px;font-size:16px">{t.cta}</a>
+      <button aria-expanded="false" aria-controls="mnav" aria-label={t.open} class="menu-btn" data-menu-btn type="button"><svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+    </div>
+  </div>
+  <div hidden id="mnav">
+    <nav aria-label={t.menu} class="mobile-nav wrap" style="flex-direction:column;padding-bottom:24px">
+      {nav.map((n) => (
+        <a class:list={['m-link', { 'is-active': n.key === page }]} aria-current={n.key === page ? 'page' : undefined} href={path(lang, n.key)}>{n[lang]}</a>
+      ))}
+      <a class="btn btn-primary" href={path(lang, 'registratie')} style="margin-top:20px">{t.cta}</a>
+    </nav>
+  </div>
+</header>

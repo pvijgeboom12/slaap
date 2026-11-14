@@ -1,0 +1,83 @@
+---
+import { path, type Lang } from '../i18n/routes';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = {
+  nl: {
+    home: 'SLAAP2027, naar de homepage',
+    about: ['Nederlands Slaapcongres', '10 t/m 12 november 2027', 'NH Koningshof, Veldhoven'],
+    orgBy: 'Georganiseerd door',
+    nswo: 'Nederlandse Vereniging voor Slaap-Waak Onderzoek (NSWO)',
+    svnl: 'Nederlandse Vereniging voor Slaapgeneeskunde (SVNL)',
+    under: 'onder Stichting Slaapcongres Nederland',
+    pco: 'Congresorganisatie',
+    form: 'Contactformulier',
+    quick: 'Snel naar',
+    register: 'Registreren',
+    abstract: 'Abstract indienen',
+    hotel: 'Hotelkamer boeken',
+    member: 'Lid worden',
+    terms: 'Algemene voorwaarden',
+    privacy: 'Privacyverklaring',
+  },
+  en: {
+    home: 'SLAAP2027, to the homepage',
+    about: ['Dutch Sleep Congress', '10 to 12 November 2027', 'NH Koningshof, Veldhoven'],
+    orgBy: 'Organised by',
+    nswo: 'Dutch Society for Sleep-Wake Research (NSWO)',
+    svnl: 'Dutch Society for Sleep Medicine (SVNL)',
+    under: 'on behalf of Stichting Slaapcongres Nederland',
+    pco: 'Congress management',
+    form: 'Contact form',
+    quick: 'Quick links',
+    register: 'Register',
+    abstract: 'Submit an abstract',
+    hotel: 'Book a hotel room',
+    member: 'Become a member',
+    terms: 'Terms and conditions',
+    privacy: 'Privacy statement',
+  },
+}[lang];
+const h2 = 'font-family:inherit;font-size:16px;font-weight:700;color:#FFFFFF;letter-spacing:0';
+const col = 'display:flex;flex-direction:column;gap:10px';
+---
+
+<footer class="night" style="padding:72px 0 32px">
+  <div class="wrap">
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr));gap:40px">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <a href={path(lang, 'home')} style="display:inline-flex;align-items:center;min-height:48px;flex:0 0 auto"><img alt={t.home} height="32" src="/assets/slaap2027-woordmerk-donker.svg" style="display:block;width:250px;height:32px" width="250" /></a>
+        <p class="soft" style="font-size:16px;line-height:1.6">{t.about[0]}<br />{t.about[1]}<br />{t.about[2]}</p>
+      </div>
+      <div style={col}>
+        <h2 style={h2}>{t.orgBy}</h2>
+        <a class="foot-link" href="https://www.nswo.nl">{t.nswo}</a>
+        <a class="foot-link" href="https://www.slaapgeneeskundevereniging.nl">{t.svnl}</a>
+        <p class="soft" style="font-size:16px">{t.under}</p>
+      </div>
+      <div style={col}>
+        <h2 style={h2}>{t.pco}</h2>
+        <p class="soft" style="font-size:16px">JCC Congress Consultancy &amp; Events</p>
+        <a class="foot-link" href="mailto:info@jcc-congressen.nl">info@jcc-congressen.nl</a>
+        <a class="foot-link" href={path(lang, 'contact')}>{t.form}</a>
+      </div>
+      <div style={col}>
+        <h2 style={h2}>{t.quick}</h2>
+        <a class="foot-link" href={path(lang, 'registratie')}>{t.register}</a>
+        <a class="foot-link" href={path(lang, 'abstracts')}>{t.abstract}</a>
+        <a class="foot-link" href={path(lang, 'praktisch', 'hotel')}>{t.hotel}</a>
+        <a class="foot-link" href={path(lang, 'registratie', 'lid-worden')}>{t.member}</a>
+      </div>
+    </div>
+    <div class="soft" style="margin-top:56px;padding-top:24px;border-top:1px solid rgba(233,234,244,0.14);display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;font-size:15px">
+      <span>© Stichting Slaapcongres Nederland 2027</span>
+      <div style="display:flex;gap:24px;flex-wrap:wrap">
+        <a class="foot-link" href="#">{t.terms}</a>
+        <a class="foot-link" href="#">{t.privacy}</a>
+      </div>
+    </div>
+  </div>
+</footer>

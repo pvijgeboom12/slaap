@@ -1,0 +1,10 @@
+# Oude paden van de testsite (slaap2027.netlify.app) → nieuwe paden
+/index-en          /en/            301
+/index-en.html     /en/            301
+/index.html        /               301
+/programma.html    /programma/     301
+/registratie.html  /registratie/   301
+/abstracts.html    /abstracts/     301
+/praktisch.html    /praktisch/     301
+/sponsors.html     /sponsors/      301
+/contact.html      /contact/       301
