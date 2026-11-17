@@ -17,8 +17,8 @@ Alles wat live gaat of DNS wijzigt, gebeurt pas na akkoord van Pieter. Inloggen 
 - [ ] Turnstile: maak een widget aan voor `slaapcongres.nl` en het `workers.dev`-previewdomein.
 - [ ] Zet de sitekey in `src/lib/site.ts` (`turnstileSiteKey`).
 - [ ] Zet de geheime sleutel als secret `TURNSTILE_SECRET` in de Worker.
-- [ ] Email Routing: zet het aan op het subdomein `post.slaapcongres.nl`, niet op het hoofddomein. Daar staan de MX-records van Google Workspace.
-- [ ] Voeg `info@slaapcongres.nl` en `info@jcc-congressen.nl` toe als destination addresses en laat beide bevestigen via de verificatiemail.
+- [ ] Email Routing: aan op het subdomein `post.jcc-congressen.nl` (account JCC), niet op het hoofddomein. Daar staan de MX-records van Google Workspace.
+- [ ] Voeg `slaap@jcc-congress.com` (alias op Annicks mailbox, zoals weac@) toe als destination address en laat Annick de verificatiemail bevestigen.
 - [ ] Controleer of `CONTACT_TO` in `wrangler.jsonc` klopt. Nu staan daar beide adressen.
 
 ## C. Inhoud

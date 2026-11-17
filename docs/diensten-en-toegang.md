@@ -10,7 +10,7 @@ Afspraak van 9 november 2026: SLAAP valt onder JCC. Er zijn dus geen aparte acco
 | Pages CMS (app.pagescms.org) | Beheer van teksten, programma en sponsors | Geen eigen account: inloggen via GitHub | Iedereen met schrijfrechten op de repo | €0 |
 | Cloudflare, Workers `slaap` | Hosting, previews per branch, contactformulier | JCC (account Annick) | Annick: Super Administrator. Pieter: Administrator | €0 (gratis plan) |
 | Cloudflare DNS, zone `slaapcongres.nl` | Domeinverwijzing | JCC (account Annick) | Als hierboven | €0 |
-| Cloudflare Email Routing, `post.slaapcongres.nl` | Verzenden van formulierberichten | JCC (account Annick) | Als hierboven | €0 |
+| Cloudflare Email Routing, `post.jcc-congressen.nl` → `slaap@jcc-congress.com` | Verzenden van formulierberichten | JCC (account Annick) | Als hierboven | €0 |
 | Cloudflare Turnstile | Spambeveiliging contactformulier | JCC (account Annick) | Als hierboven | €0 |
 | Cloudflare Web Analytics | Bezoekersstatistieken zonder cookies | JCC (account Annick) | Als hierboven | €0 |
 | Domeinregistratie `slaapcongres.nl` | Het domein zelf | [registrar en eigenaar invullen] | [invullen] | ca. $11 per jaar |
