@@ -23,6 +23,13 @@ export const nav: { key: RouteKey; nl: string; en: string }[] = [
   { key: 'contact', nl: 'Contact', en: 'Contact' },
 ];
 
+/** Hoofdmenu in fase 1 (save the date). Zie site.fase. */
+export const navFase1: { key: RouteKey; hash?: string; nl: string; en: string }[] = [
+  { key: 'home', hash: 'locatie', nl: 'Locatie', en: 'Venue' },
+  { key: 'home', hash: 'call-for-symposia', nl: 'Call for Symposia', en: 'Call for Symposia' },
+  { key: 'contact', nl: 'Contact', en: 'Contact' },
+];
+
 /** Pad naar een pagina, eventueel met anker: path('nl', 'praktisch', 'hotel'). */
 export function path(lang: Lang, key: RouteKey, hash?: string) {
   return routes[key][lang] + (hash ? `#${hash}` : '');

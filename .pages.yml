@@ -269,6 +269,129 @@ content:
               - { name: en, label: Engels, type: string }
           - { name: punten, label: Aantal punten, type: string }
 
+
+  # Fase 1: homepage als save the date (zie src/lib/site.ts → fase)
+  - name: tekst-savethedate-nl
+    label: "Tekst Save the date-homepage (NL)"
+    type: file
+    path: src/content/pages/nl/savethedate.yml
+    format: yaml
+    fields:
+    - name: seo
+      label: Zoekmachines (Google)
+      type: object
+      fields:
+      - { name: titel, label: Titel, type: string }
+      - { name: omschrijving, label: Omschrijving, type: text, description: Zichtbaar in Google onder de titel. Houd het tussen 120 en 160 tekens. }
+    - name: hero
+      label: Bovenste blok (beeld)
+      type: object
+      fields:
+      - { name: kicker, label: Regel boven de titel, type: string }
+      - { name: label, label: Label in het datumblok, type: string }
+      - { name: lead, label: Intro, type: text, description: "Gebruik {congresdatum} voor de congresdatum uit de instellingen." }
+      - { name: knop_symposia, label: Knop Call for Symposia, type: string }
+      - { name: knop_contact, label: Knop contact, type: string }
+      - { name: link_route, label: Link route plannen, type: string }
+    - name: intro
+      label: Introductie
+      type: object
+      fields:
+      - { name: titel, label: Titel, type: string }
+      - { name: lead, label: Intro, type: text }
+      - { name: tekst, label: Tekst, type: text }
+      - { name: voor_wie_titel, label: Titel Voor wie, type: string }
+      - { name: voor_wie, label: Voor wie, type: string, list: true }
+    - name: locatie
+      label: Locatie
+      type: object
+      fields:
+      - { name: titel, label: Titel, type: string }
+      - { name: tekst, label: Tekst, type: text }
+    - name: symposia
+      label: Call for Symposia
+      type: object
+      description: "Status, openingsdatum, deadline en link komen uit Instellingen congres → Abstracts."
+      fields:
+      - { name: titel, label: Titel, type: string }
+      - { name: lead, label: Intro, type: text }
+      - { name: tekst, label: Tekst, type: text }
+      - { name: deadline, label: Label deadline, type: string }
+      - { name: binnenkort, label: Tekst als de openingsdatum bekend is, type: string }
+      - { name: volgt, label: Tekst als er nog geen openingsdatum is, type: string }
+      - { name: gesloten, label: Tekst bij status gesloten, type: string }
+      - { name: knop, label: Knop indienen, type: string }
+      - { name: vraag, label: Vraag onderaan, type: string }
+      - { name: vraag_link, label: Link naar contact, type: string }
+    - name: afsluiter
+      label: Afsluiter
+      type: object
+      fields:
+      - { name: titel, label: Titel, type: string }
+      - { name: tekst, label: Tekst, type: text }
+      - { name: knop, label: Knop, type: string }
+
+  # Fase 1: homepage als save the date (zie src/lib/site.ts → fase)
+  - name: tekst-savethedate-en
+    label: "Tekst Save the date-homepage (EN)"
+    type: file
+    path: src/content/pages/en/savethedate.yml
+    format: yaml
+    fields:
+    - name: seo
+      label: Zoekmachines (Google)
+      type: object
+      fields:
+      - { name: titel, label: Titel, type: string }
+      - { name: omschrijving, label: Omschrijving, type: text, description: Zichtbaar in Google onder de titel. Houd het tussen 120 en 160 tekens. }
+    - name: hero
+      label: Bovenste blok (beeld)
+      type: object
+      fields:
+      - { name: kicker, label: Regel boven de titel, type: string }
+      - { name: label, label: Label in het datumblok, type: string }
+      - { name: lead, label: Intro, type: text, description: "Gebruik {congresdatum} voor de congresdatum uit de instellingen." }
+      - { name: knop_symposia, label: Knop Call for Symposia, type: string }
+      - { name: knop_contact, label: Knop contact, type: string }
+      - { name: link_route, label: Link route plannen, type: string }
+    - name: intro
+      label: Introductie
+      type: object
+      fields:
+      - { name: titel, label: Titel, type: string }
+      - { name: lead, label: Intro, type: text }
+      - { name: tekst, label: Tekst, type: text }
+      - { name: voor_wie_titel, label: Titel Voor wie, type: string }
+      - { name: voor_wie, label: Voor wie, type: string, list: true }
+    - name: locatie
+      label: Locatie
+      type: object
+      fields:
+      - { name: titel, label: Titel, type: string }
+      - { name: tekst, label: Tekst, type: text }
+    - name: symposia
+      label: Call for Symposia
+      type: object
+      description: "Status, openingsdatum, deadline en link komen uit Instellingen congres → Abstracts."
+      fields:
+      - { name: titel, label: Titel, type: string }
+      - { name: lead, label: Intro, type: text }
+      - { name: tekst, label: Tekst, type: text }
+      - { name: deadline, label: Label deadline, type: string }
+      - { name: binnenkort, label: Tekst als de openingsdatum bekend is, type: string }
+      - { name: volgt, label: Tekst als er nog geen openingsdatum is, type: string }
+      - { name: gesloten, label: Tekst bij status gesloten, type: string }
+      - { name: knop, label: Knop indienen, type: string }
+      - { name: vraag, label: Vraag onderaan, type: string }
+      - { name: vraag_link, label: Link naar contact, type: string }
+    - name: afsluiter
+      label: Afsluiter
+      type: object
+      fields:
+      - { name: titel, label: Titel, type: string }
+      - { name: tekst, label: Tekst, type: text }
+      - { name: knop, label: Knop, type: string }
+
   # Teksten per pagina en taal (gegenereerd uit de YAML-structuur, zie docs/README)
   - name: tekst-home-nl
     label: Tekst Home (NL)

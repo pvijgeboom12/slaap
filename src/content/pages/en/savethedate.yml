@@ -1,0 +1,39 @@
+# Homepage in phase 1 (save the date). Codes in curly brackets are filled in from the congress settings.
+seo:
+  titel: Save the Date
+  omschrijving: SLAAP2027, the biennial Dutch Sleep Congress, on 11 and 12 November 2027 at NH Koningshof, Veldhoven. Save the date and read all about the Call for Symposia.
+hero:
+  kicker: Dutch Sleep Congress
+  label: Save the Date
+  lead: The biennial congress for everyone working in sleep science and sleep medicine. Save {congresdatum} in your calendar.
+  knop_symposia: Call for Symposia
+  knop_contact: Contact us
+  link_route: Plan your route
+intro:
+  titel: Where sleep research and sleep care meet
+  lead: SLAAP2027 brings together researchers, clinicians and healthcare professionals in sleep science and sleep medicine. Two days of keynotes, symposia, poster presentations and time to catch up with colleagues. Sessions are held in Dutch and English.
+  tekst: The congress is organised every two years by the Dutch Society for Sleep-Wake Research (NSWO) and the Dutch Society for Sleep Medicine (SVNL), on behalf of Stichting Slaapcongres Nederland. We expect around {deelnemers} participants.
+  voor_wie_titel: Who is it for?
+  voor_wie:
+    - Physicians, researchers and healthcare professionals in sleep medicine and sleep science, whether or not you are a member of NSWO or SVNL
+    - (PhD) students and young professionals
+    - Sponsors and exhibitors from pharma and medtech
+    - Anyone with an interest in sleep and wakefulness
+locatie:
+  titel: Venue
+  tekst: As at the previous edition, we will meet at NH Koningshof in Veldhoven. Information on directions, parking and hotel rooms will follow on this site.
+symposia:
+  titel: Call for Symposia
+  lead: Would you like to organise a symposium at SLAAP2027? We invite researchers, clinicians and healthcare professionals to submit a proposal.
+  tekst: A symposium is a session built around one theme, with speakers from your field. Proposals from all areas of sleep science and sleep medicine are welcome.
+  deadline: Deadline for symposium proposals
+  binnenkort: Submission opens on {opening_abstracts}.
+  volgt: The submission form and deadline will be announced on this page soon.
+  gesloten: Submission of symposium proposals is closed.
+  knop: Propose a symposium
+  vraag: Questions about your proposal?
+  vraag_link: Contact us
+afsluiter:
+  titel: Questions about SLAAP2027?
+  tekst: The congress is managed by JCC Congress Consultancy & Events. Send us a message and we will get back to you as soon as possible.
+  knop: Contact us

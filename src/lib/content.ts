@@ -55,6 +55,19 @@ export const dayName = (d: Date, lang: Lang) => days[lang][d.getUTCDay()];
 export const monthName = (d: Date, lang: Lang) => months[lang][d.getUTCMonth()];
 export const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
+/** "11 en 12 november 2027" / "11 and 12 November 2027" (of "10 t/m 12 ..." bij drie dagen). */
+export function congresdatum(lang: Lang): string {
+  const c = settings().congres ?? {};
+  const a = toDate(c.startdatum), b = toDate(c.einddatum) ?? a;
+  if (!a || !b) return '';
+  const m = (d: Date) => `${months[lang][d.getUTCMonth()]} ${d.getUTCFullYear()}`;
+  if (a.getTime() === b.getTime()) return fmtDate(a, lang);
+  const days = Math.round((b.getTime() - a.getTime()) / 86400000) + 1;
+  const join = days === 2 ? (lang === 'nl' ? ' en ' : ' and ') : (lang === 'nl' ? ' t/m ' : ' to ');
+  if (a.getUTCMonth() === b.getUTCMonth()) return `${a.getUTCDate()}${join}${b.getUTCDate()} ${m(b)}`;
+  return `${a.getUTCDate()} ${months[lang][a.getUTCMonth()]}${join}${fmtDate(b, lang)}`;
+}
+
 /* ---------- tekst met open plekken ---------- */
 
 const esc = (s: string) =>
@@ -75,6 +88,8 @@ export function tokens(lang: Lang): Record<string, string> {
     bericht_acceptatie: date(s.abstracts?.bericht_acceptatie),
     contactpersoon_sponsoring: s.contact?.sponsoring_contactpersoon || (lang === 'nl' ? '[naam contactpersoon]' : '[contact name]'),
     deelnemers: String(s.congres?.verwachte_deelnemers ?? ''),
+    congresdatum: congresdatum(lang),
+    locatie: [s.congres?.locatie_kort || s.congres?.locatie, s.congres?.plaats].filter(Boolean).join(', '),
   };
 }
 

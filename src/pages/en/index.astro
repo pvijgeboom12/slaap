@@ -1,4 +1,6 @@
 ---
 import Home from '../../components/pages/Home.astro';
+import SaveTheDate from '../../components/pages/SaveTheDate.astro';
+import { site } from '../../lib/site';
 ---
-<Home lang="en" />
+{site.fase === 1 ? <SaveTheDate lang="en" /> : <Home lang="en" />}

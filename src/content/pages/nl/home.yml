@@ -1,6 +1,6 @@
 seo:
   titel: Home
-  omschrijving: SLAAP2027, het tweejaarlijkse Nederlands Slaapcongres, 10 t/m 12 november 2027 in NH Koningshof, Veldhoven. Keynotes, symposia, posters en het congresdiner.
+  omschrijving: SLAAP2027, het tweejaarlijkse Nederlands Slaapcongres, 11 en 12 november 2027 in NH Koningshof, Veldhoven. Keynotes, symposia, posters en het congresdiner.
 hero:
   kicker: Nederlands Slaapcongres
   lead: Het tweejaarlijkse congres voor iedereen die werkt in de slaapwetenschap en slaapgeneeskunde.
@@ -13,7 +13,7 @@ hero:
   link_route: Route en hotel
 blokken:
   - titel: Datum en locatie
-    tekst: Woensdag 10 t/m vrijdag 12 november 2027 in NH Koningshof, Veldhoven.
+    tekst: Donderdag 11 en vrijdag 12 november 2027 in NH Koningshof, Veldhoven.
     link: Route en hotel
   - titel: Programma
     tekst: Keynotes, parallelle symposia, posters met Data Blitz en het congresdiner.
@@ -23,7 +23,7 @@ blokken:
     link: Punten per vereniging
 over:
   titel: Waar slaaponderzoek en slaapzorg elkaar treffen
-  lead: SLAAP2027 brengt onderzoekers, clinici en zorgprofessionals uit de slaapwetenschap en slaapgeneeskunde samen. Drie dagen met keynotes, symposia, posterpresentaties en tijd om bij te praten met collega's. Er zijn Nederlandstalige en Engelstalige sessies.
+  lead: SLAAP2027 brengt onderzoekers, clinici en zorgprofessionals uit de slaapwetenschap en slaapgeneeskunde samen. Twee dagen met keynotes, symposia, posterpresentaties en tijd om bij te praten met collega's. Er zijn Nederlandstalige en Engelstalige sessies.
   tekst: Het congres wordt om de twee jaar georganiseerd door de Nederlandse Vereniging voor Slaap-Waak Onderzoek (NSWO) en de Nederlandse Vereniging voor Slaapgeneeskunde (SVNL), onder Stichting Slaapcongres Nederland. We verwachten circa {deelnemers} deelnemers.
 voor_wie:
   titel: Voor wie?
@@ -62,7 +62,7 @@ sponsors:
   titel: Platinum sponsors
   link: Alle sponsors
 afsluiter:
-  titel: Zet 10 t/m 12 november 2027 in je agenda
+  titel: Zet 11 en 12 november 2027 in je agenda
   tekst:
     binnenkort: Registratie opent op {opening_registratie}. Leden van NSWO en SVNL registreren met korting.
     open: De registratie is geopend. Leden van NSWO en SVNL registreren met korting.

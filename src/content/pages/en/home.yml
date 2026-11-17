@@ -1,6 +1,6 @@
 seo:
   titel: Home
-  omschrijving: SLAAP2027, the biennial Dutch Sleep Congress, 10 to 12 November 2027 at NH Koningshof, Veldhoven. Keynotes, symposia, posters and the congress dinner.
+  omschrijving: SLAAP2027, the biennial Dutch Sleep Congress, 11 and 12 November 2027 at NH Koningshof, Veldhoven. Keynotes, symposia, posters and the congress dinner.
 hero:
   kicker: Dutch Sleep Congress
   lead: The biennial congress for everyone working in sleep science and sleep medicine.
@@ -13,7 +13,7 @@ hero:
   link_route: Directions and hotel
 blokken:
   - titel: Date and venue
-    tekst: Wednesday 10 to Friday 12 November 2027 at NH Koningshof, Veldhoven.
+    tekst: Thursday 11 and Friday 12 November 2027 at NH Koningshof, Veldhoven.
     link: Directions and hotel
   - titel: Programme
     tekst: Keynotes, parallel symposia, posters with a Data Blitz, and the congress dinner.
@@ -23,7 +23,7 @@ blokken:
     link: Points per association
 over:
   titel: Where sleep research meets sleep care
-  lead: SLAAP2027 brings together researchers, clinicians and healthcare professionals in sleep science and sleep medicine. Three days of keynotes, symposia, poster presentations and time to catch up with colleagues. Sessions are held in Dutch and English.
+  lead: SLAAP2027 brings together researchers, clinicians and healthcare professionals in sleep science and sleep medicine. Two days of keynotes, symposia, poster presentations and time to catch up with colleagues. Sessions are held in Dutch and English.
   tekst: The congress is organised every two years by the Dutch Society for Sleep-Wake Research (NSWO) and the Dutch Society for Sleep Medicine (SVNL), on behalf of Stichting Slaapcongres Nederland. We expect around {deelnemers} participants.
 voor_wie:
   titel: Who is it for?
@@ -62,7 +62,7 @@ sponsors:
   titel: Platinum sponsors
   link: All sponsors
 afsluiter:
-  titel: "Save the date: 10 to 12 November 2027"
+  titel: "Save the date: 11 and 12 November 2027"
   tekst:
     binnenkort: Registration opens on {opening_registratie}. NSWO and SVNL members register at a reduced fee.
     open: Registration is open. NSWO and SVNL members register at a reduced fee.
