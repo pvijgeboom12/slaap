@@ -9,7 +9,7 @@ import { page, settings, sponsors } from '../../lib/content';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const c = page(lang, 'sponsors');
-const email = settings().contact?.email ?? 'info@jcc-congressen.nl';
+const email = settings().contact?.email ?? 'info@jcc-congress.com';
 const mailto = `mailto:${email}?subject=${encodeURIComponent(c.sponsor_worden.mail_onderwerp)}`;
 const heeftExposanten = sponsors().some((x: any) => x.niveau === 'exposant');
 const levels = [

@@ -334,12 +334,14 @@ content:
       - { name: knop, label: Knop, type: string }
       - { name: mail_label, label: Tekst voor het e-mailadres, type: string }
     - name: afsluiter
-      label: Afsluiter
+      label: Contactblok onderaan (met formulier)
       type: object
       fields:
       - { name: titel, label: Titel, type: string }
       - { name: tekst, label: Tekst, type: text }
-      - { name: knop, label: Knop, type: string }
+      - { name: mail_label, label: Tekst voor het e-mailadres, type: string }
+      - { name: formulier_titel, label: Titel boven het formulier, type: string }
+      - { name: knop, label: Knop (niet meer in gebruik), type: string }
 
   # Fase 1: homepage als save the date (zie src/lib/site.ts → fase)
   - name: tekst-savethedate-en
@@ -404,12 +406,14 @@ content:
       - { name: knop, label: Knop, type: string }
       - { name: mail_label, label: Tekst voor het e-mailadres, type: string }
     - name: afsluiter
-      label: Afsluiter
+      label: Contactblok onderaan (met formulier)
       type: object
       fields:
       - { name: titel, label: Titel, type: string }
       - { name: tekst, label: Tekst, type: text }
-      - { name: knop, label: Knop, type: string }
+      - { name: mail_label, label: Tekst voor het e-mailadres, type: string }
+      - { name: formulier_titel, label: Titel boven het formulier, type: string }
+      - { name: knop, label: Knop (niet meer in gebruik), type: string }
 
   # Teksten per pagina en taal (gegenereerd uit de YAML-structuur, zie docs/README)
   - name: tekst-home-nl

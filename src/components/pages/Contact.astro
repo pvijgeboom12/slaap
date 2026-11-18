@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import R from '../R.astro';
 import Photo from '../Photo.astro';
+import ContactForm from '../ContactForm.astro';
 import { path, type Lang } from '../../i18n/routes';
 import { page, settings } from '../../lib/content';
 import { site } from '../../lib/site';
@@ -9,62 +10,12 @@ import { site } from '../../lib/site';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const c = page(lang, 'contact');
-const f = c.formulier;
-const email = settings().contact?.email ?? 'info@jcc-congressen.nl';
+const email = settings().contact?.email ?? 'info@jcc-congress.com';
 const quick = [path(lang, 'registratie'), path(lang, 'abstracts'), path(lang, 'sponsors'), path(lang, 'praktisch')];
-const [reqBefore, reqAfter = ''] = String(f.verplicht).split('*');
-const star = '<span aria-hidden="true" style="color:#155A8A">*</span>';
-const msgs = {
-  missing: f.fout_ontbreekt,
-  labels: { first: f.voornaam.toLowerCase(), last: f.achternaam.toLowerCase(), email: f.email.toLowerCase() },
-  email: f.fout_email,
-  failed: f.fout_verzenden,
-  robot: f.fout_spam,
-  busy: f.bezig,
-  send: f.knop,
-  lang,
-};
 const mailIcon = '<rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path>';
 ---
 
 <BaseLayout lang={lang} page="contact" title={c.seo.titel} description={c.seo.omschrijving} ogImage="slaap-netwerken_foto90.jpg">
-{site.turnstileSiteKey && <script slot="head" is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>}
-<section class="night" style="position:relative;padding-top:clamp(80px,10vw,144px);overflow:hidden"><Photo class="hero-media" name="slaap-netwerken_foto90.jpg" alt="" priority /><div class="shade-side" aria-hidden="true"></div><div class="wrap" style="position:relative;display:flex;flex-direction:column;gap:20px;padding-bottom:clamp(64px,8vw,104px)"><h1 style="font-size:clamp(40px,5.6vw,72px);font-weight:800;color:#FFFFFF;max-width:920px">{c.hero.titel}</h1><p class="lead" style="color:#C9CDE3;max-width:760px"><R t={c.hero.lead} lang={lang} /> <a href={`mailto:${email}`} style="color:#6EC3EE">{email}</a>.</p></div></section><section class="sec"><div class="wrap" style="display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,64px);align-items:flex-start"><div class="panel" style="flex:999 1 560px;min-width:0"><form id="form-view" action="/api/contact" method="post" novalidate aria-labelledby="form-title"><div style="display:flex;flex-direction:column;gap:20px"><h2 id="form-title" class="h2" style="font-size:32px">{f.titel}</h2><p class="muted" style="font-size:16px">{reqBefore}<span style="color:#155A8A">*</span>{reqAfter}</p><div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:18px"><div class="field"><label for="f-first">{f.voornaam} <Fragment set:html={star} /></label><input class="input" id="f-first" name="first" type="text" autocomplete="given-name" required aria-required="true" maxlength="100" value=""></div><div class="field"><label for="f-last">{f.achternaam} <Fragment set:html={star} /></label><input class="input" id="f-last" name="last" type="text" autocomplete="family-name" required aria-required="true" maxlength="100" value=""></div></div><div class="field"><label for="f-email">{f.email} <Fragment set:html={star} /></label><input class="input" id="f-email" name="email" type="email" autocomplete="email" required aria-required="true" maxlength="200" value=""></div><div class="field"><label for="f-org">{f.organisatie}</label><input class="input" id="f-org" name="org" type="text" autocomplete="organization" maxlength="200" value=""></div><div class="field"><label for="f-msg">{f.bericht}</label><textarea class="input" id="f-msg" name="message" rows="6" maxlength="5000" style="resize:vertical"></textarea></div><div aria-hidden="true" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden"><label for="f-website">Website</label><input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off" value=""></div>{site.turnstileSiteKey && <div class="cf-turnstile" data-sitekey={site.turnstileSiteKey} data-language={lang} data-appearance="interaction-only" data-size="flexible"></div>}<div aria-live="polite"><div id="form-error" hidden><p style="padding:12px 16px;border-radius:12px;background:#FBE4E4;color:#8A1C1C;font-weight:600"></p></div></div><div><button type="submit" class="btn btn-dark" id="f-submit">{f.knop}</button></div></div></form><div id="sent-view" hidden><div role="status" tabindex="-1" style="display:flex;flex-direction:column;gap:16px;align-items:flex-start"><h2 class="h2" style="font-size:32px">{f.bedankt} <span data-f="first"></span></h2><p class="muted"><R t={f.bevestiging} lang={lang} /></p><button type="button" class="btn btn-outline" id="f-reset">{f.opnieuw}</button></div></div></div><aside style="flex:1 1 300px;display:flex;flex-direction:column;gap:24px"><div class="panel-night" style="display:flex;flex-direction:column;gap:12px"><h2 class="h3" style="color:#FFFFFF">{c.zijbalk.organisatie_titel}</h2><p>JCC Congress Consultancy &amp; Events</p><a class="more" href={`mailto:${email}`} style="color:#6EC3EE;gap:10px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={mailIcon}></svg>{email}</a></div>{site.fase !== 1 && <div style="display:flex;flex-direction:column;gap:10px;padding:4px 4px 0"><h2 class="h3">{c.zijbalk.snel_titel}</h2>{c.zijbalk.snel.map((x: string, i: number) => <a class='more' href={quick[i]}>{x}</a>)}</div>}</aside></div></section>
-<script is:inline define:vars={{ msgs }}>
-(function () {
-  var form = document.getElementById('form-view');
-  if (!form) return;
-  var sent = document.getElementById('sent-view'), err = document.getElementById('form-error'), btn = document.getElementById('f-submit');
-  var v = function (id) { return (document.getElementById(id).value || '').trim(); };
-  var show = function (msg, focusId) {
-    err.querySelector('p').textContent = msg; err.hidden = false;
-    if (focusId) { var el = document.getElementById(focusId); el.setAttribute('aria-invalid', 'true'); el.focus(); }
-  };
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    ['f-first', 'f-last', 'f-email'].forEach(function (id) { document.getElementById(id).removeAttribute('aria-invalid'); });
-    var miss = [], first = null;
-    [['f-first', 'first'], ['f-last', 'last'], ['f-email', 'email']].forEach(function (p) { if (!v(p[0])) { miss.push(msgs.labels[p[1]]); first = first || p[0]; } });
-    if (miss.length) return show(msgs.missing + ' ' + miss.join(', ') + '.', first);
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v('f-email'))) return show(msgs.email, 'f-email');
-    var data = Object.fromEntries(new FormData(form).entries());
-    data.lang = msgs.lang;
-    if (document.querySelector('.cf-turnstile') && !data['cf-turnstile-response']) return show(msgs.robot);
-    err.hidden = true; btn.disabled = true; btn.textContent = msgs.busy;
-    fetch(form.action, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
-      .then(function (r) { return r.json().catch(function () { return { ok: false }; }); })
-      .then(function (res) {
-        if (!res || !res.ok) throw new Error('send');
-        document.querySelector('[data-f="first"]').textContent = v('f-first');
-        form.hidden = true; sent.hidden = false; sent.querySelector('[role="status"]').focus();
-      })
-      .catch(function () { show(msgs.failed); if (window.turnstile) window.turnstile.reset(); })
-      .finally(function () { btn.disabled = false; btn.textContent = msgs.send; });
-  });
-  document.getElementById('f-reset').addEventListener('click', function () {
-    form.reset(); if (window.turnstile) window.turnstile.reset();
-    sent.hidden = true; form.hidden = false; document.getElementById('f-first').focus();
-  });
-})();
-</script>
+<section class="night" style="position:relative;padding-top:clamp(80px,10vw,144px);overflow:hidden"><Photo class="hero-media" name="slaap-netwerken_foto90.jpg" alt="" priority /><div class="shade-side" aria-hidden="true"></div><div class="wrap" style="position:relative;display:flex;flex-direction:column;gap:20px;padding-bottom:clamp(64px,8vw,104px)"><h1 style="font-size:clamp(40px,5.6vw,72px);font-weight:800;color:#FFFFFF;max-width:920px">{c.hero.titel}</h1><p class="lead" style="color:#C9CDE3;max-width:760px"><R t={c.hero.lead} lang={lang} /> <a href={`mailto:${email}`} style="color:#6EC3EE">{email}</a>.</p></div></section><section class="sec"><div class="wrap" style="display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,64px);align-items:flex-start"><div class="panel" style="flex:999 1 560px;min-width:0"><ContactForm lang={lang} /></div><aside style="flex:1 1 300px;display:flex;flex-direction:column;gap:24px"><div class="panel-night" style="display:flex;flex-direction:column;gap:12px"><h2 class="h3" style="color:#FFFFFF">{c.zijbalk.organisatie_titel}</h2><p>JCC Congress Consultancy &amp; Events</p><a class="more" href={`mailto:${email}`} style="color:#6EC3EE;gap:10px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={mailIcon}></svg>{email}</a></div>{site.fase !== 1 && <div style="display:flex;flex-direction:column;gap:10px;padding:4px 4px 0"><h2 class="h3">{c.zijbalk.snel_titel}</h2>{c.zijbalk.snel.map((x: string, i: number) => <a class='more' href={quick[i]}>{x}</a>)}</div>}</aside></div></section>
+
 </BaseLayout>
