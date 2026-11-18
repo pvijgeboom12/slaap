@@ -118,6 +118,7 @@ content:
         fields:
           - { name: email, label: E-mailadres congresorganisatie, type: string, required: true }
           - { name: sponsoring_contactpersoon, label: Contactpersoon sponsoring, type: string }
+          - { name: sponsoring_email, label: E-mailadres sponsoring (leeg = alleen contactformulier), type: string }
 
   - name: programma
     label: Programma
@@ -323,6 +324,15 @@ content:
       - { name: knop, label: Knop indienen, type: string }
       - { name: vraag, label: Vraag onderaan, type: string }
       - { name: vraag_link, label: Link naar contact, type: string }
+    - name: sponsors
+      label: Oproep sponsoren
+      type: object
+      fields:
+      - { name: titel, label: Titel, type: string }
+      - { name: lead, label: Intro, type: text }
+      - { name: tekst, label: Tekst, type: text }
+      - { name: knop, label: Knop, type: string }
+      - { name: mail_label, label: Tekst voor het e-mailadres, type: string }
     - name: afsluiter
       label: Afsluiter
       type: object
@@ -384,6 +394,15 @@ content:
       - { name: knop, label: Knop indienen, type: string }
       - { name: vraag, label: Vraag onderaan, type: string }
       - { name: vraag_link, label: Link naar contact, type: string }
+    - name: sponsors
+      label: Oproep sponsoren
+      type: object
+      fields:
+      - { name: titel, label: Titel, type: string }
+      - { name: lead, label: Intro, type: text }
+      - { name: tekst, label: Tekst, type: text }
+      - { name: knop, label: Knop, type: string }
+      - { name: mail_label, label: Tekst voor het e-mailadres, type: string }
     - name: afsluiter
       label: Afsluiter
       type: object

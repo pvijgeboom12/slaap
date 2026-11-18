@@ -61,3 +61,5 @@ links:
 contact:
   email: info@jcc-congressen.nl
   sponsoring_contactpersoon:
+  # Leeg = de sponsoroproep verwijst alleen naar het contactformulier
+  sponsoring_email:
