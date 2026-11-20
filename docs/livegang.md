@@ -18,7 +18,7 @@ Alles wat live gaat of DNS wijzigt, gebeurt pas na akkoord van Pieter. Inloggen 
 - [ ] Zet de sitekey in `src/lib/site.ts` (`turnstileSiteKey`).
 - [ ] Zet de geheime sleutel als secret `TURNSTILE_SECRET` in de Worker.
 - [ ] Email Routing: aan op het subdomein `post.jcc-congressen.nl` (account JCC), niet op het hoofddomein. Daar staan de MX-records van Google Workspace.
-- [ ] Voeg `info@jcc-congress.com` (standaardadres JCC) toe als destination address en laat Annick de verificatiemail bevestigen.
+- [ ] Voeg `info@slaapcongres.nl` (eigen mailbox van de stichting) toe als destination address en laat Annick de verificatiemail bevestigen.
 - [ ] Controleer of `CONTACT_TO` in `wrangler.jsonc` klopt. Nu staan daar beide adressen.
 
 ## C. Inhoud

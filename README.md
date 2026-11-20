@@ -41,7 +41,7 @@ Een wijziging via Pages CMS is een commit. Op `main` staat die na 2 à 4 minuten
 | Naam | Waar | Waarde |
 |---|---|---|
 | `CONTACT_FROM` | `wrangler.jsonc` (vars) | `formulier@post.slaapcongres.nl` |
-| `CONTACT_TO` | `wrangler.jsonc` (vars) | Ontvangers, kommagescheiden. Nu `info@jcc-congress.com` |
+| `CONTACT_TO` | `wrangler.jsonc` (vars) | Ontvangers, kommagescheiden. Nu `info@slaapcongres.nl` |
 | `TURNSTILE_SECRET` | Cloudflare-dashboard → Worker → Settings → Variables and Secrets (type Secret) | Geheime sleutel van de Turnstile-widget |
 | `MAIL` | `wrangler.jsonc` (send_email-binding) | Cloudflare Email Routing |
 
