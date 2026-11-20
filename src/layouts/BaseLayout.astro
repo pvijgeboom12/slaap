@@ -6,6 +6,8 @@ import '../styles/site.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { site } from '../lib/site';
+import { ogFoto } from '../lib/images';
+import archivoLatin from '@fontsource-variable/archivo/files/archivo-latin-wdth-normal.woff2?url';
 import { routes, type Lang, type RouteKey } from '../i18n/routes';
 
 interface Props {
@@ -14,12 +16,14 @@ interface Props {
   title: string;
   description?: string;
   ogImage?: string;
+  noindex?: boolean;
 }
-const { lang, page, title, description = '', ogImage } = Astro.props;
+const { lang, page, title, description = '', ogImage, noindex = false } = Astro.props;
 
 const alt = routes[page];
 const canonical = new URL(alt[lang], site.url).href;
 const fullTitle = `SLAAP2027 | ${title}`;
+const og = ogImage ? await ogFoto(ogImage) : undefined;
 ---
 
 <!doctype html>
@@ -27,7 +31,9 @@ const fullTitle = `SLAAP2027 | ${title}`;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    {!site.indexable && <meta name="robots" content="noindex, nofollow" />}
+    <link rel="preload" href={archivoLatin} as="font" type="font/woff2" crossorigin />
+    <meta name="theme-color" content="#12152A" />
+    {(!site.indexable || noindex) && <meta name="robots" content="noindex, nofollow" />}
     <title>{fullTitle}</title>
     {description && <meta name="description" content={description} />}
     <link rel="canonical" href={canonical} />
@@ -42,7 +48,8 @@ const fullTitle = `SLAAP2027 | ${title}`;
     {description && <meta property="og:description" content={description} />}
     <meta property="og:url" content={canonical} />
     <meta property="og:locale" content={lang === 'nl' ? 'nl_NL' : 'en_GB'} />
-    {ogImage && <meta property="og:image" content={new URL(ogImage, site.url).href} />}
+    {og && <meta property="og:image" content={new URL(og, site.url).href} />}
+    {og && <meta name="twitter:card" content="summary_large_image" />}
     <slot name="head" />
     {
       import.meta.env.PROD && site.cfAnalyticsToken && (
@@ -52,8 +59,9 @@ const fullTitle = `SLAAP2027 | ${title}`;
   </head>
   <body>
     <div class="site">
+      <a class="skip-link" href="#main">{lang === 'nl' ? 'Direct naar de inhoud' : 'Skip to content'}</a>
       <Header lang={lang} page={page} />
-      <main>
+      <main id="main" tabindex="-1" style="outline:none">
         <slot />
       </main>
       <Footer lang={lang} />

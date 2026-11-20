@@ -1,0 +1,65 @@
+# Instellingen congres – te beheren in Pages CMS onder "Instellingen congres".
+# Lege velden tonen op de site een gele open plek, zoals [datum].
+
+congres:
+  naam: SLAAP2027
+  ondertitel:
+    nl: Nederlands Slaapcongres
+    en: Dutch Sleep Congress
+  startdatum: 2027-11-11
+  einddatum: 2027-11-12
+  locatie: NH Conference Centre Koningshof
+  locatie_kort: NH Koningshof
+  locatie_volledig: NH Eindhoven Conference Centre Koningshof
+  adres: Locht 117
+  postcode: 5507 RM
+  plaats: Veldhoven
+  verwachte_deelnemers: 600
+
+registratie:
+  # binnenkort | open | gesloten
+  status: binnenkort
+  opent_op:
+  vroegboek_tot:
+  link_individueel:
+  link_groep:
+  link_dinerticket:
+  melding_binnenkort:
+    nl: De registratie opent op {opening_registratie}.
+    en: Registration opens on {opening_registratie}.
+  melding_gesloten:
+    nl: De registratie voor SLAAP2027 is gesloten.
+    en: Registration for SLAAP2027 is closed.
+
+abstracts:
+  # binnenkort | open | gesloten
+  status: binnenkort
+  opent_op:
+  deadline_abstracts:
+  deadline_symposia:
+  bericht_acceptatie:
+  link_abstract:
+  link_symposium:
+  melding_binnenkort:
+    nl: Indienen kan vanaf {opening_abstracts}.
+    en: Submission opens on {opening_abstracts}.
+  melding_gesloten:
+    nl: Het indienen van abstracts en symposiumvoorstellen is gesloten.
+    en: Abstract and symposium submission is closed.
+
+downloads:
+  programma_pdf:
+  posteroverzicht_pdf:
+  voorwaarden_registratie_pdf:
+  voorwaarden_abstracts_pdf:
+
+links:
+  hotel_boeken:
+  algemene_voorwaarden:
+  privacyverklaring:
+
+contact:
+  email: info@slaapcongres.nl
+  sponsoring_contactpersoon:
+  # Leeg = de sponsoroproep verwijst alleen naar het contactformulier
+  sponsoring_email: info@slaapcongres.nl

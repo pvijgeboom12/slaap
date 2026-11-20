@@ -1,0 +1,31 @@
+seo:
+  titel: Contact
+  omschrijving: Questions about SLAAP2027? Contact the congress organisers, JCC Congress Consultancy & Events, through the form or by email.
+hero:
+  titel: Questions about SLAAP2027?
+  lead: The congress is organised by JCC Congress Consultancy & Events. Send a message through the form or email
+formulier:
+  titel: Send a message
+  verplicht: Fields marked * are required.
+  voornaam: First name
+  achternaam: Last name
+  email: Email address
+  organisatie: Organisation
+  bericht: Message
+  knop: Send message
+  bezig: Sending…
+  bedankt: Thank you,
+  bevestiging: Your message has been sent. We will reply as soon as possible.
+  opnieuw: Send another message
+  fout_ontbreekt: "Please fill in:"
+  fout_email: Please check your email address, for example name@hospital.org.
+  fout_verzenden: Sending failed. Please try again later or email us directly.
+  fout_spam: Please confirm that you are not a robot first.
+zijbalk:
+  organisatie_titel: Congress management
+  snel_titel: Quick help
+  snel:
+    - Questions about registration and fees
+    - Abstracts and posters
+    - Sponsorship and stands
+    - Directions and hotel

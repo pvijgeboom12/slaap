@@ -1,0 +1,48 @@
+# Homepage in fase 1 (save the date). Codes tussen accolades worden ingevuld vanuit Instellingen congres:
+# {congresdatum}, {locatie}, {deelnemers}, {opening_abstracts}, {deadline_symposia}
+seo:
+  titel: Save the Date
+  omschrijving: SLAAP2027, het tweejaarlijkse Nederlands Slaapcongres, op 11 en 12 november 2027 in NH Koningshof, Veldhoven. Zet de datum in je agenda en lees alles over de Call for Symposia.
+hero:
+  kicker: Nederlands Slaapcongres
+  label: Save the Date
+  lead: Het tweejaarlijkse congres voor iedereen die werkt in de slaapwetenschap en slaapgeneeskunde. Zet {congresdatum} alvast in je agenda.
+  knop_symposia: Call for Symposia
+  knop_contact: Neem contact op
+  link_route: Route plannen
+intro:
+  titel: Waar slaaponderzoek en slaapzorg elkaar treffen
+  lead: SLAAP2027 brengt onderzoekers, clinici en zorgprofessionals uit de slaapwetenschap en slaapgeneeskunde samen. Twee dagen met keynotes, symposia, posterpresentaties en tijd om bij te praten met collega's. Er zijn Nederlandstalige en Engelstalige sessies.
+  tekst: Het congres wordt om de twee jaar georganiseerd door de Nederlandse Vereniging voor Slaap-Waak Onderzoek (NSWO) en de Nederlandse Vereniging voor Slaapgeneeskunde (SVNL), onder Stichting Slaapcongres Nederland. We verwachten circa {deelnemers} deelnemers.
+  voor_wie_titel: Voor wie?
+  voor_wie:
+    - Artsen, onderzoekers en zorgprofessionals in de slaapgeneeskunde en slaapwetenschap, lid of geen lid van NSWO of SVNL
+    - (PhD-)studenten en young professionals
+    - Sponsoren en exposanten uit farma en medtech
+    - Iedereen met belangstelling voor slaap en waak
+locatie:
+  titel: Locatie
+  tekst: Net als bij de vorige editie komen we samen in NH Koningshof in Veldhoven. Informatie over de route, parkeren en hotelkamers volgt later op deze site.
+symposia:
+  titel: Call for Symposia
+  lead: Wil je een symposium organiseren op SLAAP2027? We nodigen onderzoekers, clinici en zorgprofessionals uit om een voorstel in te dienen.
+  tekst: Een symposium is een sessie rond één thema, met sprekers uit jouw vakgebied. Voorstellen uit alle gebieden van de slaapwetenschap en slaapgeneeskunde zijn welkom.
+  deadline: Deadline symposiumvoorstellen
+  binnenkort: Indienen kan vanaf {opening_abstracts}.
+  volgt: Het indienformulier en de deadline volgen binnenkort op deze pagina.
+  gesloten: Het indienen van symposiumvoorstellen is gesloten.
+  knop: Symposium voorstellen
+  vraag: Vragen over je voorstel?
+  vraag_link: Neem contact op
+sponsors:
+  titel: Sponsor of exposant worden?
+  lead: Op SLAAP2027 ontmoet je in twee dagen de mensen die in Nederland werken aan slaaponderzoek en slaapzorg.
+  tekst: Wil je SLAAP2027 steunen als sponsor of met een stand op de beursvloer? We denken graag met je mee. Laat het ons weten, dan sturen we je de mogelijkheden zodra die bekend zijn.
+  knop: Neem contact op over sponsoring
+  mail_label: Of mail naar
+afsluiter:
+  titel: Vragen over SLAAP2027?
+  tekst: De congresorganisatie is in handen van JCC Congress Consultancy & Events. Stuur ons een bericht, we reageren zo snel mogelijk.
+  mail_label: Of mail direct naar
+  formulier_titel: Stuur ons een bericht
+  knop: Neem contact op

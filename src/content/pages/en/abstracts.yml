@@ -1,0 +1,64 @@
+seo:
+  titel: Abstracts and posters
+  omschrijving: Submit an abstract or symposium proposal for SLAAP2027. Guidelines, deadlines, poster information, the Data Blitz and poster prizes.
+hero:
+  titel: Present your research at SLAAP2027
+  lead: "We welcome contributions from all areas of sleep medicine and sleep research: as an abstract for a poster, or as a symposium proposal."
+  knop_abstract: Submit an abstract
+  knop_symposium: Propose a symposium
+  ankers: [Guidelines, Posters, Data Blitz, Poster prizes]
+deadlines:
+  abstracts: Abstract deadline
+  symposia: Symposium proposal deadline
+  acceptatie: Notification of acceptance
+richtlijnen:
+  titel: Abstract guidelines
+  punten:
+    - Abstracts must be submitted in English.
+    - You may submit more than one abstract.
+    - An abstract has a maximum of 300 words.
+    - "Use the fixed structure: Title, Background, Methods, Results and Conclusion."
+    - After acceptance, the presenting author registers as a regular participant.
+  knop_abstract: Submit an abstract
+  knop_voorwaarden: Terms (PDF)
+opbouw:
+  titel: Structure of your abstract
+  onderdelen: [Title, Background, Methods, Results, Conclusion]
+  voetnoot: 300 words maximum in total.
+  symposium_titel: Organising a symposium?
+  symposium_tekst: Put together a symposium with speakers from your field and submit the proposal through the abstract platform by {deadline_symposia}.
+posters:
+  titel: Information for poster presenters
+  lead: All accepted abstracts are presented as posters in the [room].
+  foto_alt: Participants discussing posters at SLAAP2025
+  blokken:
+    - titel: Format
+      tekst: A0, portrait (841 × 1189 mm).
+    - titel: Mounting
+      tekst: "[day and date] from [time], or [day] before [time] on your assigned poster board. Mounting materials are provided."
+    - titel: Removal
+      tekst: By [day] at [time] at the latest. Posters left on the boards will be removed by the organisers.
+    - titel: Poster reception
+      tekst: "[day] from [time] to [time]. During the reception and lunch breaks you stand by your poster to explain your work."
+data_blitz:
+  titel: Data Blitz
+  lead: Pitch your poster in one minute to the whole room and draw visitors to your poster board.
+  tekst: Prepare with the pitch workshop by the NSWO Early Career Scientists on [date and venue].
+  feiten:
+    - waarde: '1'
+      label: minute pitch
+    - waarde: '1'
+      label: slide, 16:9
+    - waarde: EN
+      label: language
+prijzen:
+  titel: Poster prizes
+  lead: The prizes are presented on [day] at [time].
+  publiek_titel: Audience Award
+  publiek_tekst: For the poster with the most votes from congress participants.
+  pv_titel: Piet Visser Poster Prize
+  pv_tekst: "Awarded by an expert jury: a challenge trophy and € 500, offered by NSWO and SVNL."
+  pv_voorwaarde: Only NSWO or SVNL members are eligible.
+  pv_link: Become a member
+  foto_alt: Piet Visser Poster Prize ceremony at SLAAP2025
+  foto_bijschrift: Piet Visser Poster Prize ceremony at SLAAP2025

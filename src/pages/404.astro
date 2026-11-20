@@ -1,0 +1,8 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Photo from '../components/Photo.astro';
+import { path } from '../i18n/routes';
+---
+<BaseLayout lang="nl" page="home" title="Pagina niet gevonden" noindex>
+<section class="night" style="position:relative;padding-top:clamp(80px,10vw,144px);overflow:hidden;min-height:60vh"><Photo class="hero-media" name="slaap-publiek_foto287.jpg" alt="" priority /><div class="shade-side" aria-hidden="true"></div><div class="wrap" style="position:relative;display:flex;flex-direction:column;gap:20px;padding-bottom:clamp(64px,8vw,104px)"><h1 style="font-size:clamp(40px,5.6vw,72px);font-weight:800;color:#FFFFFF;max-width:920px">Deze pagina bestaat niet (meer)</h1><p class="lead" style="color:#C9CDE3;max-width:760px">Controleer het adres of ga naar de homepage. <span lang="en">This page could not be found.</span></p><div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:8px"><a class="btn btn-primary" href={path('nl', 'home')}>Naar de homepage</a><a class="btn btn-ghost" href={path('en', 'home')} lang="en">English homepage</a></div></div></section>
+</BaseLayout>

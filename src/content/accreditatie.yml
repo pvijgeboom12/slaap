@@ -1,0 +1,17 @@
+# Accreditatiepunten – te beheren in Pages CMS onder "Accreditatie".
+# Leeg aantal punten toont [n].
+verenigingen:
+  - naam: { nl: 'Beroepsvereniging Verzorgenden & Verpleegkundigen (V&VN)', en: 'Dutch Nurses Association (V&VN)' }
+    punten: ''
+  - naam: { nl: 'Verpleegkundig Specialisten Register (VSR)', en: 'Nurse Specialists Register (VSR)' }
+    punten: ''
+  - naam: { nl: 'Nederlandse Associatie van Physician Assistants (NAPA)', en: 'Netherlands Association of Physician Assistants (NAPA)' }
+    punten: ''
+  - naam: { nl: 'Kwaliteitsregister Tandartsen (KRT)', en: 'Dentists Quality Register (KRT)' }
+    punten: ''
+  - naam: { nl: 'KABIZ, Laboranten Klinische Neurofysiologie (NVLKNF)', en: 'KABIZ, Clinical Neurophysiology Technicians (NVLKNF)' }
+    punten: ''
+  - naam: { nl: 'Nederlandse Vereniging van Artsen voor Longziekten en Tuberculose (NVALT)*', en: 'Netherlands Association of Physicians for Lung Diseases and Tuberculosis (NVALT)*' }
+    punten: ''
+  - naam: { nl: 'Federatie van Gezondheidszorgpsychologen en Psychotherapeuten (FGzPt)', en: 'Federation of Healthcare Psychologists and Psychotherapists (FGzPt)' }
+    punten: ''

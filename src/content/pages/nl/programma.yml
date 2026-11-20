@@ -1,0 +1,38 @@
+seo:
+  titel: Programma
+  omschrijving: Het programma van SLAAP2027 met keynotes, parallelle symposia, posterpresentaties, Data Blitz en het congresdiner, 10 t/m 12 november 2027.
+hero:
+  titel: Programma
+  lead: Drie congresdagen met keynotes, parallelle symposia, posterpresentaties en een sociaal programma. Het volledige programma verschijnt hier in [maand] 2027.
+  ankers: [Overzicht, Sprekers, Posters, Congresdiner]
+overzicht:
+  titel: Programma-overzicht
+  lead: Voorbeeldindeling. Het definitieve programma met tijden en zalen volgt.
+  knop_pdf: Programma (PDF)
+  kies_dag: Kies een dag
+  spreker: Spreker
+  sprekers: Sprekers
+  voorzitter: Voorzitter
+sprekers:
+  titel: Uitgelichte sprekers
+posters:
+  titel: Posteroverzicht
+  lead: Na de beoordeling van de abstracts publiceren we hier alle posters, met titel, auteurs en posterbordnummer.
+  tekst: Presenteer je zelf een poster? Formaat, ophangtijden, Data Blitz en posterprijzen staan bij de informatie voor presentatoren.
+  knop_pdf: Posteroverzicht (PDF)
+  knop_info: Info voor presentatoren
+diner:
+  kicker: Sociaal programma
+  titel: Congresdiner
+  lead: "Sluit de congresdag af met het traditionele congresdiner: een avond om in ongedwongen sfeer bij te praten en te netwerken met collega's."
+  tekst: Het congresdiner is niet inbegrepen in de registratiekosten. Je bestelt een ticket via het registratieplatform. Al geregistreerd? Log opnieuw in om een ticket toe te voegen.
+  knop: Ticket bestellen
+  label_datum: Datum
+  label_tijd: Tijd
+  label_locatie: Locatie
+  label_kosten: Kosten
+  vanaf: Vanaf
+  btw: inclusief btw
+  alt:
+    - Optreden tijdens het congresdiner van SLAAP2025
+    - Gedekte tafels voor het congresdiner in NH Koningshof

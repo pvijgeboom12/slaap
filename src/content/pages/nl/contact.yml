@@ -1,0 +1,31 @@
+seo:
+  titel: Contact
+  omschrijving: Vragen over SLAAP2027? Neem contact op met de congresorganisatie, JCC Congress Consultancy & Events, via het formulier of per e-mail.
+hero:
+  titel: Vragen over SLAAP2027?
+  lead: De congresorganisatie is in handen van JCC Congress Consultancy & Events. Stuur een bericht via het formulier of mail naar
+formulier:
+  titel: Stuur een bericht
+  verplicht: Velden met * zijn verplicht.
+  voornaam: Voornaam
+  achternaam: Achternaam
+  email: E-mailadres
+  organisatie: Organisatie
+  bericht: Bericht
+  knop: Verstuur bericht
+  bezig: Bezig met versturen…
+  bedankt: Bedankt,
+  bevestiging: Je bericht is verstuurd. We reageren zo snel mogelijk.
+  opnieuw: Nog een bericht sturen
+  fout_ontbreekt: "Vul nog in:"
+  fout_email: Controleer je e-mailadres, bijvoorbeeld naam@ziekenhuis.nl.
+  fout_verzenden: Het versturen is niet gelukt. Probeer het later opnieuw of mail ons direct.
+  fout_spam: Bevestig eerst dat je geen robot bent.
+zijbalk:
+  organisatie_titel: Congresorganisatie
+  snel_titel: Snel geregeld
+  snel:
+    - Vragen over registratie en tarieven
+    - Abstracts en posters
+    - Sponsoring en stands
+    - Route en hotel

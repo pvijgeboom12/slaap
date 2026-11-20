@@ -1,0 +1,20 @@
+seo:
+  titel: Sponsors
+  omschrijving: Sponsors and exhibitors at SLAAP2027. Meet around 600 professionals in sleep research and sleep care. Information on sponsorship and the CGR code of conduct.
+hero:
+  titel: Sponsors and exhibitors
+  lead: SLAAP2027 is made possible in part by our sponsors. With around {deelnemers} participants from research and care, this is where you meet the Dutch sleep community.
+  knop: Become a sponsor
+niveaus:
+  platinum: Platinum sponsors
+  goud: Gold sponsors
+  zilver: Silver sponsors
+  exposant: Exhibitors
+sponsor_worden:
+  titel: Become a sponsor
+  lead: Interested in sponsorship or a stand at SLAAP2027? Contact {contactpersoon_sponsoring} at JCC Congress Consultancy.
+  mail_onderwerp: Sponsorship SLAAP2027
+cgr:
+  titel: Code of Conduct for Pharmaceutical Advertising (CGR)
+  tekst1: The SLAAP2027 audience includes both professionals and non-professionals. Therefore only corporate branding is permitted, without product information. Badges show participants' roles, so you can have targeted conversations.
+  tekst2: Sponsorship contributions cover only the organisational costs and the scientific programme. Any surplus from registration fees goes to Stichting Slaapcongres Nederland for future congresses. We comply with the GDPR and the [Code of Conduct for Pharmaceutical Advertising](https://www.cgr.nl).

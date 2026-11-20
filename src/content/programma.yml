@@ -1,0 +1,127 @@
+# Programma – te beheren in Pages CMS onder "Programma".
+# type: keynote | symposia | posters | plenair | sociaal
+# Lege tijd toont [tijd]; lege zaal toont [zaal]. Tekst tussen [haken] wordt een gele open plek.
+dagen:
+  - datum: 2027-11-10
+    sessies:
+      - tijd: ''
+        type: plenair
+        titel:
+          nl: 'Registratie en ontvangst'
+          en: 'Registration and welcome'
+        zaal: 'Foyer'
+        sprekers: ''
+        voorzitter: ''
+      - tijd: ''
+        type: keynote
+        titel:
+          nl: 'Opening en keynote: [titel], [spreker]'
+          en: 'Opening and keynote: [title], [speaker]'
+        zaal: ''
+        sprekers: ''
+        voorzitter: ''
+      - tijd: ''
+        type: symposia
+        titel:
+          nl: 'Parallelle symposia, ronde 1'
+          en: 'Parallel symposia, round 1'
+        zaal: ''
+        sprekers: ''
+        voorzitter: ''
+      - tijd: ''
+        type: posters
+        titel:
+          nl: 'Data Blitz'
+          en: 'Data Blitz'
+        zaal: ''
+        sprekers: ''
+        voorzitter: ''
+      - tijd: ''
+        type: posters
+        titel:
+          nl: 'Posterreceptie'
+          en: 'Poster reception'
+        zaal: ''
+        sprekers: ''
+        voorzitter: ''
+  - datum: 2027-11-11
+    sessies:
+      - tijd: ''
+        type: keynote
+        titel:
+          nl: 'Keynote: [titel], [spreker]'
+          en: 'Keynote: [title], [speaker]'
+        zaal: ''
+        sprekers: ''
+        voorzitter: ''
+      - tijd: ''
+        type: symposia
+        titel:
+          nl: 'Parallelle symposia, ronde 2'
+          en: 'Parallel symposia, round 2'
+        zaal: ''
+        sprekers: ''
+        voorzitter: ''
+      - tijd: ''
+        type: posters
+        titel:
+          nl: 'Lunch en postersessie'
+          en: 'Lunch and poster session'
+        zaal: ''
+        sprekers: ''
+        voorzitter: ''
+      - tijd: ''
+        type: symposia
+        titel:
+          nl: 'Parallelle symposia, ronde 3'
+          en: 'Parallel symposia, round 3'
+        zaal: ''
+        sprekers: ''
+        voorzitter: ''
+      - tijd: ''
+        type: sociaal
+        titel:
+          nl: 'Congresdiner'
+          en: 'Congress dinner'
+        zaal: ''
+        sprekers: ''
+        voorzitter: ''
+  - datum: 2027-11-12
+    sessies:
+      - tijd: ''
+        type: keynote
+        titel:
+          nl: 'Keynote: [titel], [spreker]'
+          en: 'Keynote: [title], [speaker]'
+        zaal: ''
+        sprekers: ''
+        voorzitter: ''
+      - tijd: ''
+        type: posters
+        titel:
+          nl: 'Data Blitz'
+          en: 'Data Blitz'
+        zaal: ''
+        sprekers: ''
+        voorzitter: ''
+      - tijd: ''
+        type: symposia
+        titel:
+          nl: 'Parallelle symposia, ronde 4'
+          en: 'Parallel symposia, round 4'
+        zaal: ''
+        sprekers: ''
+        voorzitter: ''
+      - tijd: ''
+        type: plenair
+        titel:
+          nl: 'Uitreiking posterprijzen en afsluiting'
+          en: 'Poster prizes and closing'
+        zaal: ''
+        sprekers: ''
+        voorzitter: ''
+diner:
+  datum:
+  tijd:
+  zaal:
+  bedrag:
