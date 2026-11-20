@@ -23,5 +23,5 @@ export const site = {
    * Cloudflare Turnstile (spamcheck contactformulier), publieke sitekey.
    * Leeg = geen widget (handig lokaal). De geheime sleutel staat alleen in Cloudflare (TURNSTILE_SECRET).
    */
-  turnstileSiteKey: '',
+  turnstileSiteKey: '0x4AAAAAAGKZctKxP9pYW39Q',
 };
