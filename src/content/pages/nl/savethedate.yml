@@ -1,48 +1,39 @@
-# Homepage in fase 1 (save the date). Codes tussen accolades worden ingevuld vanuit Instellingen congres:
-# {congresdatum}, {locatie}, {deelnemers}, {opening_abstracts}, {deadline_symposia}
+# Homepage in fase 1. Teksten van Annick (Websiteteksten SLAAP2027, 23 november 2026).
+# Codes tussen accolades worden ingevuld vanuit Instellingen congres: {congresdatum}, {locatie}, {opening_abstracts}, {deadline_symposia}
 seo:
-  titel: Save the Date
-  omschrijving: SLAAP2027, het tweejaarlijkse Nederlands Slaapcongres, op 11 en 12 november 2027 in NH Koningshof, Veldhoven. Zet de datum in je agenda en lees alles over de Call for Symposia.
+  titel: Slaapcongres Nederland
+  omschrijving: SLAAP2027, het tweejaarlijkse congres voor iedereen die werkt in de slaapwetenschap en slaapgeneeskunde. 11 en 12 november 2027 in NH Conference Centre Koningshof, Veldhoven.
 hero:
-  kicker: Nederlands Slaapcongres
+  kicker: Slaapcongres Nederland
   label: Save the Date
-  lead: Het tweejaarlijkse congres voor iedereen die werkt in de slaapwetenschap en slaapgeneeskunde. Zet {congresdatum} alvast in je agenda.
-  knop_symposia: Call for Symposia
-  knop_contact: Neem contact op
-  link_route: Route plannen
+  lead: Het tweejaarlijkse congres voor iedereen die werkt in de slaapwetenschap en slaapgeneeskunde.
+  knop_symposia: Dien een symposium in
+  link_locatie: Bekijk de locatie
 intro:
-  titel: Waar slaaponderzoek en slaapzorg elkaar treffen
-  lead: SLAAP2027 brengt onderzoekers, clinici en zorgprofessionals uit de slaapwetenschap en slaapgeneeskunde samen. Twee dagen met keynotes, symposia, posterpresentaties en tijd om bij te praten met collega's. Er zijn Nederlandstalige en Engelstalige sessies.
-  tekst: Het congres wordt om de twee jaar georganiseerd door de Nederlandse Vereniging voor Slaap-Waak Onderzoek (NSWO) en de Nederlandse Vereniging voor Slaapgeneeskunde (SVNL), onder Stichting Slaapcongres Nederland. We verwachten circa {deelnemers} deelnemers.
-  voor_wie_titel: Voor wie?
-  voor_wie:
-    - Artsen, onderzoekers en zorgprofessionals in de slaapgeneeskunde en slaapwetenschap, lid of geen lid van NSWO of SVNL
-    - (PhD-)studenten en young professionals
-    - Sponsoren en exposanten uit farma en medtech
-    - Iedereen met belangstelling voor slaap en waak
+  titel: Waar slaaponderzoek en slaapzorg samenkomen
+  lead: Op 11 en 12 november 2027 komt het Nederlandse slaapveld opnieuw samen tijdens SLAAP2027. Twee dagen vol nieuwe inzichten, wetenschappelijke ontwikkelingen en praktische toepassingen. Van fundamenteel slaaponderzoek tot diagnostiek en behandeling in de dagelijkse praktijk.
+  tekst: SLAAP2027 brengt onderzoekers, artsen, psychologen, verpleegkundigen, technici en andere professionals samen die zich bezighouden met slaap en waak. Om kennis te delen, ervaringen uit te wisselen en elkaar te ontmoeten.
+  organisatie: Het congres wordt georganiseerd door Stichting Slaap Congres Nederland (SSCN), een samenwerking van de NSWO en de SVNL.
+verwachten:
+  titel: Wat kun je verwachten?
+  lead: Een veelzijdig programma waarin wetenschap en praktijk elkaar versterken.
+  punten:
+    - Inspirerende keynotes van vooraanstaande nationale en internationale sprekers.
+    - Symposia in drie parallelle tracks, met onderwerpen aangedragen door het slaapveld zelf.
+    - Twee sessies met mondelinge presentaties, waarin onder meer jonge onderzoekers en PhD-studenten hun onderzoek presenteren.
+    - Twee posterblitssessies, waarin onderzoekers hun werk kort en krachtig onder de aandacht brengen.
+    - Aandacht voor de eerste lijn, met onderwerpen die aansluiten op de dagelijkse huisartsenpraktijk.
+    - Een sponsormarkt, met ontwikkelingen op het gebied van slaapdiagnostiek, technologie en behandeling.
+    - Een feestelijke congresavond, met diner, live muziek en gelegenheid om collega's te ontmoeten.
+  taal: Het programma bestaat uit Nederlandstalige en Engelstalige sessies. In ieder tijdslot is minimaal één Engelstalige sessie beschikbaar.
+voor_wie:
+  titel: Voor wie?
+  tekst: SLAAP2027 is er voor iedereen die zich professioneel bezighoudt met slaap, slaaponderzoek en slaapgeneeskunde. Van ervaren specialisten tot jonge onderzoekers en van de eerste lijn tot gespecialiseerde slaapcentra. Ook professionals die vanuit andere disciplines met slaapvraagstukken te maken hebben, zijn van harte welkom.
+programma:
+  titel: Denk mee over het programma
+  tekst: Heb jij een onderwerp dat een podium verdient? De Call for Symposia opent op {opening_abstracts}.
+  knop: Bekijk de Call for Symposia
 locatie:
-  titel: Locatie
-  tekst: Net als bij de vorige editie komen we samen in NH Koningshof in Veldhoven. Informatie over de route, parkeren en hotelkamers volgt later op deze site.
-symposia:
-  titel: Call for Symposia
-  lead: Wil je een symposium organiseren op SLAAP2027? We nodigen onderzoekers, clinici en zorgprofessionals uit om een voorstel in te dienen.
-  tekst: Een symposium is een sessie rond één thema, met sprekers uit jouw vakgebied. Voorstellen uit alle gebieden van de slaapwetenschap en slaapgeneeskunde zijn welkom.
-  deadline: Deadline symposiumvoorstellen
-  binnenkort: Indienen kan vanaf {opening_abstracts}.
-  volgt: Het indienformulier en de deadline volgen binnenkort op deze pagina.
-  gesloten: Het indienen van symposiumvoorstellen is gesloten.
-  knop: Symposium voorstellen
-  vraag: Vragen over je voorstel?
-  vraag_link: Neem contact op
-sponsors:
-  titel: Sponsor of exposant worden?
-  lead: Op SLAAP2027 ontmoet je in twee dagen de mensen die in Nederland werken aan slaaponderzoek en slaapzorg.
-  tekst: Wil je SLAAP2027 steunen als sponsor of met een stand op de beursvloer? We denken graag met je mee. Laat het ons weten, dan sturen we je de mogelijkheden zodra die bekend zijn.
-  knop: Neem contact op over sponsoring
-  mail_label: Of mail naar
-afsluiter:
-  titel: Vragen over SLAAP2027?
-  tekst: De congresorganisatie is in handen van JCC Congress Consultancy & Events. Stuur ons een bericht, we reageren zo snel mogelijk.
-  mail_label: Of mail direct naar
-  formulier_titel: Stuur ons een bericht
-  knop: Neem contact op
+  titel: Twee dagen kennis delen én elkaar ontmoeten
+  tekst: SLAAP2027 vindt plaats in NH Conference Centre Koningshof in Veldhoven. Congres, sponsormarkt, diner en hotel bevinden zich op één locatie.
+  knop: Bekijk de locatie

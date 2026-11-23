@@ -1,0 +1,31 @@
+---
+// Pagina Symposium indienen (Call for Symposia, fase 1). Teksten: src/content/pages/{nl,en}/symposium.yml.
+// Knoppen: abstracts.status en abstracts.link_symposium in settings.yml (Eventira-formulier).
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import R from '../R.astro';
+import Photo from '../Photo.astro';
+import { type Lang } from '../../i18n/routes';
+import { page, settings } from '../../lib/content';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const c = page(lang, 'symposium');
+const s = settings();
+const ab = s.abstracts ?? {};
+const status: string = ab.status ?? 'binnenkort';
+const link: string = ab.link_symposium || '';
+const email: string = s.contact?.email ?? 'info@slaapcongres.nl';
+const open = status === 'open' && !!link;
+const melding = status === 'gesloten' ? c.knop_gesloten : c.knop_binnenkort;
+type Blok = { titel: string; intro?: string; punten?: string[]; slot?: string; tekst?: string[] };
+---
+
+<BaseLayout lang={lang} page="symposium" title={c.seo.titel} description={c.seo.omschrijving} ogImage="slaap-sprekers_foto38.jpg">
+<section class="night" style="position:relative;padding-top:clamp(80px,10vw,144px);overflow:hidden"><Photo class="hero-media" name="slaap-sprekers_foto38.jpg" alt="" priority /><div class="shade-side" aria-hidden="true"></div><div class="wrap" style="position:relative;display:flex;flex-direction:column;gap:20px;padding-bottom:clamp(64px,8vw,104px)"><h1 style="font-size:clamp(40px,5.6vw,72px);font-weight:800;color:#FFFFFF;max-width:920px">{c.hero.titel}</h1><p class="lead" style="color:#E9EAF4;max-width:760px"><R t={c.hero.lead} lang={lang} /></p><p style="color:#C9CDE3;max-width:760px"><R t={c.hero.tekst} lang={lang} /></p><p style="color:#FFFFFF;font-weight:700"><R t={c.hero.oproep} lang={lang} /></p><div>{open ? <a class="btn btn-primary" href={link} rel="noopener">{c.knop}</a> : <p class="soft"><R t={melding} lang={lang} /></p>}</div></div></section>
+
+<section class="sec"><div class="wrap" style="display:flex;flex-direction:column;gap:clamp(28px,4vw,40px)"><div style="display:flex;flex-direction:column;gap:18px"><h2 class="h2">{c.data.titel}</h2><div class="panel" style="padding:0;overflow:hidden"><table style="width:100%;border-collapse:collapse;font-size:18px"><thead><tr style="background:#12152A;color:#FFFFFF;text-align:left"><th scope="col" style="padding:14px 20px">{c.data.kop_activiteit}</th><th scope="col" style="padding:14px 20px">{c.data.kop_datum}</th></tr></thead><tbody>{c.data.rijen.map((r: { activiteit: string; datum: string }) => <tr style="border-top:1px solid #E6E8F0"><td style="padding:14px 20px">{r.activiteit}</td><td style="padding:14px 20px;font-weight:700">{r.datum}</td></tr>)}</tbody></table></div></div><div style="display:flex;flex-direction:column;gap:18px"><h2 class="h3">{c.kort.titel}</h2><ul class="grid" style="list-style:none;padding:0;margin:0;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:16px">{c.kort.punten.map((p: string) => <li class="panel" style="padding:20px;font-weight:600"><R t={p} lang={lang} /></li>)}</ul><div>{open ? <a class="btn btn-primary" href={link} rel="noopener">{c.knop}</a> : <p class="muted"><R t={melding} lang={lang} /></p>}</div></div></div></section>
+
+<section class="sec" style="background:#FFFFFF;border-top:1px solid #DADDE8;border-bottom:1px solid #DADDE8"><div class="wrap" style="display:flex;flex-direction:column;gap:20px;max-width:960px"><h2 class="h2">{c.richtlijnen.titel}</h2><div style="display:flex;flex-direction:column;gap:12px">{c.richtlijnen.blokken.map((b: Blok) => <details class="panel acc"><summary class="h3">{b.titel}</summary><div style="display:flex;flex-direction:column;gap:12px;padding-top:12px">{b.intro && <p><R t={b.intro} lang={lang} /></p>}{b.punten && <ul style="display:flex;flex-direction:column;gap:8px;padding-left:20px">{b.punten.map((p) => <li><R t={p} lang={lang} /></li>)}</ul>}{b.tekst && b.tekst.map((p) => <p class="muted"><R t={p} lang={lang} /></p>)}{b.slot && <p class="muted"><R t={b.slot} lang={lang} /></p>}</div></details>)}</div></div></section>
+
+<section class="night" style="padding:clamp(64px,8vw,104px) 0"><div class="wrap grid" style="grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr));gap:clamp(40px,6vw,96px);align-items:start"><div style="display:flex;flex-direction:column;gap:16px"><h2 class="h2" style="color:#FFFFFF">{c.formulier.titel}</h2><p class="lead" style="color:#C9CDE3"><R t={c.formulier.tekst} lang={lang} /></p><p style="color:#FFFFFF"><R t={c.formulier.deadline} lang={lang} /></p><div>{open ? <a class="btn btn-primary" href={link} rel="noopener">{c.knop}</a> : <p class="soft"><R t={melding} lang={lang} /></p>}</div></div><div class="panel-night" style="display:flex;flex-direction:column;gap:12px"><h2 class="h3" style="color:#FFFFFF">{c.vragen.titel}</h2><p><R t={c.vragen.tekst} lang={lang} /> <a href={`mailto:${email}`} style="color:#6EC3EE;font-weight:700">{email}</a>.</p></div></div></section>
+</BaseLayout>

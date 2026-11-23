@@ -1,0 +1,27 @@
+# NOG VERTALEN: tijdelijk de Nederlandse tekst van Annick (23 november 2026).
+# Pagina Locatie. Teksten van Annick (23 november 2026). Adres en hotellink: Instellingen congres.
+seo:
+  titel: Locatie
+  omschrijving: SLAAP2027 vindt op 11 en 12 november 2027 plaats in NH Conference Centre Koningshof in Veldhoven. Adres, bereikbaarheid en overnachten.
+hero:
+  titel: Alles onder één dak
+  lead: SLAAP2027 vindt op 11 en 12 november 2027 plaats in NH Conference Centre Koningshof in Veldhoven, vlak bij Eindhoven. Dit voormalige klooster, omgeven door groen, biedt alle ruimte voor twee dagen vol wetenschap, ontmoeting en inspiratie.
+  tekst: "Van de plenaire sessies en symposia tot de sponsormarkt, het congresdiner en de feestavond: alles vindt plaats onder één dak. Ook overnachten kan op de congreslocatie."
+adres:
+  titel: Adres
+  knop: Plan je route
+  kaart_titel: Kaart van NH Conference Centre Koningshof
+bereikbaarheid:
+  titel: Bereikbaarheid
+  items:
+    - titel: Met de auto
+      tekst: NH Koningshof is goed bereikbaar via de A2 en A67. Het congrescentrum beschikt over een eigen parkeerterrein.
+    - titel: Met het openbaar vervoer
+      tekst: Vanaf station Eindhoven Centraal rijdt bus 19/319 naar NH Koningshof. De rit duurt ongeveer 15 minuten.
+    - titel: Vanaf Eindhoven Airport
+      tekst: Vanaf Eindhoven Airport reis je met het openbaar vervoer via Eindhoven of met een taxi naar NH Koningshof. De taxirit duurt doorgaans ongeveer 15 minuten, afhankelijk van het verkeer.
+overnachten:
+  titel: Overnachten
+  tekst: Wil je na een congresdag, het diner en de feestavond niet meer naar huis reizen? NH Koningshof beschikt over ruim 500 hotelkamers op de congreslocatie.
+  volgt: De boekingslink volgt binnenkort.
+  knop: Hotel boeken

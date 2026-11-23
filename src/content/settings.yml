@@ -4,7 +4,7 @@
 congres:
   naam: SLAAP2027
   ondertitel:
-    nl: Nederlands Slaapcongres
+    nl: Slaapcongres Nederland
     en: Dutch Sleep Congress
   startdatum: 2027-11-11
   einddatum: 2027-11-12
@@ -34,9 +34,9 @@ registratie:
 abstracts:
   # binnenkort | open | gesloten
   status: binnenkort
-  opent_op:
+  opent_op: 2026-12-01
   deadline_abstracts:
-  deadline_symposia:
+  deadline_symposia: 2027-02-01
   bericht_acceptatie:
   link_abstract:
   link_symposium:
@@ -55,6 +55,8 @@ downloads:
 
 links:
   hotel_boeken:
+  # LinkedIn-pagina SLAAP2027. Leeg = knop wordt niet getoond.
+  linkedin:
   algemene_voorwaarden:
   privacyverklaring:
 
