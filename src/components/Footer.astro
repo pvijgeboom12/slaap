@@ -10,7 +10,7 @@ const { lang } = Astro.props;
 const t = {
   nl: {
     home: 'SLAAP2027, naar de homepage',
-    about: ['Nederlands Slaapcongres'],
+    about: ['Slaapcongres Nederland'],
     orgBy: 'Georganiseerd door',
     nswo: 'Nederlandse Vereniging voor Slaap-Waak Onderzoek (NSWO)',
     svnl: 'Nederlandse Vereniging voor Slaapgeneeskunde (SVNL)',
@@ -48,8 +48,8 @@ const fase1 = site.fase === 1;
 const plaats = [s.congres?.locatie_kort || s.congres?.locatie, s.congres?.plaats].filter(Boolean).join(', ');
 const quick = fase1
   ? [
-      { href: path(lang, 'home', 'call-for-symposia'), label: 'Call for Symposia' },
-      { href: path(lang, 'home', 'locatie'), label: lang === 'nl' ? 'Locatie' : 'Venue' },
+      { href: path(lang, 'symposium'), label: lang === 'nl' ? 'Symposium indienen' : 'Submit a symposium' },
+      { href: path(lang, 'locatie'), label: lang === 'nl' ? 'Locatie' : 'Venue' },
       { href: path(lang, 'contact'), label: lang === 'nl' ? 'Contact' : 'Contact' },
     ]
   : [

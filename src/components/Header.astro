@@ -14,7 +14,7 @@ const t = {
 const fase1 = site.fase === 1;
 const items: { key: RouteKey; hash?: string; nl: string; en: string }[] = fase1 ? navFase1 : nav;
 const cta = fase1
-  ? { href: path(lang, 'home', 'call-for-symposia'), label: 'Call for Symposia' }
+  ? { href: path(lang, 'symposium'), label: lang === 'nl' ? 'Dien een symposium in' : 'Submit a symposium' }
   : { href: path(lang, 'registratie'), label: t.cta };
 const langStyle = 'display:inline-flex;align-items:center;justify-content:center;text-decoration:none';
 ---

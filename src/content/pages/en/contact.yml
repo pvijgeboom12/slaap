@@ -2,6 +2,7 @@ seo:
   titel: Contact
   omschrijving: Questions about SLAAP2027? Contact the congress organisers, JCC Congress Consultancy & Events, through the form or by email.
 hero:
+  email_label: "Email:"
   titel: Questions about SLAAP2027?
   lead: The congress is organised by JCC Congress Consultancy & Events. Send a message through the form or email
 formulier:
@@ -29,3 +30,21 @@ zijbalk:
     - Abstracts and posters
     - Sponsorship and stands
     - Directions and hotel
+# NOG VERTALEN: onderstaande blokken tijdelijk in het Nederlands (Annick, 23 november 2026).
+sponsoring:
+  titel: Sponsoring en exposeren
+  tekst: SLAAP2027 biedt bedrijven en organisaties de mogelijkheid om in contact te komen met professionals uit de slaapwetenschap en slaapgeneeskunde. De sponsor- en exposantenmogelijkheden voor 2027 worden momenteel samengesteld.
+  oproep: Wil je meer weten of de sponsormogelijkheden als eerste ontvangen? Neem dan contact met ons op via
+  knop: Informeer naar de sponsormogelijkheden
+  onderwerp: Sponsormogelijkheden SLAAP2027
+organisatie:
+  titel: Organisatie
+  tekst: "SLAAP2027 wordt georganiseerd door Stichting Slaap Congres Nederland (SSCN), een samenwerking van:"
+  leden:
+    - Nederlandse Vereniging voor Slaap-Waak Onderzoek (NSWO)
+    - Nederlandse Vereniging voor Slaapgeneeskunde (SVNL)
+  slot: Het bestuur van SSCN vormt tevens de programmacommissie. De praktische congresorganisatie is in handen van JCC Congress Consultancy & Events ([www.jcc-congress.com](https://www.jcc-congress.com)).
+op_de_hoogte:
+  titel: Blijf op de hoogte
+  tekst: Mis niets van SLAAP2027! Volg ons op LinkedIn voor nieuws over het programma, de sprekers, belangrijke deadlines en de opening van de registratie.
+  knop: Volg SLAAP2027 op LinkedIn
