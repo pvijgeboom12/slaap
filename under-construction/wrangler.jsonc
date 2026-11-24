@@ -1,0 +1,7 @@
+// Tijdelijke under construction-pagina voor slaapcongres.nl (tot de livegang van de nieuwe site).
+// Aparte Worker in Annicks Cloudflare-account; de echte site is Worker "slaap".
+{
+  "name": "slaap-under-construction",
+  "compatibility_date": "2025-11-01",
+  "assets": { "directory": "./public", "not_found_handling": "single-page-application" }
+}
