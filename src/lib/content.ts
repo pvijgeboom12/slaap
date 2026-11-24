@@ -20,7 +20,9 @@ export const sprekers = () => load<any>('sprekers.yml')?.sprekers ?? [];
 export const sponsors = () => load<any>('sponsors.yml')?.sponsors ?? [];
 export const comite = () => load<any>('comite.yml')?.leden ?? [];
 export const accreditatie = () => load<any>('accreditatie.yml')?.verenigingen ?? [];
-export const page = (lang: Lang, name: string) => load<any>(`pages/${lang}/${name}.yml`);
+/** Paginateksten. Ontbreekt de Engelse versie nog, dan valt de pagina terug op de Nederlandse tekst. */
+export const page = (lang: Lang, name: string) =>
+  load<any>(fs.existsSync(path.join(dir, `pages/${lang}/${name}.yml`)) ? `pages/${lang}/${name}.yml` : `pages/nl/${name}.yml`);
 
 /** Tekst in de juiste taal uit een { nl, en }-veld (of een gewone string). */
 export function tr(v: L10n | string | undefined | null, lang: Lang): string {

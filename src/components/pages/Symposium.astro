@@ -1,0 +1,26 @@
+---
+// Call for Symposia (fase 1). Teksten: src/content/pages/{nl,en}/symposium.yml.
+// Knoppen linken naar het Eventira-formulier uit settings.yml → abstracts.link_symposium. Leeg = knop uitgeschakeld met "opent op"-melding.
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import R from '../R.astro';
+import Photo from '../Photo.astro';
+import { path, type Lang } from '../../i18n/routes';
+import { page, settings } from '../../lib/content';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const c = page(lang, 'symposium');
+const link: string = settings().abstracts?.link_symposium || '';
+const stack = 'display:flex;flex-direction:column;gap:22px';
+const check = '<path d="M5 12.5l4.5 4.5L19 7.5"></path>';
+---
+
+<BaseLayout lang={lang} page="symposium" title={c.seo.titel} description={c.seo.omschrijving} ogImage="slaap-sprekers_foto38.jpg">
+<section class="night" style="position:relative;padding-top:clamp(80px,10vw,144px);overflow:hidden"><Photo class="hero-media" name="slaap-sprekers_foto38.jpg" alt="" priority /><div class="shade-side" aria-hidden="true"></div><div class="wrap" style="position:relative;display:flex;flex-direction:column;gap:20px;padding-bottom:clamp(64px,8vw,104px)"><h1 style="font-size:clamp(40px,5.6vw,72px);font-weight:800;color:#FFFFFF;max-width:920px">{c.hero.titel}</h1>{c.hero.alineas.map((a: string, i: number) => <p class={i === 0 ? 'lead' : ''} style={`color:${i === 0 ? '#E9EAF4' : '#C9CDE3'};max-width:780px`}><R t={a} lang={lang} /></p>)}<p style="font-weight:700;color:#A9D9F4">{c.hero.oproep}</p><div class="sym-cta">{link ? <a class="btn btn-primary" href={link} rel="noopener">{c.knop}</a> : <><span class="btn btn-primary" aria-disabled="true" style="opacity:.55;cursor:default">{c.knop}</span><span class="soft">{c.link_volgt}</span></>}</div></div></section>
+
+<section id="data" class="sec"><div class="wrap grid" style="grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr));gap:clamp(32px,5vw,64px);align-items:start"><div style={stack}><h2 class="h2">{c.data.titel}</h2><div class="tbl-box"><table class="tbl" style="min-width:0"><thead><tr><th scope="col">{c.data.kop_activiteit}</th><th scope="col">{c.data.kop_datum}</th></tr></thead><tbody>{c.data.rijen.map((r: any) => <tr><td>{r.activiteit}</td><td style="font-weight:700">{r.datum}</td></tr>)}</tbody></table></div></div><div class="panel-night" style="display:flex;flex-direction:column;gap:14px"><h2 class="h3" style="color:#FFFFFF">{c.kort.titel}</h2><ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px">{c.kort.punten.map((p: string) => <li style="display:flex;gap:12px;align-items:flex-start"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6EC3EE" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:0 0 22px;margin-top:3px" set:html={check}></svg><span style="color:#E9EAF4"><R t={p} lang={lang} /></span></li>)}</ul><div class="sym-cta" style="padding-top:8px">{link ? <a class="btn btn-primary" href={link} rel="noopener">{c.knop}</a> : <><span class="btn btn-primary" aria-disabled="true" style="opacity:.55;cursor:default">{c.knop}</span><span class="soft" style="font-size:16px">{c.link_volgt}</span></>}</div></div></div></section>
+
+<section id="richtlijnen" class="sec" style="background:#FFFFFF;border-top:1px solid #DADDE8;border-bottom:1px solid #DADDE8"><div class="wrap" style="display:flex;flex-direction:column;gap:clamp(24px,3vw,36px);max-width:960px"><h2 class="h2">{c.richtlijnen.titel}</h2><div class="acc">{c.richtlijnen.onderdelen.map((o: any) => <details><summary><span>{o.titel}</span><svg class="acc-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></summary><div class="acc-body">{(o.alineas ?? []).map((a: string) => <p><R t={a} lang={lang} /></p>)}{o.punten && <ul class="rule-list" style="list-style:none;padding:0;margin:0">{o.punten.map((p: string) => <li><span class="dot" aria-hidden="true"></span><span><R t={p} lang={lang} /></span></li>)}</ul>}{(o.slot ?? []).map((a: string) => <p class="muted"><R t={a} lang={lang} /></p>)}</div></details>)}</div></div></section>
+
+<section id="indienen" class="sec"><div class="wrap grid" style="grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr));gap:clamp(40px,6vw,96px);align-items:start"><div style={stack}><h2 class="h2">{c.indienen.titel}</h2><p class="lead"><R t={c.indienen.tekst} lang={lang} /></p><p style="font-weight:700"><R t={c.indienen.deadline} lang={lang} /></p><div class="sym-cta">{link ? <a class="btn btn-primary" href={link} rel="noopener">{c.knop}</a> : <><span class="btn btn-primary" aria-disabled="true" style="opacity:.55;cursor:default">{c.knop}</span><span class="muted" style="font-size:16px">{c.link_volgt}</span></>}</div></div><div class="panel" style="display:flex;flex-direction:column;gap:14px"><h2 class="h3">{c.vragen.titel}</h2><p class="muted"><R t={c.vragen.tekst} lang={lang} /></p><a class="more" href={path(lang, 'contact')}>{lang === 'nl' ? 'Naar het contactformulier' : 'Go to the contact form'}</a></div></div></section>
+</BaseLayout>

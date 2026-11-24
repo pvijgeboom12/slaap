@@ -10,9 +10,9 @@ congres:
   einddatum: 2027-11-12
   locatie: NH Conference Centre Koningshof
   locatie_kort: NH Koningshof
-  locatie_volledig: NH Eindhoven Conference Centre Koningshof
+  locatie_volledig: NH Conference Centre Koningshof
   adres: Locht 117
-  postcode: 5507 RM
+  postcode: 5504 RM
   plaats: Veldhoven
   verwachte_deelnemers: 600
 
@@ -57,6 +57,7 @@ links:
   hotel_boeken:
   algemene_voorwaarden:
   privacyverklaring:
+  linkedin:
 
 contact:
   email: info@slaapcongres.nl

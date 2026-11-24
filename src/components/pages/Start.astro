@@ -1,0 +1,37 @@
+---
+// Homepage fase 1 (vanaf 24 nov 2026, teksten Annick). Teksten: src/content/pages/{nl,en}/start.yml.
+// De Engelse versie valt terug op de Nederlandse tekst zolang en/start.yml ontbreekt.
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import R from '../R.astro';
+import Photo from '../Photo.astro';
+import EventJsonLd from '../EventJsonLd.astro';
+import { path, type Lang } from '../../i18n/routes';
+import { page, settings, toDate, dayName, monthName, cap } from '../../lib/content';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const c = page(lang, 'start');
+const cg = settings().congres;
+
+const start = toDate(cg.startdatum)!;
+const end = toDate(cg.einddatum) ?? start;
+const days: Date[] = [];
+for (let d = new Date(start); d <= end; d = new Date(d.getTime() + 86400000)) days.push(d);
+const monthLabel = `${cap(monthName(start, lang))} ${start.getUTCFullYear()}`;
+const pin = '<path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"></path><circle cx="12" cy="9" r="2.5"></circle>';
+const two = 'grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr));gap:clamp(40px,6vw,96px)';
+const stack = 'display:flex;flex-direction:column;gap:22px';
+---
+
+<BaseLayout lang={lang} page="home" title={c.seo.titel} description={c.seo.omschrijving} ogImage="slaap-hero_foto272.jpg">
+<EventJsonLd slot="head" lang={lang} />
+
+<section class="night" style="position:relative;overflow:hidden"><Photo class="hero-media" name="slaap-hero_foto272.jpg" alt="" priority /><div class="shade-home" aria-hidden="true"></div><div class="wrap" style="position:relative;padding-top:clamp(80px,11vw,168px);padding-bottom:clamp(56px,7vw,96px);display:flex;flex-direction:column;gap:clamp(40px,5vw,64px)"><div style="display:flex;flex-direction:column;gap:clamp(16px,2vw,24px)"><p style="font-size:clamp(20px,1.8vw,24px);font-weight:600;color:#C9CDE3">{c.hero.kicker}</p><h1 style="margin:0;line-height:0"><img src="/assets/slaap2027-woordmerk-donker.svg" alt="SLAAP2027" width="1104" height="142" style="display:block;width:100%;max-width:1104px;height:auto"></h1></div><div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(min(380px,100%),1fr));gap:40px;align-items:end"><div style={stack}><p class="lead" style="color:#E9EAF4;max-width:540px"><R t={c.hero.lead} lang={lang} /></p><p style="font-weight:700;color:#A9D9F4">{c.hero.datumregel}</p><div style="display:flex;flex-wrap:wrap;gap:12px"><a class="btn btn-primary" href={path(lang, 'symposium')}>{c.hero.knop}</a></div></div><div class="panel-night" style="display:flex;flex-direction:column;gap:22px;width:100%;max-width:460px;justify-self:end"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap"><p style="font-weight:700;color:#A9D9F4">{monthLabel}</p><p style="font-size:14px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#6EC3EE">Save the date</p></div><div class="grid" style={`grid-template-columns:repeat(${days.length},minmax(0,1fr));gap:12px`}>{days.map((d) => <div style="display:flex;flex-direction:column;gap:6px"><span class="disp tabular" style="font-size:clamp(48px,5vw,68px);font-weight:700;line-height:1;color:#FFFFFF">{d.getUTCDate()}</span><span style="font-size:15px;font-weight:600;color:#A9AECB">{dayName(d, lang)}</span></div>)}</div><div style="height:1px;background:rgba(110,195,238,0.2)"></div><div style="display:flex;gap:12px;align-items:flex-start"><span style="color:#6EC3EE;margin-top:2px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={pin}></svg></span><div><p style="font-weight:700;color:#FFFFFF">{cg.locatie}</p><p class="soft">{cg.plaats}</p></div></div></div></div></div></section>
+
+<section class="sec"><div class="wrap grid" style={`${two};align-items:start`}><div style={stack}><h2 class="h2">{c.intro.titel}</h2>{c.intro.alineas.map((a: string, i: number) => <p class={i === 0 ? 'lead' : 'muted'}><R t={a} lang={lang} /></p>)}</div><div class="panel" style="display:flex;flex-direction:column;gap:8px"><h3 class="h3">{c.verwachten.titel}</h3><p class="muted">{c.verwachten.lead}</p><ul class="rule-list" style="list-style:none;padding:0;margin:0">{c.verwachten.punten.map((p: string) => <li><span class="dot" aria-hidden="true"></span><span><R t={p} lang={lang} /></span></li>)}</ul><p class="muted" style="font-size:16px;padding-top:12px;border-top:1px solid #E6E8F0"><R t={c.verwachten.taal} lang={lang} /></p></div></div></section>
+
+<section class="sec" style="background:#FFFFFF;border-top:1px solid #DADDE8;border-bottom:1px solid #DADDE8"><div class="wrap grid" style={`${two};align-items:start`}><div style={stack}><h2 class="h2">{c.voor_wie.titel}</h2><p class="lead"><R t={c.voor_wie.tekst} lang={lang} /></p></div><div class="panel-night" style="display:flex;flex-direction:column;gap:18px;align-items:flex-start"><h2 class="h3" style="color:#FFFFFF">{c.symposia.titel}</h2><p style="color:#E9EAF4"><R t={c.symposia.tekst} lang={lang} /></p><a class="btn btn-primary" href={path(lang, 'symposium')}>{c.symposia.knop}</a></div></div></section>
+
+<section class="sec"><div class="wrap grid" style={`${two};align-items:center`}><div style={stack}><h2 class="h2">{c.locatie.titel}</h2><p class="lead"><R t={c.locatie.tekst} lang={lang} /></p><div><a class="btn btn-dark" href={path(lang, 'locatie')}>{c.locatie.knop}</a></div></div><figure style="margin:0;border-radius:20px;overflow:hidden;aspect-ratio:4 / 3"><Photo name="slaap-publiek_foto287.jpg" alt={lang === 'nl' ? 'Publiek tijdens een sessie op SLAAP2025 in NH Koningshof' : 'Audience during a session at SLAAP2025 in NH Koningshof'} sizes="(max-width: 760px) 100vw, 50vw" style="display:block;width:100%;height:100%;object-fit:cover" /></figure></div></section>
+
+</BaseLayout>

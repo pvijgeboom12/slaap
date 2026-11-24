@@ -3,7 +3,7 @@
 //
 // /api/contact – contactformulier
 //   1. controleert het Turnstile-token aan de serverkant (TURNSTILE_SECRET)
-//   2. valideert naam, e-mail en bericht; honeypot-veld "website" moet leeg zijn
+//   2. valideert naam, e-mail en bericht (alle drie verplicht); honeypot-veld "website" moet leeg zijn
 //   3. verstuurt het bericht via Cloudflare Email Routing (binding MAIL) naar CONTACT_TO
 // Er wordt niets opgeslagen. Geheimen staan alleen in Cloudflare, nooit in de repository.
 import { EmailMessage } from 'cloudflare:email';
@@ -50,14 +50,15 @@ async function contact(request, env) {
   // Honeypot: bots vullen dit veld in. Doe alsof het gelukt is, verstuur niets.
   if (clean(data.website, 200)) return json({ ok: true });
 
-  const first = oneLine(data.first, 100);
-  const last = oneLine(data.last, 100);
+  // Naam: één veld "name" (nieuw formulier) of "first" + "last" (oud formulier)
+  const name = oneLine(data.name, 200) || [oneLine(data.first, 100), oneLine(data.last, 100)].filter(Boolean).join(' ');
   const email = oneLine(data.email, 200);
   const org = oneLine(data.org, 200);
+  const topic = oneLine(data.subject, 200);
   const message = clean(data.message, 5000);
   const lang = data.lang === 'en' ? 'en' : 'nl';
 
-  if (!first || !last || !EMAIL.test(email)) return json({ ok: false, error: 'validation' }, 422);
+  if (!name || !EMAIL.test(email) || !message) return json({ ok: false, error: 'validation' }, 422);
 
   if (env.TURNSTILE_SECRET) {
     const ok = await verifyTurnstile(String(data['cf-turnstile-response'] || ''), env.TURNSTILE_SECRET, request.headers.get('CF-Connecting-IP'));
@@ -68,11 +69,12 @@ async function contact(request, env) {
   const from = env.CONTACT_FROM;
   if (!env.MAIL || !from || !to.length) return json({ ok: false, error: 'config' }, 500);
 
-  const subject = `Vraag via slaapcongres.nl van ${first} ${last}`;
+  const subject = topic ? `${topic} (via slaapcongres.nl, ${name})` : `Vraag via slaapcongres.nl van ${name}`;
   const body = [
-    `Naam: ${first} ${last}`,
+    `Naam: ${name}`,
     `E-mail: ${email}`,
     `Organisatie: ${org || '-'}`,
+    `Onderwerp: ${topic || '-'}`,
     `Taal website: ${lang.toUpperCase()}`,
     '',
     message || '(geen bericht)',
@@ -86,7 +88,7 @@ async function contact(request, env) {
       const raw = [
         `From: ${encWord('SLAAP2027 website')} <${from}>`,
         `To: <${rcpt}>`,
-        `Reply-To: ${encWord(`${first} ${last}`)} <${email}>`,
+        `Reply-To: ${encWord(name)} <${email}>`,
         `Subject: ${encWord(subject)}`,
         `Date: ${new Date().toUTCString()}`,
         `Message-ID: <${crypto.randomUUID()}@${from.split('@')[1]}>`,

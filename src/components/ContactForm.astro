@@ -13,7 +13,7 @@ const [reqBefore, reqAfter = ''] = String(f.verplicht).split('*');
 const star = '<span aria-hidden="true" style="color:#155A8A">*</span>';
 const msgs = {
   missing: f.fout_ontbreekt,
-  labels: { first: f.voornaam.toLowerCase(), last: f.achternaam.toLowerCase(), email: f.email.toLowerCase() },
+  labels: { name: f.naam.toLowerCase(), email: f.email.toLowerCase(), message: f.bericht.toLowerCase() },
   email: f.fout_email,
   failed: f.fout_verzenden,
   robot: f.fout_spam,
@@ -23,7 +23,7 @@ const msgs = {
 };
 ---
 {site.turnstileSiteKey && <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>}
-<form id="form-view" action="/api/contact" method="post" novalidate aria-labelledby="form-title"><div style="display:flex;flex-direction:column;gap:20px"><h2 id="form-title" class="h2" style="font-size:32px">{titel ?? f.titel}</h2><p class="muted" style="font-size:16px">{reqBefore}<span style="color:#155A8A">*</span>{reqAfter}</p><div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:18px"><div class="field"><label for="f-first">{f.voornaam} <Fragment set:html={star} /></label><input class="input" id="f-first" name="first" type="text" autocomplete="given-name" required aria-required="true" maxlength="100" value=""></div><div class="field"><label for="f-last">{f.achternaam} <Fragment set:html={star} /></label><input class="input" id="f-last" name="last" type="text" autocomplete="family-name" required aria-required="true" maxlength="100" value=""></div></div><div class="field"><label for="f-email">{f.email} <Fragment set:html={star} /></label><input class="input" id="f-email" name="email" type="email" autocomplete="email" required aria-required="true" maxlength="200" value=""></div><div class="field"><label for="f-org">{f.organisatie}</label><input class="input" id="f-org" name="org" type="text" autocomplete="organization" maxlength="200" value=""></div><div class="field"><label for="f-msg">{f.bericht}</label><textarea class="input" id="f-msg" name="message" rows="6" maxlength="5000" style="resize:vertical"></textarea></div><div aria-hidden="true" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden"><label for="f-website">Website</label><input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off" value=""></div>{site.turnstileSiteKey && <div class="cf-turnstile" data-sitekey={site.turnstileSiteKey} data-language={lang} data-appearance="interaction-only" data-size="flexible"></div>}<div aria-live="polite"><div id="form-error" hidden><p style="padding:12px 16px;border-radius:12px;background:#FBE4E4;color:#8A1C1C;font-weight:600"></p></div></div><div><button type="submit" class="btn btn-dark" id="f-submit">{f.knop}</button></div></div></form><div id="sent-view" hidden><div role="status" tabindex="-1" style="display:flex;flex-direction:column;gap:16px;align-items:flex-start"><h2 class="h2" style="font-size:32px">{f.bedankt} <span data-f="first"></span></h2><p class="muted"><R t={f.bevestiging} lang={lang} /></p><button type="button" class="btn btn-outline" id="f-reset">{f.opnieuw}</button></div></div>
+<form id="form-view" action="/api/contact" method="post" novalidate aria-labelledby="form-title"><div style="display:flex;flex-direction:column;gap:20px"><h2 id="form-title" class="h2" style="font-size:32px">{titel ?? f.titel}</h2>{f.intro && <p class="muted">{f.intro}</p>}<p class="muted" style="font-size:16px">{reqBefore}<span style="color:#155A8A">*</span>{reqAfter}</p><div class="field"><label for="f-name">{f.naam} <Fragment set:html={star} /></label><input class="input" id="f-name" name="name" type="text" autocomplete="name" required aria-required="true" maxlength="200" value=""></div><div class="field"><label for="f-email">{f.email} <Fragment set:html={star} /></label><input class="input" id="f-email" name="email" type="email" autocomplete="email" required aria-required="true" maxlength="200" value=""></div><div class="field"><label for="f-org">{f.organisatie}</label><input class="input" id="f-org" name="org" type="text" autocomplete="organization" maxlength="200" value=""></div><div class="field"><label for="f-subject">{f.onderwerp}</label><input class="input" id="f-subject" name="subject" type="text" maxlength="200" value=""></div><div class="field"><label for="f-msg">{f.bericht} <Fragment set:html={star} /></label><textarea class="input" id="f-msg" name="message" rows="6" required aria-required="true" maxlength="5000" style="resize:vertical"></textarea></div><div aria-hidden="true" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden"><label for="f-website">Website</label><input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off" value=""></div>{site.turnstileSiteKey && <div class="cf-turnstile" data-sitekey={site.turnstileSiteKey} data-language={lang} data-appearance="interaction-only" data-size="flexible"></div>}<div aria-live="polite"><div id="form-error" hidden><p style="padding:12px 16px;border-radius:12px;background:#FBE4E4;color:#8A1C1C;font-weight:600"></p></div></div><div><button type="submit" class="btn btn-dark" id="f-submit">{f.knop}</button></div></div></form><div id="sent-view" hidden><div role="status" tabindex="-1" style="display:flex;flex-direction:column;gap:16px;align-items:flex-start"><h2 class="h2" style="font-size:32px">{f.bedankt} <span data-f="name"></span></h2><p class="muted"><R t={f.bevestiging} lang={lang} /></p><button type="button" class="btn btn-outline" id="f-reset">{f.opnieuw}</button></div></div>
 <script is:inline define:vars={{ msgs }}>
 (function () {
   var form = document.getElementById('form-view');
@@ -36,9 +36,9 @@ const msgs = {
   };
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    ['f-first', 'f-last', 'f-email'].forEach(function (id) { document.getElementById(id).removeAttribute('aria-invalid'); });
+    ['f-name', 'f-email', 'f-msg'].forEach(function (id) { document.getElementById(id).removeAttribute('aria-invalid'); });
     var miss = [], first = null;
-    [['f-first', 'first'], ['f-last', 'last'], ['f-email', 'email']].forEach(function (p) { if (!v(p[0])) { miss.push(msgs.labels[p[1]]); first = first || p[0]; } });
+    [['f-name', 'name'], ['f-email', 'email'], ['f-msg', 'message']].forEach(function (p) { if (!v(p[0])) { miss.push(msgs.labels[p[1]]); first = first || p[0]; } });
     if (miss.length) return show(msgs.missing + ' ' + miss.join(', ') + '.', first);
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v('f-email'))) return show(msgs.email, 'f-email');
     var data = Object.fromEntries(new FormData(form).entries());
@@ -49,7 +49,7 @@ const msgs = {
       .then(function (r) { return r.json().catch(function () { return { ok: false }; }); })
       .then(function (res) {
         if (!res || !res.ok) throw new Error('send');
-        document.querySelector('[data-f="first"]').textContent = v('f-first');
+        document.querySelector('[data-f="name"]').textContent = v('f-name').split(/\s+/)[0];
         form.hidden = true; sent.hidden = false; sent.querySelector('[role="status"]').focus();
       })
       .catch(function () { show(msgs.failed); if (window.turnstile) window.turnstile.reset(); })
@@ -57,7 +57,7 @@ const msgs = {
   });
   document.getElementById('f-reset').addEventListener('click', function () {
     form.reset(); if (window.turnstile) window.turnstile.reset();
-    sent.hidden = true; form.hidden = false; document.getElementById('f-first').focus();
+    sent.hidden = true; form.hidden = false; document.getElementById('f-name').focus();
   });
 })();
 </script>

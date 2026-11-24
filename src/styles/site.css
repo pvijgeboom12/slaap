@@ -87,3 +87,17 @@ a:hover{color:#0E3F63}
 /* Toegevoegd voor WCAG 2.4.1: alleen zichtbaar bij toetsenbordfocus */
 .skip-link{position:absolute;left:12px;top:-100px;z-index:100;background:#6EC3EE;color:#12152A;font-weight:700;padding:12px 20px;border-radius:999px;text-decoration:none}
 .skip-link:focus{top:12px}
+
+/* Call for Symposia: knoppen en accordeon (details/summary, standaard ingeklapt) */
+.sym-cta{display:flex;flex-wrap:wrap;gap:12px 16px;align-items:center}
+.acc{border-top:1px solid #DADDE8}
+.acc details{border-bottom:1px solid #DADDE8}
+.acc summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 4px;min-height:56px;font-size:clamp(19px,1.6vw,22px);font-weight:700;color:#1B2140}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary:hover{color:#155A8A}
+.acc summary:focus-visible{outline:3px solid rgba(110,195,238,0.9);outline-offset:2px;border-radius:8px}
+.acc-icon{flex:0 0 22px;color:#155A8A;transition:transform .2s ease}
+.acc details[open] .acc-icon{transform:rotate(45deg)}
+.acc-body{display:flex;flex-direction:column;gap:14px;padding:0 4px 26px;max-width:820px}
+.acc-body a, .panel a:not(.btn):not(.more){color:#155A8A;font-weight:700}
+.panel-night a:not(.btn):not(.more){color:#6EC3EE;font-weight:700}
