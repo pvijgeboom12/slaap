@@ -9,11 +9,12 @@ Afspraak van 9 november 2026: SLAAP valt onder JCC. Er zijn dus geen aparte acco
 | GitHub, repo `pvijgeboom12/slaap` | Code en inhoud, elke wijziging is een commit | Pieter (Waterproof Media). Overdracht naar JCC of SSCN in te plannen | Pieter: admin. Annick: schrijfrechten (voor Pages CMS) | €0 |
 | Pages CMS (app.pagescms.org) | Beheer van teksten, programma en sponsors | Geen eigen account: inloggen via GitHub | Iedereen met schrijfrechten op de repo | €0 |
 | Cloudflare, Workers `slaap` | Hosting, previews per branch, contactformulier | JCC (account Annick) | Annick: Super Administrator. Pieter: Administrator | €0 (gratis plan) |
-| Cloudflare DNS, zone `slaapcongres.nl` | Domeinverwijzing | JCC (account Annick) | Als hierboven | €0 |
+| Cloudflare DNS, zone `slaapcongres.nl` | Domeinverwijzing en mailrecords (actief sinds 22 nov 2026) | JCC (account Annick) | Als hierboven | €0 |
+| Cloudflare Workers `slaap-under-construction` | Tijdelijke pagina op slaapcongres.nl tot de livegang | JCC (account Annick) | Als hierboven | €0 |
 | Cloudflare Email Routing, `post.jcc-congressen.nl` → `info@slaapcongres.nl` | Verzenden van formulierberichten | JCC (account Annick) | Als hierboven | €0 |
 | Cloudflare Turnstile | Spambeveiliging contactformulier | JCC (account Annick) | Als hierboven | €0 |
 | Cloudflare Web Analytics | Bezoekersstatistieken zonder cookies | JCC (account Annick) | Als hierboven | €0 |
-| Domeinregistratie `slaapcongres.nl` | Het domein zelf | [registrar en eigenaar invullen] | [invullen] | ca. $11 per jaar |
+| Domeinregistratie `slaapcongres.nl` | Het domein zelf | Registrar Mijndomein; houder: [invullen] | Pieter heeft toegang tot Mijndomein | ca. $11 per jaar |
 | Google Workspace, `info@slaapcongres.nl` | Mailbox congres | JCC (Workspace Annick) | Eén beheergebruiker blijft permanent bestaan | €8 per maand |
 | Google Search Console | Indexering en sitemap | [eigenaar invullen bij livegang] | Pieter en Annick | €0 |
 | Registratie- en abstractplatform | Inschrijven, betalen, abstracts | JCC | Buiten de scope van de website, de site verwijst alleen door | via JCC |

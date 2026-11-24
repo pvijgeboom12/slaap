@@ -6,7 +6,7 @@ Alles wat live gaat of DNS wijzigt, gebeurt pas na akkoord van Pieter. Inloggen 
 
 17 nov 2026: Worker `slaap` aangemaakt in het Cloudflare-account van Annick (JCC), gekoppeld aan `pvijgeboom12/slaap`. Build command `npm run build`, deploy `npx wrangler deploy`, preview builds aan (`npx wrangler preview`).
 
-- [ ] Cloudflare (account JCC): Workers & Pages → Create → Import a repository → `pvijgeboom12/slaap`. Build command `npm run build`, deploy command `npx wrangler deploy`, non-production branch deploy command `npx wrangler versions upload`.
+- [x] Cloudflare (account JCC): Workers & Pages → Create → Import a repository → `pvijgeboom12/slaap`. Build command `npm run build`, deploy command `npx wrangler deploy`, non-production branch deploy command `npx wrangler versions upload`.
 - [ ] Na de eerste build: open de `*.workers.dev`-URL. Controleer of de header `X-Robots-Tag: noindex` er staat.
 - [ ] Pages CMS: log in op app.pagescms.org met GitHub, kies repo `slaap` en sla één kleine wijziging op. Controleer of er een commit komt en of Cloudflare opnieuw bouwt.
 - [ ] Maak een branch `concept` voor previews van Annick. Zet het preview-adres in de beheerinstructie.
@@ -14,12 +14,12 @@ Alles wat live gaat of DNS wijzigt, gebeurt pas na akkoord van Pieter. Inloggen 
 
 ## B. Contactformulier
 
-- [ ] Turnstile: maak een widget aan voor `slaapcongres.nl` en het `workers.dev`-previewdomein.
-- [ ] Zet de sitekey in `src/lib/site.ts` (`turnstileSiteKey`).
+- [x] Turnstile: widget "SLAAP contactformulier" aangemaakt op 20 nov 2026 voor `slaapcongres.nl`, `slaap.acgoijarts.workers.dev` en `fase-1-save-the-date-slaap.acgoijarts.workers.dev`.
+- [x] Sitekey staat in `src/lib/site.ts` (`turnstileSiteKey`), 20 nov 2026.
 - [ ] Zet de geheime sleutel als secret `TURNSTILE_SECRET` in de Worker.
-- [ ] Email Routing: aan op het subdomein `post.jcc-congressen.nl` (account JCC), niet op het hoofddomein. Daar staan de MX-records van Google Workspace.
-- [ ] Voeg `info@slaapcongres.nl` (eigen mailbox van de stichting) toe als destination address en laat Annick de verificatiemail bevestigen.
-- [ ] Controleer of `CONTACT_TO` in `wrangler.jsonc` klopt. Nu staan daar beide adressen.
+- [x] Email Routing: aan op het subdomein `post.jcc-congressen.nl` (account JCC), niet op het hoofddomein. Daar staan de MX-records van Google Workspace.
+- [ ] Voeg `info@slaapcongres.nl` (eigen mailbox van de stichting) toe als destination address en laat Annick de verificatiemail bevestigen. Toegevoegd op 20 nov 2026; verificatie: bevestigen en hier afvinken.
+- [x] `CONTACT_TO` in `wrangler.jsonc` is `info@slaapcongres.nl`.
 
 ## C. Inhoud
 
@@ -31,8 +31,8 @@ Alles wat live gaat of DNS wijzigt, gebeurt pas na akkoord van Pieter. Inloggen 
 
 ## D. Livegang (na akkoord Pieter)
 
-- [ ] DNS van `slaapcongres.nl` naar Cloudflare: zet de nameservers bij de registrar om naar de nameservers die Cloudflare opgeeft. Neem eerst de bestaande records over, vooral de MX- en TXT-records van Google Workspace.
-- [ ] Worker → Settings → Domains & Routes: voeg `slaapcongres.nl` toe als custom domain.
+- [x] DNS van `slaapcongres.nl` naar Cloudflare: gedaan 21-22 nov 2026. Nameservers bij Mijndomein staan op robert/ziggy.ns.cloudflare.com (account Annick); de mailrecords zijn 1-op-1 overgenomen. `slaapcongres.nl` en `www` tonen tot de livegang de under construction-pagina (Worker `slaap-under-construction`).
+- [ ] Custom domains `slaapcongres.nl` en `www.slaapcongres.nl` weghalen bij Worker `slaap-under-construction` en toevoegen aan Worker `slaap` (Settings → Domains & Routes).
 - [ ] Voeg `www.slaapcongres.nl` toe en stuur het door naar het domein zonder www, met een Redirect Rule.
 - [ ] Zet `indexable: true` in `src/lib/site.ts`. Commit dit op `main`.
 - [ ] Controleer daarna `https://slaapcongres.nl/`: geen meta-noindex en geen X-Robots-Tag.
