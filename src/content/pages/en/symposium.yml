@@ -1,74 +1,73 @@
-# NOG VERTALEN: tijdelijk de Nederlandse tekst van Annick (23 november 2026).
-# Pagina Symposium indienen (Call for Symposia). Teksten van Annick (23 november 2026).
-# De knoppen linken naar abstracts.link_symposium in Instellingen congres (Eventira-formulier, link volgt van Annick).
+# Submit a symposium page (Call for Symposia). English texts from Annick (24 November 2026).
+# The buttons link to abstracts.link_symposium in the congress settings (Eventira form, link to follow from Annick).
 seo:
-  titel: Symposium indienen
-  omschrijving: Call for Symposia SLAAP2027. Dien vóór 1 februari 2027 een symposiumvoorstel in voor het congres op 11 en 12 november 2027.
+  titel: Submit a symposium
+  omschrijving: Call for Symposia SLAAP2027. Submit a symposium proposal before 1 February 2027 for the congress on 11 and 12 November 2027.
 hero:
   titel: Call for Symposia SLAAP2027
-  lead: De programmacommissie van SLAAP2027 nodigt onderzoekers, clinici en andere professionals uit om een symposiumvoorstel in te dienen voor het congres op 11 en 12 november 2027.
-  tekst: We zoeken inhoudelijk sterke, vernieuwende en klinisch relevante symposia die bijdragen aan kennisuitwisseling en samenwerking binnen de slaapwetenschap en slaapgeneeskunde. Bijzondere aandacht gaat uit naar de verbinding tussen wetenschappelijk onderzoek en de dagelijkse klinische praktijk. Voorstellen uit alle disciplines en aandachtsgebieden binnen het slaapveld zijn welkom.
-  oproep: Heb jij een onderwerp dat een podium verdient? Dien je voorstel in!
-knop: Dien je symposium in
-knop_binnenkort: Indienen kan vanaf {opening_abstracts}.
-knop_gesloten: Het indienen van symposiumvoorstellen is gesloten.
+  lead: The SLAAP2027 programme committee invites researchers, clinicians and other professionals to submit a symposium proposal for the congress on 11 and 12 November 2027.
+  tekst: We are looking for strong, innovative and clinically relevant symposia that contribute to knowledge exchange and collaboration in sleep science and sleep medicine. Special attention goes to the link between scientific research and daily clinical practice. Proposals from all disciplines and fields within sleep are welcome.
+  oproep: Do you have a topic that deserves a stage? Submit your proposal!
+knop: Submit your symposium
+knop_binnenkort: Submissions open on {opening_abstracts}.
+knop_gesloten: Symposium submissions are closed.
 data:
-  titel: Belangrijke data
-  kop_activiteit: Activiteit
-  kop_datum: Datum
+  titel: Key dates
+  kop_activiteit: Activity
+  kop_datum: Date
   rijen:
-    - activiteit: Opening Call for Symposia
-      datum: 1 december 2026
-    - activiteit: Deadline indienen
-      datum: 1 februari 2027, 23.59 uur
-    - activiteit: Bekendmaking selectie
-      datum: Eind maart 2027
+    - activiteit: Call for Symposia opens
+      datum: 1 December 2026
+    - activiteit: Submission deadline
+      datum: 1 February 2027, 23:59 CET
+    - activiteit: Selection announced
+      datum: End of March 2027
 kort:
-  titel: In het kort
+  titel: At a glance
   punten:
-    - 75 of 90 minuten, met maximaal 3 of 4 sprekers
-    - De hoofdindiener is ook spreker en voorzitter
-    - Alle sprekers hebben vooraf hun deelname bevestigd
-    - Sprekers ontvangen gratis toegang op hun presentatiedag en maximaal €100 reiskosten, geen honorarium
-    - "Deadline: maandag 1 februari 2027, 23.59 uur"
+    - 75 or 90 minutes, with a maximum of 3 or 4 speakers
+    - The lead submitter is also a speaker and the chair
+    - All speakers have confirmed their participation in advance
+    - Speakers receive free access on the day of their presentation and up to €100 in travel costs, no fee
+    - "Deadline: Monday 1 February 2027, 23:59 CET"
 richtlijnen:
-  titel: Richtlijnen voor symposiumvoorstellen
+  titel: Guidelines for symposium proposals
   blokken:
-    - titel: Opzet en programma
+    - titel: Format and programme
       punten:
-        - Een symposium duurt 75 of 90 minuten. De programmacommissie bepaalt de definitieve duur en plaatsing in het programma.
-        - Een symposium van 75 minuten heeft maximaal drie sprekers. Bij 90 minuten zijn maximaal vier sprekers toegestaan.
-        - De hoofdindiener is tevens spreker en voorzitter van het symposium.
-        - Sprekers zijn bij voorkeur afkomstig uit verschillende instellingen en disciplines, zodat meerdere perspectieven aan bod komen.
-        - De voertaal is Nederlands of Engels. Wanneer één of meer sprekers Engelstalig zijn, wordt het volledige symposium in het Engels verzorgd.
-        - Wijzigingen in de sprekersbezetting na acceptatie zijn uitsluitend mogelijk in overleg met de programmacommissie.
-        - Alle voorgestelde sprekers moeten vooraf zijn benaderd en hun deelname hebben bevestigd.
-    - titel: Voorwaarden voor sprekers
-      intro: "Sprekers van geselecteerde symposia ontvangen:"
+        - A symposium lasts 75 or 90 minutes. The programme committee decides on the final length and position in the programme.
+        - A 75-minute symposium has a maximum of three speakers. A 90-minute symposium may have up to four speakers.
+        - The lead submitter is also a speaker and chairs the symposium.
+        - Speakers should preferably come from different institutions and disciplines, so that several perspectives are represented.
+        - The language is Dutch or English. If one or more speakers present in English, the entire symposium will be held in English.
+        - Changes to the speaker line-up after acceptance are only possible in consultation with the programme committee.
+        - All proposed speakers must have been approached in advance and have confirmed their participation.
+    - titel: Speaker conditions
+      intro: "Speakers in selected symposia receive:"
       punten:
-        - Gratis toegang tot het congres op de dag van hun presentatie.
-        - Een reiskostenvergoeding tot maximaal €100, op basis van een vlucht in economy class of een treinreis in de 2e klas.
-        - Eén hotelovernachting, geboekt door de congresorganisatie, wanneer de reisafstand meer dan 300 kilometer bedraagt.
-      slot: Er wordt geen honorarium verstrekt. Deelname aan het congresdiner is niet inbegrepen. Een (mede)voorzitter die zelf geen presentatie verzorgt, komt niet in aanmerking voor bovenstaande vergoedingen. We vragen je als hoofdindiener deze voorwaarden vooraf met alle betrokken sprekers en voorzitters af te stemmen.
-    - titel: Hoe worden voorstellen beoordeeld?
-      intro: "De programmacommissie beoordeelt alle ingediende voorstellen op basis van de volgende criteria:"
+        - Free access to the congress on the day of their presentation.
+        - Reimbursement of travel costs up to €100, based on an economy class flight or a second-class train journey.
+        - One hotel night, booked by the congress organisation, if the travel distance is more than 300 kilometres.
+      slot: No speaker fee is paid. The congress dinner is not included. A (co-)chair who does not give a presentation is not eligible for the above reimbursements. As lead submitter, we ask you to agree these conditions in advance with all speakers and chairs involved.
+    - titel: How are proposals assessed?
+      intro: "The programme committee assesses all proposals on the following criteria:"
       punten:
-        - "**Inhoudelijke kwaliteit en diepgang:** een duidelijke inhoudelijke focus, met meer diepgang dan een algemeen overzicht."
-        - "**Klinische relevantie:** de betekenis van het onderwerp voor diagnostiek, behandeling of de dagelijkse praktijk."
-        - "**Wetenschappelijke onderbouwing:** de kwaliteit en actualiteit van de gepresenteerde kennis."
-        - "**Aansluiting op het congresprogramma:** de bijdrage aan een evenwichtig en veelzijdig programma."
-        - "**Vernieuwing:** nieuwe inzichten, ontwikkelingen of invalshoeken, ook ten opzichte van SLAAP2025."
-        - "**Multidisciplinariteit:** samenwerking tussen disciplines en spreiding van sprekers over verschillende instellingen."
-        - "**Haalbaarheid:** een realistische programmaopzet en bevestigde beschikbaarheid van de sprekers."
-      slot: De programmacommissie streeft naar een gevarieerd programma waarin zowel fundamenteel onderzoek als klinische toepassingen en verschillende doelgroepen vertegenwoordigd zijn.
-    - titel: Wat gebeurt er als je voorstel niet wordt geselecteerd?
+        - "**Quality and depth of content:** a clear focus, with more depth than a general overview."
+        - "**Clinical relevance:** the significance of the topic for diagnosis, treatment or daily practice."
+        - "**Scientific basis:** the quality and topicality of the knowledge presented."
+        - "**Fit with the congress programme:** the contribution to a balanced and varied programme."
+        - "**Innovation:** new insights, developments or perspectives, also compared with SLAAP2025."
+        - "**Multidisciplinarity:** collaboration between disciplines and a spread of speakers across institutions."
+        - "**Feasibility:** a realistic programme and confirmed availability of the speakers."
+      slot: The programme committee aims for a varied programme that represents fundamental research, clinical applications and a range of target audiences.
+    - titel: What happens if your proposal is not selected?
       tekst:
-        - Ook wanneer een symposiumvoorstel niet wordt geselecteerd, kan een afzonderlijke bijdrage interessant zijn voor het congresprogramma. De programmacommissie kan daarom één of meer sprekers uitnodigen om een individueel abstract in te dienen voor een mondelinge presentatie of poster.
-        - Een dergelijke uitnodiging betekent niet dat de bijdrage automatisch wordt geaccepteerd. Het abstract moet vóór de reguliere deadline worden ingediend en doorloopt de gebruikelijke beoordelingsprocedure. De sprekersvergoedingen voor geselecteerde symposia zijn niet van toepassing op individuele abstractpresentaties.
+        - Even if a symposium proposal is not selected, an individual contribution may still be of interest for the congress programme. The programme committee may therefore invite one or more speakers to submit an individual abstract for an oral or poster presentation.
+        - Such an invitation does not mean the contribution will automatically be accepted. The abstract must be submitted before the regular deadline and goes through the standard review procedure. The speaker conditions for selected symposia do not apply to individual abstract presentations.
 formulier:
-  titel: Indienen via het online formulier
-  tekst: Je dient je voorstel in via het online formulier. Daar zie je precies welke gegevens we vragen, zoals de beschrijving, de leerdoelen en een korte bio per spreker. Je kunt tussentijds opslaan en je voorstel aanpassen tot de deadline.
-  deadline: "**Deadline:** maandag 1 februari 2027 om 23.59 uur."
+  titel: Submit via the online form
+  tekst: You submit your proposal through the online form. It shows exactly what information we ask for, such as the description, the learning objectives and a short bio for each speaker. You can save your proposal as a draft and make changes until the deadline.
+  deadline: "**Deadline:** Monday 1 February 2027, 23:59 CET."
 vragen:
-  titel: Vragen over je voorstel?
-  tekst: Heb je vragen over de indieningsprocedure, de voorwaarden of het formulier? Neem gerust contact op met het congressecretariaat via
+  titel: Questions about your proposal?
+  tekst: Do you have questions about the submission procedure, the conditions or the form? Please contact the congress secretariat at

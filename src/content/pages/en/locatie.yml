@@ -1,27 +1,26 @@
-# NOG VERTALEN: tijdelijk de Nederlandse tekst van Annick (23 november 2026).
-# Pagina Locatie. Teksten van Annick (23 november 2026). Adres en hotellink: Instellingen congres.
+# Venue page. English texts from Annick (24 November 2026). Address and hotel link: congress settings.
 seo:
-  titel: Locatie
-  omschrijving: SLAAP2027 vindt op 11 en 12 november 2027 plaats in NH Conference Centre Koningshof in Veldhoven. Adres, bereikbaarheid en overnachten.
+  titel: Venue
+  omschrijving: SLAAP2027 takes place on 11 and 12 November 2027 at NH Conference Centre Koningshof in Veldhoven. Address, getting there and accommodation.
 hero:
-  titel: Alles onder één dak
-  lead: SLAAP2027 vindt op 11 en 12 november 2027 plaats in NH Conference Centre Koningshof in Veldhoven, vlak bij Eindhoven. Dit voormalige klooster, omgeven door groen, biedt alle ruimte voor twee dagen vol wetenschap, ontmoeting en inspiratie.
-  tekst: "Van de plenaire sessies en symposia tot de sponsormarkt, het congresdiner en de feestavond: alles vindt plaats onder één dak. Ook overnachten kan op de congreslocatie."
+  titel: Your congress venue
+  lead: SLAAP2027 takes place on 11 and 12 November 2027 at NH Conference Centre Koningshof in Veldhoven, near Eindhoven. Set in green surroundings, this former monastery provides a welcoming setting for two days of scientific exchange, learning and networking.
+  tekst: From plenary lectures and symposia to the industry exhibition, congress dinner and evening party, everything takes place under one roof. On-site accommodation allows you to make the most of your congress experience.
 adres:
-  titel: Adres
-  knop: Plan je route
-  kaart_titel: Kaart van NH Conference Centre Koningshof
+  titel: Address
+  knop: Plan your route
+  kaart_titel: Map of NH Conference Centre Koningshof
 bereikbaarheid:
-  titel: Bereikbaarheid
+  titel: Getting there
   items:
-    - titel: Met de auto
-      tekst: NH Koningshof is goed bereikbaar via de A2 en A67. Het congrescentrum beschikt over een eigen parkeerterrein.
-    - titel: Met het openbaar vervoer
-      tekst: Vanaf station Eindhoven Centraal rijdt bus 19/319 naar NH Koningshof. De rit duurt ongeveer 15 minuten.
-    - titel: Vanaf Eindhoven Airport
-      tekst: Vanaf Eindhoven Airport reis je met het openbaar vervoer via Eindhoven of met een taxi naar NH Koningshof. De taxirit duurt doorgaans ongeveer 15 minuten, afhankelijk van het verkeer.
+    - titel: By car
+      tekst: NH Koningshof is easily reached via the A2 and A67 motorways. The conference centre has its own car park.
+    - titel: By public transport
+      tekst: From Eindhoven Centraal station, bus 19/319 runs to NH Koningshof. The journey takes about 15 minutes.
+    - titel: From Eindhoven Airport
+      tekst: From Eindhoven Airport, you can travel to NH Koningshof by public transport via Eindhoven, or by taxi. The taxi ride usually takes about 15 minutes, depending on traffic.
 overnachten:
-  titel: Overnachten
-  tekst: Wil je na een congresdag, het diner en de feestavond niet meer naar huis reizen? NH Koningshof beschikt over ruim 500 hotelkamers op de congreslocatie.
-  volgt: De boekingslink volgt binnenkort.
-  knop: Hotel boeken
+  titel: Accommodation
+  tekst: Prefer not to travel home after a congress day, the dinner and the evening party? NH Koningshof has more than 500 hotel rooms on site.
+  volgt: The booking link will follow soon.
+  knop: Book your hotel
