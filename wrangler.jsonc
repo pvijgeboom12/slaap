@@ -12,11 +12,11 @@
     // Alleen het contactformulier loopt via de Worker; al het andere is statisch.
     "run_worker_first": ["/api/*"]
   },
-  // Cloudflare Email Routing op het subdomein post.jcc-congressen.nl (account JCC; niet op het hoofddomein:
+  // Cloudflare Email Routing op het subdomein post.slaapcongres.nl (account Annick/JCC; niet op het hoofddomein:
   // daar staan de MX-records van Google Workspace). Ontvanger info@slaapcongres.nl (eigen Workspace-mailbox van de stichting, in Annicks Workspace) moet geverifieerd zijn als destination address in Email Routing.
   "send_email": [{ "name": "MAIL" }],
   "vars": {
-    "CONTACT_FROM": "slaap-formulier@post.jcc-congressen.nl",
+    "CONTACT_FROM": "formulier@post.slaapcongres.nl",
     "CONTACT_TO": "info@slaapcongres.nl"
   },
   "observability": { "enabled": true },
