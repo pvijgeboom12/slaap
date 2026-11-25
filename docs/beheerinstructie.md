@@ -12,16 +12,12 @@ Lukt het niet? Vraag Pieter om je toegang te geven tot de repository.
 
 ## Zo is het opgebouwd
 
-Links zie je een menu. Bovenaan staan de onderdelen die je het vaakst aanpast:
+Links zie je een menu:
 
-- **Instellingen congres**: datums, status van registratie en abstracts, links en PDF's.
-- **Programma**: dagen en sessies, en het congresdiner.
-- **Sprekers**: de uitgelichte sprekers op de programmapagina.
-- **Sponsors**: logo's per niveau.
-- **Organisatiecomité**: namen en functies.
-- **Accreditatie**: punten per beroepsvereniging.
+- **Instellingen congres**: datums, adres, de status van het indienen, en links zoals het Eventira-formulier, de hotelboeking en LinkedIn. Een lege link betekent: geen knop op de site.
+- **Home**, **Locatie**, **Symposium indienen** en **Contact**: de teksten per pagina. Elke pagina staat er twee keer in: (NL) voor Nederlands en (EN) voor Engels.
 
-Daaronder staan de teksten per pagina, apart voor Nederlands (NL) en Engels (EN).
+Pas je een tekst in het Nederlands aan? Doe dat dan ook in de Engelse versie.
 
 ## Open plekken en codes
 
@@ -31,36 +27,15 @@ Sommige teksten bevatten een code tussen accolades, zoals `{deadline_abstracts}`
 
 Een link maak je zo: `[tekst die je ziet](https://www.voorbeeld.nl)`.
 
-## Programma aanpassen
+## Symposiumvoorstellen: link en status
 
-1. Open **Programma**.
-2. Klik op een dag en daarna op een sessie.
-3. Vul de tijd in, bijvoorbeeld `09.00–10.30`. Kies het soort sessie, vul de titel in het Nederlands en Engels in, en vul de zaal in.
-4. Sprekers en voorzitter zijn niet verplicht. Vul je ze in, dan staan ze onder de titel.
-5. Klik op **Save**.
-
-Een sessie toevoegen doe je met **Add an entry**. De volgorde verander je door te slepen.
-
-## Sponsors toevoegen
-
-1. Open **Sponsors** en klik op **Add an entry**.
-2. Vul de naam in en kies het niveau: Platinum, Goud, Zilver of Exposant.
-3. Upload het logo. Een SVG of een PNG met een doorzichtige achtergrond werkt het best.
-4. Vul de website van de sponsor in.
-5. Klik op **Save**.
-
-Zolang een niveau geen sponsors heeft, toont de site lege tegels met `[Logo]`. Het blok Exposanten verschijnt pas als er een exposant is. Platinum-sponsors staan ook op de homepage.
-
-## Registratie openen en sluiten
-
-1. Open **Instellingen congres** en ga naar **Registratie**.
-2. Kies bij **Status**:
-   - **Binnenkort**: de site toont de openingsdatum. Vul die in bij **Registratie opent op**.
-   - **Open**: de knoppen gaan naar het registratieplatform. Vul eerst de links in.
+1. Open **Instellingen congres** en ga naar **Abstracts**.
+2. Plak bij **Link symposiumvoorstel** de link naar het Eventira-formulier. De knoppen "Dien je symposium in" gaan dan daarheen.
+3. Kies bij **Status**:
+   - **Binnenkort**: de site toont de datum uit **Indienen kan vanaf**.
+   - **Open**: de knoppen zijn actief.
    - **Gesloten**: de site toont een korte melding.
-3. Klik op **Save**.
-
-Voor abstracts werkt het hetzelfde, onder **Abstracts**.
+4. Klik op **Save**.
 
 ## Een PDF plaatsen
 
