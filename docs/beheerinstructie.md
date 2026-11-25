@@ -4,11 +4,11 @@ Voor Annick. Zo pas je de website zelf aan.
 
 ## Inloggen
 
-1. Ga naar https://app.pagescms.org.
-2. Klik op **Sign in with GitHub**. Log in met je eigen GitHub-account.
-3. Kies de repository **slaap**.
+Net als bij de JCC-site log je in met je e-mailadres, zonder wachtwoord.
 
-Lukt het niet? Vraag Pieter om je toegang te geven tot de repository.
+1. Pieter nodigt je uit in Pages CMS. Je krijgt dan een mail van Pages CMS op annick@jcc-congress.com. Klik op de link in die mail.
+2. Later inloggen gaat via https://app.pagescms.org. Vul je e-mailadres in. Je krijgt dan steeds een nieuwe inloglink per mail.
+3. Kies de website **slaap**.
 
 ## Zo is het opgebouwd
 

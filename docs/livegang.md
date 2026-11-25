@@ -10,7 +10,7 @@ Alles wat live gaat of DNS wijzigt, gebeurt pas na akkoord van Pieter. Inloggen 
 - [ ] Na de eerste build: open de `*.workers.dev`-URL. Controleer of de header `X-Robots-Tag: noindex` er staat.
 - [ ] Pages CMS: log in op app.pagescms.org met GitHub, kies repo `slaap` en sla één kleine wijziging op. Controleer of er een commit komt en of Cloudflare opnieuw bouwt.
 - [ ] Maak een branch `concept` voor previews van Annick. Zet het preview-adres in de beheerinstructie.
-- [ ] Geef Annick schrijfrechten op de GitHub-repo.
+- [ ] Nodig Annick (annick@jcc-congress.com) uit als medewerker in Pages CMS, ná het mergen naar main.
 
 ## B. Contactformulier
 
