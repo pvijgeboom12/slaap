@@ -29,7 +29,6 @@ export const nav: { key: RouteKey; nl: string; en: string }[] = [
 export const navFase1: { key: RouteKey; hash?: string; nl: string; en: string }[] = [
   { key: 'home', nl: 'Home', en: 'Home' },
   { key: 'locatie', nl: 'Locatie', en: 'Venue' },
-  { key: 'symposium', nl: 'Symposium indienen', en: 'Submit a symposium' },
   { key: 'contact', nl: 'Contact', en: 'Contact' },
 ];
 
