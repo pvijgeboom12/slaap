@@ -21,7 +21,7 @@ const langStyle = 'display:inline-flex;align-items:center;justify-content:center
 
 <header style="background:#12152A;color:#E9EAF4;border-bottom:1px solid rgba(233,234,244,0.1)">
   <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:80px;max-width:1320px">
-    <a href={path(lang, 'home')} style="display:inline-flex;align-items:center;min-height:48px;flex:0 0 auto"><img alt={t.home} height="24" src="/assets/slaap2027-woordmerk-donker.svg" style="display:block;width:187px;height:24px" width="187" /></a>
+    <a href={path(lang, 'home')} style="display:inline-flex;align-items:center;min-height:48px;flex:0 0 auto"><img alt={t.home} height="24" src="/assets/slaap2027-logo-donker.svg" style="display:block;width:180px;height:24px" width="180" /></a>
     <nav aria-label={t.menu} class="nav-links" style="display:flex;align-items:center;gap:clamp(14px,1.8vw,26px)">
       {items.map((n) => (
         <a class:list={['nav-link', { 'is-active': n.key === page && !n.hash }]} aria-current={n.key === page && !n.hash ? 'page' : undefined} href={path(lang, n.key, n.hash)}>{n[lang]}</a>
