@@ -9,6 +9,8 @@ export const routes = {
   praktisch: { nl: '/praktisch/', en: '/en/practical-information/' },
   sponsors: { nl: '/sponsors/', en: '/en/sponsors/' },
   contact: { nl: '/contact/', en: '/en/contact/' },
+  locatie: { nl: '/locatie/', en: '/en/venue/' },
+  symposium: { nl: '/symposium-indienen/', en: '/en/submit-a-symposium/' },
 } as const;
 
 export type RouteKey = keyof typeof routes;
@@ -20,6 +22,13 @@ export const nav: { key: RouteKey; nl: string; en: string }[] = [
   { key: 'abstracts', nl: 'Abstracts & posters', en: 'Abstracts & posters' },
   { key: 'praktisch', nl: 'Praktisch', en: 'Practical info' },
   { key: 'sponsors', nl: 'Sponsors', en: 'Sponsors' },
+  { key: 'contact', nl: 'Contact', en: 'Contact' },
+];
+
+/** Hoofdmenu in fase 1 (save the date). Zie site.fase. */
+export const navFase1: { key: RouteKey; hash?: string; nl: string; en: string }[] = [
+  { key: 'locatie', nl: 'Locatie', en: 'Venue' },
+  { key: 'symposium', nl: 'Symposium indienen', en: 'Submit a symposium' },
   { key: 'contact', nl: 'Contact', en: 'Contact' },
 ];
 

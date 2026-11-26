@@ -1,0 +1,15 @@
+---
+// Foto uit het ontwerp als geoptimaliseerde WebP met srcset. Zet priority op de hero-foto (LCP).
+import { foto } from '../lib/images';
+interface Props {
+  name: string;
+  alt: string;
+  class?: string;
+  style?: string;
+  sizes?: string;
+  priority?: boolean;
+}
+const { name, alt, class: cls, style, sizes = '100vw', priority = false } = Astro.props;
+const f = await foto(name);
+---
+<img class={cls} src={f.src} srcset={f.srcset} sizes={sizes} alt={alt} width={f.width} height={f.height} style={style} loading={priority ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : undefined} decoding={priority ? undefined : 'async'}>

@@ -1,0 +1,34 @@
+---
+// Contactpagina. Teksten: src/content/pages/{nl,en}/contact.yml. Losse blokken (sponsoring, organisatie, LinkedIn) verschijnen alleen als ze in de tekst staan.
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import R from '../R.astro';
+import Photo from '../Photo.astro';
+import ContactForm from '../ContactForm.astro';
+import { type Lang } from '../../i18n/routes';
+import { page, settings, PH } from '../../lib/content';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const c = page(lang, 'contact');
+const s = settings();
+const email: string = s.contact?.email ?? 'info@slaapcongres.nl';
+const sponsorMail: string = s.contact?.sponsoring_email || email;
+const linkedin: string = s.links?.linkedin || '';
+const mailIcon = '<rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path>';
+const col = 'display:flex;flex-direction:column;gap:16px';
+---
+
+<BaseLayout lang={lang} page="contact" title={c.seo.titel} description={c.seo.omschrijving} ogImage="slaap-netwerken_foto90.jpg">
+<section class="night" style="position:relative;padding-top:clamp(80px,10vw,144px);overflow:hidden"><Photo class="hero-media" name="slaap-netwerken_foto90.jpg" alt="" priority /><div class="shade-side" aria-hidden="true"></div><div class="wrap" style="position:relative;display:flex;flex-direction:column;gap:20px;padding-bottom:clamp(64px,8vw,104px)"><h1 style="font-size:clamp(40px,5.6vw,72px);font-weight:800;color:#FFFFFF;max-width:920px">{c.hero.titel}</h1><p class="lead" style="color:#C9CDE3;max-width:760px"><R t={c.hero.lead} lang={lang} /></p><p class="lead" style="color:#C9CDE3">{c.hero.mail_label} <a href={`mailto:${email}`} style="color:#6EC3EE;font-weight:700">{email}</a></p></div></section>
+
+<section class="sec"><div class="wrap" style="display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,64px);align-items:flex-start">
+<div class="panel" style="flex:999 1 560px;min-width:0"><ContactForm lang={lang} /></div>
+<aside style="flex:1 1 300px;display:flex;flex-direction:column;gap:24px">
+{c.sponsoring && <div class="panel-night" style={col}><h2 class="h3" style="color:#FFFFFF">{c.sponsoring.titel}</h2><p><R t={c.sponsoring.tekst} lang={lang} /></p><p class="soft"><R t={c.sponsoring.tekst2} lang={lang} /></p><div><a class="btn btn-primary" href={`mailto:${sponsorMail}?subject=${encodeURIComponent(c.sponsoring.mail_onderwerp)}`}>{c.sponsoring.knop}</a></div></div>}
+{c.organisatie ? <div class="panel" style={col}><h2 class="h3">{c.organisatie.titel}</h2><p class="muted"><R t={c.organisatie.tekst} lang={lang} /></p><ul class="rule-list" style="list-style:none;padding:0;margin:0">{c.organisatie.verenigingen.map((v: string) => <li><span class="dot" aria-hidden="true"></span><span>{v}</span></li>)}</ul><p class="muted" style="font-size:16px"><R t={c.organisatie.slot} lang={lang} /></p></div>
+ : <div class="panel-night" style="display:flex;flex-direction:column;gap:12px"><h2 class="h3" style="color:#FFFFFF">{c.zijbalk.organisatie_titel}</h2><p>JCC Congress Consultancy &amp; Events</p><a class="more" href={`mailto:${email}`} style="color:#6EC3EE;gap:10px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={mailIcon}></svg>{email}</a></div>}
+</aside></div></section>
+
+{c.linkedin && <section class="sec" style="background:#FFFFFF;border-top:1px solid #DADDE8"><div class="wrap grid" style="grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr));gap:clamp(32px,5vw,64px);align-items:center"><div style={col}><h2 class="h2">{c.linkedin.titel}</h2><p class="lead"><R t={c.linkedin.tekst} lang={lang} /></p></div><div style="display:flex;flex-direction:column;gap:10px;align-items:flex-start">{linkedin ? <a class="btn btn-dark" href={linkedin} rel="noopener">{c.linkedin.knop}</a> : <><span class="btn btn-dark" aria-disabled="true" style="opacity:.55;cursor:default">{c.linkedin.knop}</span><Fragment set:html={PH(lang === 'nl' ? '[LinkedIn-link volgt]' : '[LinkedIn link to follow]')} /></>}</div></div></section>}
+
+</BaseLayout>

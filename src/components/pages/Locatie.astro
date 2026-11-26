@@ -1,0 +1,35 @@
+---
+// Locatiepagina (fase 1). Teksten: src/content/pages/{nl,en}/locatie.yml. Adres en hotellink: settings.yml.
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import R from '../R.astro';
+import Photo from '../Photo.astro';
+import { type Lang } from '../../i18n/routes';
+import { page, settings } from '../../lib/content';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const c = page(lang, 'locatie');
+const s = settings();
+const cg = s.congres;
+const naam: string = cg.locatie_volledig || cg.locatie;
+const query = [naam, cg.adres, [cg.postcode, cg.plaats].filter(Boolean).join(' ')].filter(Boolean).join(', ');
+const mapSrc = `https://maps.google.com/maps?q=${encodeURIComponent(query)}&z=15&output=embed`;
+const routeUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(query)}`;
+const hotel: string = s.links?.hotel_boeken || '';
+const icons = [
+  '<path d="M5 17h14M6 17l1.5-5h9L18 17M7 17v2M17 17v2"></path><circle cx="8.5" cy="14.5" r=".5"></circle><circle cx="15.5" cy="14.5" r=".5"></circle>',
+  '<rect x="5" y="3" width="14" height="14" rx="3"></rect><path d="M5 11h14M8 21l1.5-4M16 21l-1.5-4"></path>',
+  '<path d="M2 16l20-6-2-2-6 2-6-6-2 1 4 6-5 2-3-2-1 1 3 4z"></path>',
+];
+const stack = 'display:flex;flex-direction:column;gap:22px';
+---
+
+<BaseLayout lang={lang} page="locatie" title={c.seo.titel} description={c.seo.omschrijving} ogImage="slaap-publiek_foto287.jpg">
+<section class="night" style="position:relative;padding-top:clamp(80px,10vw,144px);overflow:hidden"><Photo class="hero-media" name="slaap-publiek_foto287.jpg" alt="" priority /><div class="shade-side" aria-hidden="true"></div><div class="wrap" style="position:relative;display:flex;flex-direction:column;gap:20px;padding-bottom:clamp(64px,8vw,104px)"><h1 style="font-size:clamp(40px,5.6vw,72px);font-weight:800;color:#FFFFFF;max-width:920px">{c.hero.titel}</h1>{c.hero.alineas.map((a: string, i: number) => <p class={i === 0 ? 'lead' : ''} style={`color:${i === 0 ? '#E9EAF4' : '#C9CDE3'};max-width:760px`}><R t={a} lang={lang} /></p>)}</div></section>
+
+<section id="adres" class="sec"><div class="wrap grid" style="grid-template-columns:repeat(auto-fit,minmax(min(380px,100%),1fr));gap:clamp(32px,5vw,64px);align-items:stretch"><div class="panel" style={`${stack};justify-content:center`}><h2 class="h2">{c.adres.titel}</h2><address style="font-style:normal;font-size:20px;line-height:1.6"><strong>{naam}</strong><br />{cg.adres}<br />{cg.postcode} {cg.plaats}</address><div><a class="btn btn-dark" href={routeUrl} rel="noopener" target="_blank">{c.adres.knop}</a></div></div><div style="border-radius:20px;overflow:hidden;border:1px solid #DADDE8;min-height:360px;background:#E6E8F0"><iframe title={c.adres.kaart_titel} src={mapSrc} loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="display:block;width:100%;height:100%;min-height:360px;border:0"></iframe></div></div></section>
+
+<section id="bereikbaarheid" class="sec" style="background:#FFFFFF;border-top:1px solid #DADDE8;border-bottom:1px solid #DADDE8"><div class="wrap" style="display:flex;flex-direction:column;gap:clamp(28px,3vw,40px)"><h2 class="h2">{c.bereikbaarheid.titel}</h2><div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:24px">{c.bereikbaarheid.items.map((it: any, i: number) => <div class="panel" style="display:flex;flex-direction:column;gap:12px;background:#F7F8FB"><span style="color:#155A8A"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={icons[i] ?? icons[0]}></svg></span><h3 class="h3">{it.titel}</h3><p class="muted"><R t={it.tekst} lang={lang} /></p></div>)}</div></div></section>
+
+<section id="hotel" class="sec"><div class="wrap grid" style="grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr));gap:clamp(40px,6vw,96px);align-items:center"><div style={stack}><h2 class="h2">{c.overnachten.titel}</h2><p class="lead"><R t={c.overnachten.tekst} lang={lang} /></p>{hotel && <div><a class="btn btn-primary" href={hotel} rel="noopener">{c.overnachten.knop}</a></div>}</div><figure style="margin:0;border-radius:20px;overflow:hidden;aspect-ratio:4 / 3"><Photo name="slaap-netwerken_foto141.jpg" alt={lang === 'nl' ? 'Deelnemers in gesprek tijdens SLAAP2025 in NH Koningshof' : 'Participants talking during SLAAP2025 at NH Koningshof'} sizes="(max-width: 760px) 100vw, 50vw" style="display:block;width:100%;height:100%;object-fit:cover" /></figure></div></section>
+</BaseLayout>

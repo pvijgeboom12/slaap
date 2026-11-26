@@ -1,0 +1,49 @@
+seo:
+  titel: Registration
+  omschrijving: Register for SLAAP2027. Fees for members and non-members of NSWO and SVNL, group registration and terms.
+hero:
+  titel: Register for SLAAP2027
+  lead: You register through the registration platform. The early-bird fee applies until {vroegboek_tot}.
+  knop_individueel: Register individually
+  knop_groep: Group registration
+tarieven:
+  titel: Registration fees
+  lead: NSWO and SVNL members register at a reduced fee.
+  bijschrift: SLAAP2027 registration fees per category
+  kolom_categorie: Category
+  kolom_vroegboek: Early bird until {vroegboek_tot}
+  kolom_regulier: Regular
+  rijen:
+    - categorie: NSWO or SVNL member
+      vroegboek:
+      regulier:
+    - categorie: Non-member
+      vroegboek:
+      regulier:
+    - categorie: (PhD) student, NSWO or SVNL member
+      vroegboek:
+      regulier:
+    - categorie: (PhD) student, non-member
+      vroegboek:
+      regulier:
+  diner: Congress dinner (optional)
+  voetnoot: All fees are [including / excluding] VAT. Hotel accommodation and the congress dinner are not included in the registration.
+groep:
+  titel: Group registration
+  tekst: Registering several colleagues from the same organisation? With group registration you sign everyone up at once and receive a single invoice.
+  knop: Go to group registration
+voorwaarden:
+  titel: Terms and conditions
+  tekst: By registering you agree to the terms and conditions of Stichting Slaapcongres Nederland, including the rules for cancellations and changes.
+  knop: Terms and conditions (PDF)
+lid_worden:
+  titel: Join NSWO or SVNL
+  lead: SLAAP2027 is an initiative of both societies. Members register at a reduced fee, and only members are eligible for the Piet Visser Poster Prize.
+  nswo:
+    naam: Dutch Society for Sleep-Wake Research
+    tekst: The scientific society for sleep and wakefulness research in the Netherlands.
+    knop: Join NSWO
+  svnl:
+    naam: Dutch Society for Sleep Medicine
+    tekst: The society for professionals in clinical sleep medicine.
+    knop: Join SVNL

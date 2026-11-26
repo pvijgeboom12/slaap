@@ -1,0 +1,52 @@
+seo:
+  titel: Contact
+  omschrijving: Vragen over SLAAP2027? Het congressecretariaat helpt je graag verder. Neem contact op via het formulier of mail naar info@slaapcongres.nl.
+hero:
+  titel: Vragen over SLAAP2027?
+  lead: Heb je een vraag over het congresprogramma, het indienen van een symposium of abstract, de registratie of de mogelijkheden voor sponsoring? Het congressecretariaat helpt je graag verder.
+  mail_label: "E-mail:"
+formulier:
+  titel: Stuur ons een bericht
+  intro: Je kunt ook gebruikmaken van het onderstaande contactformulier.
+  verplicht: Velden met * zijn verplicht.
+  naam: Naam
+  voornaam: Voornaam
+  achternaam: Achternaam
+  email: E-mailadres
+  organisatie: Organisatie
+  onderwerp: Onderwerp
+  bericht: Bericht
+  knop: Verstuur bericht
+  bezig: Bezig met versturen…
+  bedankt: Bedankt,
+  bevestiging: Je bericht is verstuurd. We reageren zo snel mogelijk.
+  opnieuw: Nog een bericht sturen
+  fout_ontbreekt: "Vul nog in:"
+  fout_email: Controleer je e-mailadres, bijvoorbeeld naam@ziekenhuis.nl.
+  fout_verzenden: Het versturen is niet gelukt. Probeer het later opnieuw of mail ons direct.
+  fout_spam: Bevestig eerst dat je geen robot bent.
+zijbalk:
+  organisatie_titel: Congresorganisatie
+  snel_titel: Snel geregeld
+  snel:
+    - Vragen over registratie en tarieven
+    - Abstracts en posters
+    - Sponsoring en stands
+    - Route en hotel
+sponsoring:
+  titel: Sponsoring en exposeren
+  tekst: SLAAP2027 biedt bedrijven en organisaties de mogelijkheid om in contact te komen met professionals uit de slaapwetenschap en slaapgeneeskunde. De sponsor- en exposantenmogelijkheden voor 2027 worden momenteel samengesteld.
+  tekst2: Wil je meer weten of de sponsormogelijkheden als eerste ontvangen? Neem dan contact met ons op via [info@slaapcongres.nl](mailto:info@slaapcongres.nl).
+  knop: Informeer naar de sponsormogelijkheden
+  mail_onderwerp: Sponsormogelijkheden SLAAP2027
+organisatie:
+  titel: Organisatie
+  tekst: "SLAAP2027 wordt georganiseerd door Stichting Slaap Congres Nederland (SSCN), een samenwerking van:"
+  verenigingen:
+    - Nederlandse Vereniging voor Slaap-Waak Onderzoek (NSWO)
+    - Nederlandse Vereniging voor Slaapgeneeskunde (SVNL)
+  slot: Het bestuur van SSCN vormt tevens de programmacommissie. De praktische congresorganisatie is in handen van JCC Congress Consultancy & Events ([www.jcc-congress.com](https://www.jcc-congress.com)).
+linkedin:
+  titel: Blijf op de hoogte
+  tekst: Mis niets van SLAAP2027! Volg ons op LinkedIn voor nieuws over het programma, de sprekers, belangrijke deadlines en de opening van de registratie.
+  knop: Volg SLAAP2027 op LinkedIn

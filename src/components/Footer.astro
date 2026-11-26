@@ -1,5 +1,7 @@
 ---
 import { path, type Lang } from '../i18n/routes';
+import { settings, congresdatum } from '../lib/content';
+import { site } from '../lib/site';
 
 interface Props {
   lang: Lang;
@@ -8,11 +10,11 @@ const { lang } = Astro.props;
 const t = {
   nl: {
     home: 'SLAAP2027, naar de homepage',
-    about: ['Nederlands Slaapcongres', '10 t/m 12 november 2027', 'NH Koningshof, Veldhoven'],
+    about: ['Nederlands Slaapcongres'],
     orgBy: 'Georganiseerd door',
     nswo: 'Nederlandse Vereniging voor Slaap-Waak Onderzoek (NSWO)',
     svnl: 'Nederlandse Vereniging voor Slaapgeneeskunde (SVNL)',
-    under: 'onder Stichting Slaapcongres Nederland',
+    under: 'onder Stichting Slaap Congres Nederland (SSCN)',
     pco: 'Congresorganisatie',
     form: 'Contactformulier',
     quick: 'Snel naar',
@@ -25,11 +27,11 @@ const t = {
   },
   en: {
     home: 'SLAAP2027, to the homepage',
-    about: ['Dutch Sleep Congress', '10 to 12 November 2027', 'NH Koningshof, Veldhoven'],
+    about: ['Dutch Sleep Congress'],
     orgBy: 'Organised by',
     nswo: 'Dutch Society for Sleep-Wake Research (NSWO)',
     svnl: 'Dutch Society for Sleep Medicine (SVNL)',
-    under: 'on behalf of Stichting Slaapcongres Nederland',
+    under: 'on behalf of Stichting Slaap Congres Nederland (SSCN)',
     pco: 'Congress management',
     form: 'Contact form',
     quick: 'Quick links',
@@ -41,6 +43,27 @@ const t = {
     privacy: 'Privacy statement',
   },
 }[lang];
+const s = settings();
+const fase1 = site.fase === 1;
+const plaats = [s.congres?.locatie_kort || s.congres?.locatie, s.congres?.plaats].filter(Boolean).join(', ');
+const quick = fase1
+  ? [
+      { href: path(lang, 'symposium'), label: lang === 'nl' ? 'Symposium indienen' : 'Submit a symposium' },
+      { href: path(lang, 'locatie'), label: lang === 'nl' ? 'Locatie' : 'Venue' },
+      { href: path(lang, 'contact'), label: lang === 'nl' ? 'Contact' : 'Contact' },
+    ]
+  : [
+      { href: path(lang, 'registratie'), label: t.register },
+      { href: path(lang, 'abstracts'), label: t.abstract },
+      { href: path(lang, 'praktisch', 'hotel'), label: t.hotel },
+      { href: path(lang, 'registratie', 'lid-worden'), label: t.member },
+    ];
+// Juridische links pas tonen als ze zijn ingevuld in Instellingen congres
+const legal = [
+  { href: s.links?.algemene_voorwaarden, label: t.terms },
+  { href: s.links?.privacyverklaring, label: t.privacy },
+].filter((l) => fase1 ? l.href : true);
+const email = s.contact?.email ?? 'info@slaapcongres.nl';
 const h2 = 'font-family:inherit;font-size:16px;font-weight:700;color:#FFFFFF;letter-spacing:0';
 const col = 'display:flex;flex-direction:column;gap:10px';
 ---
@@ -50,7 +73,7 @@ const col = 'display:flex;flex-direction:column;gap:10px';
     <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr));gap:40px">
       <div style="display:flex;flex-direction:column;gap:16px">
         <a href={path(lang, 'home')} style="display:inline-flex;align-items:center;min-height:48px;flex:0 0 auto"><img alt={t.home} height="32" src="/assets/slaap2027-woordmerk-donker.svg" style="display:block;width:250px;height:32px" width="250" /></a>
-        <p class="soft" style="font-size:16px;line-height:1.6">{t.about[0]}<br />{t.about[1]}<br />{t.about[2]}</p>
+        <p class="soft" style="font-size:16px;line-height:1.6">{t.about[0]}<br />{congresdatum(lang)}<br />{plaats}</p>
       </div>
       <div style={col}>
         <h2 style={h2}>{t.orgBy}</h2>
@@ -61,22 +84,18 @@ const col = 'display:flex;flex-direction:column;gap:10px';
       <div style={col}>
         <h2 style={h2}>{t.pco}</h2>
         <p class="soft" style="font-size:16px">JCC Congress Consultancy &amp; Events</p>
-        <a class="foot-link" href="mailto:info@jcc-congressen.nl">info@jcc-congressen.nl</a>
+        <a class="foot-link" href={`mailto:${email}`}>{email}</a>
         <a class="foot-link" href={path(lang, 'contact')}>{t.form}</a>
       </div>
       <div style={col}>
         <h2 style={h2}>{t.quick}</h2>
-        <a class="foot-link" href={path(lang, 'registratie')}>{t.register}</a>
-        <a class="foot-link" href={path(lang, 'abstracts')}>{t.abstract}</a>
-        <a class="foot-link" href={path(lang, 'praktisch', 'hotel')}>{t.hotel}</a>
-        <a class="foot-link" href={path(lang, 'registratie', 'lid-worden')}>{t.member}</a>
+        {quick.map((q) => <a class="foot-link" href={q.href}>{q.label}</a>)}
       </div>
     </div>
     <div class="soft" style="margin-top:56px;padding-top:24px;border-top:1px solid rgba(233,234,244,0.14);display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;font-size:15px">
       <span>© Stichting Slaapcongres Nederland 2027</span>
       <div style="display:flex;gap:24px;flex-wrap:wrap">
-        <a class="foot-link" href="#">{t.terms}</a>
-        <a class="foot-link" href="#">{t.privacy}</a>
+        {legal.map((l) => <a class="foot-link" href={l.href || '#'}>{l.label}</a>)}
       </div>
     </div>
   </div>
