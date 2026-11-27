@@ -143,8 +143,11 @@ content:
       - name: knop_symposia
         label: Knop Call for Symposia
         type: string
+      - name: knop_locatie
+        label: Knop locatie
+        type: string
       - name: link_locatie
-        label: Link naar locatie
+        label: Link naar locatie (datumblok)
         type: string
     - name: intro
       label: Introductie
@@ -173,9 +176,19 @@ content:
         label: Intro
         type: string
       - name: punten
-        label: Punten
-        type: text
+        label: Onderdelen (met icoon)
+        type: object
         list: true
+        fields:
+        - name: icoon
+          label: Icoon (keynote, symposia, presentatie, poster, eerstelijn, markt of avond)
+          type: string
+        - name: titel
+          label: Titel
+          type: string
+        - name: tekst
+          label: Korte omschrijving
+          type: text
       - name: taal
         label: Taal van het programma
         type: text
@@ -247,8 +260,11 @@ content:
       - name: knop_symposia
         label: Knop Call for Symposia
         type: string
+      - name: knop_locatie
+        label: Knop locatie
+        type: string
       - name: link_locatie
-        label: Link naar locatie
+        label: Link naar locatie (datumblok)
         type: string
     - name: intro
       label: Introductie
@@ -277,9 +293,19 @@ content:
         label: Intro
         type: string
       - name: punten
-        label: Punten
-        type: text
+        label: Onderdelen (met icoon)
+        type: object
         list: true
+        fields:
+        - name: icoon
+          label: Icoon (keynote, symposia, presentatie, poster, eerstelijn, markt of avond)
+          type: string
+        - name: titel
+          label: Titel
+          type: string
+        - name: tekst
+          label: Korte omschrijving
+          type: text
       - name: taal
         label: Taal van het programma
         type: text
@@ -355,6 +381,9 @@ content:
       - name: titel
         label: Titel
         type: string
+      - name: website
+        label: Link naar hotelwebsite (bij adres)
+        type: string
       - name: knop
         label: Knop
         type: string
@@ -379,6 +408,9 @@ content:
         - name: tekst
           label: Tekst
           type: text
+      - name: toegankelijk
+        label: Toegankelijkheid
+        type: text
     - name: overnachten
       label: Overnachten
       type: object
@@ -431,6 +463,9 @@ content:
       - name: titel
         label: Titel
         type: string
+      - name: website
+        label: Link naar hotelwebsite (bij adres)
+        type: string
       - name: knop
         label: Knop
         type: string
@@ -455,6 +490,9 @@ content:
         - name: tekst
           label: Tekst
           type: text
+      - name: toegankelijk
+        label: Toegankelijkheid
+        type: text
     - name: overnachten
       label: Overnachten
       type: object
@@ -536,17 +574,6 @@ content:
         - name: datum
           label: Datum
           type: string
-    - name: kort
-      label: In het kort
-      type: object
-      fields:
-      - name: titel
-        label: Titel
-        type: string
-      - name: punten
-        label: Punten
-        type: text
-        list: true
     - name: richtlijnen
       label: Richtlijnen (accordeons)
       type: object
@@ -585,6 +612,13 @@ content:
         type: string
       - name: tekst
         label: Tekst
+        type: text
+      - name: punten
+        label: Wat we vragen (lijst)
+        type: text
+        list: true
+      - name: slot
+        label: Tekst onder de lijst
         type: text
       - name: deadline
         label: Deadline
@@ -664,17 +698,6 @@ content:
         - name: datum
           label: Datum
           type: string
-    - name: kort
-      label: In het kort
-      type: object
-      fields:
-      - name: titel
-        label: Titel
-        type: string
-      - name: punten
-        label: Punten
-        type: text
-        list: true
     - name: richtlijnen
       label: Richtlijnen (accordeons)
       type: object
@@ -713,6 +736,13 @@ content:
         type: string
       - name: tekst
         label: Tekst
+        type: text
+      - name: punten
+        label: Wat we vragen (lijst)
+        type: text
+        list: true
+      - name: slot
+        label: Tekst onder de lijst
         type: text
       - name: deadline
         label: Deadline
@@ -811,6 +841,9 @@ content:
       - name: fout_spam
         label: 'Foutmelding: robotcheck'
         type: string
+      - name: privacy
+        label: Tekst onder de verzendknop (privacy)
+        type: text
     - name: zijbalk
       label: Zijbalk
       type: object
@@ -838,6 +871,9 @@ content:
       - name: oproep
         label: Oproep
         type: text
+      - name: oproep_na
+        label: Tekst na het e-mailadres
+        type: string
       - name: knop
         label: Knop
         type: string
@@ -958,6 +994,9 @@ content:
       - name: fout_spam
         label: 'Foutmelding: robotcheck'
         type: string
+      - name: privacy
+        label: Tekst onder de verzendknop (privacy)
+        type: text
     - name: zijbalk
       label: Zijbalk
       type: object
@@ -985,6 +1024,9 @@ content:
       - name: oproep
         label: Oproep
         type: text
+      - name: oproep_na
+        label: Tekst na het e-mailadres
+        type: string
       - name: knop
         label: Knop
         type: string
@@ -1021,3 +1063,86 @@ content:
       - name: knop
         label: Knop
         type: string
+
+  - name: pagina-privacy-nl
+    label: Privacyverklaring (NL)
+    type: file
+    path: src/content/pages/nl/privacy.yml
+    format: yaml
+    fields:
+    - name: seo
+      label: Zoekmachines (Google)
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: omschrijving
+        label: Omschrijving in Google
+        type: text
+    - name: titel
+      label: Titel
+      type: string
+    - name: blokken
+      label: Onderdelen
+      type: object
+      list: true
+      fields:
+      - name: titel
+        label: Kop
+        type: string
+      - name: intro
+        label: Zin boven de lijst
+        type: text
+      - name: punten
+        label: Lijst
+        type: text
+        list: true
+      - name: tekst
+        label: Alinea's
+        type: text
+        list: true
+    - name: bijgewerkt
+      label: Laatst bijgewerkt
+      type: string
+  - name: pagina-privacy-en
+    label: Privacy statement (EN)
+    type: file
+    path: src/content/pages/en/privacy.yml
+    format: yaml
+    fields:
+    - name: seo
+      label: Zoekmachines (Google)
+      type: object
+      fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: omschrijving
+        label: Omschrijving in Google
+        type: text
+    - name: titel
+      label: Titel
+      type: string
+    - name: blokken
+      label: Onderdelen
+      type: object
+      list: true
+      fields:
+      - name: titel
+        label: Kop
+        type: string
+      - name: intro
+        label: Zin boven de lijst
+        type: text
+      - name: punten
+        label: Lijst
+        type: text
+        list: true
+      - name: tekst
+        label: Alinea's
+        type: text
+        list: true
+    - name: bijgewerkt
+      label: Laatst bijgewerkt
+      type: string

@@ -23,6 +23,7 @@ formulier:
   fout_email: Controleer je e-mailadres, bijvoorbeeld naam@ziekenhuis.nl.
   fout_verzenden: Het versturen is niet gelukt. Probeer het later opnieuw of mail ons direct.
   fout_spam: Bevestig eerst dat je geen robot bent.
+  privacy: Lees in onze [privacyverklaring](/privacyverklaring/) hoe we met je gegevens omgaan.
 zijbalk:
   organisatie_titel: Congresorganisatie
   snel_titel: Snel geregeld
@@ -32,17 +33,18 @@ zijbalk:
     - Sponsoring en stands
     - Route en hotel
 sponsoring:
-  titel: Sponsoring en exposeren
-  tekst: SLAAP2027 biedt bedrijven en organisaties de mogelijkheid om in contact te komen met professionals uit de slaapwetenschap en slaapgeneeskunde. De sponsor- en exposantenmogelijkheden voor 2027 worden momenteel samengesteld.
-  oproep: Wil je meer weten of de sponsormogelijkheden als eerste ontvangen? Neem dan contact met ons op via
+  titel: Word partner van SLAAP2027
+  tekst: SLAAP2027 biedt bedrijven en organisaties de gelegenheid om in contact te komen met onderzoekers, clinici en andere professionals uit het Nederlandse slaapveld. Wil je jouw organisatie, producten of innovaties onder de aandacht brengen en nieuwe contacten leggen?
+  oproep: De sponsor- en exposantenpakketten voor 2027 zijn binnenkort beschikbaar. Neem gerust contact met ons op via
+  oproep_na: " om de mogelijkheden te bespreken."
   knop: Informeer naar de sponsormogelijkheden
   onderwerp: Sponsormogelijkheden SLAAP2027
 organisatie:
   titel: Organisatie
   tekst: "SLAAP2027 wordt georganiseerd door Stichting Slaap Congres Nederland (SSCN), een samenwerking van:"
   leden:
-    - Nederlandse Vereniging voor Slaap-Waak Onderzoek (NSWO)
-    - Nederlandse Vereniging voor Slaapgeneeskunde (SVNL)
+    - Nederlandse Vereniging voor Slaap- en Waakonderzoek ([NSWO](https://www.nswo.nl/))
+    - Slaapgeneeskunde Vereniging Nederland ([SVNL](https://www.slaapgeneeskundevereniging.nl/))
   slot: Het bestuur van SSCN vormt tevens de programmacommissie. De praktische congresorganisatie is in handen van JCC Congress Consultancy & Events ([www.jcc-congress.com](https://www.jcc-congress.com)).
 op_de_hoogte:
   titel: Blijf op de hoogte

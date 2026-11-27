@@ -34,16 +34,16 @@ groep:
   knop: Naar groepsregistratie
 voorwaarden:
   titel: Voorwaarden
-  tekst: Door te registreren ga je akkoord met de algemene voorwaarden van Stichting Slaapcongres Nederland, waaronder de regels voor annuleren en wijzigen.
+  tekst: Door te registreren ga je akkoord met de algemene voorwaarden van Stichting Slaap Congres Nederland, waaronder de regels voor annuleren en wijzigen.
   knop: Algemene voorwaarden (PDF)
 lid_worden:
   titel: Lid worden van NSWO of SVNL
   lead: SLAAP2027 is een initiatief van beide verenigingen. Leden registreren met korting en alleen leden komen in aanmerking voor de Piet Visser Posterprijs.
   nswo:
-    naam: Nederlandse Vereniging voor Slaap-Waak Onderzoek
+    naam: Nederlandse Vereniging voor Slaap- en Waakonderzoek
     tekst: De wetenschappelijke vereniging voor onderzoek naar slaap en waak in Nederland.
     knop: Word lid van de NSWO
   svnl:
-    naam: Nederlandse Vereniging voor Slaapgeneeskunde
+    naam: Slaapgeneeskunde Vereniging Nederland
     tekst: De vereniging voor professionals in de klinische slaapgeneeskunde.
     knop: Word lid van de SVNL

@@ -1,0 +1,42 @@
+# Privacy statement page. Text from Annick (27 November 2026). Linked from the footer and the contact form.
+seo:
+  titel: Privacy statement
+  omschrijving: How Stichting Slaap Congres Nederland (SSCN) handles your personal data for SLAAP2027.
+titel: Privacy statement
+blokken:
+  - titel: Who are we?
+    tekst:
+      - Stichting Slaap Congres Nederland (SSCN) organises SLAAP2027 and is the data controller for your personal data. The practical organisation of the congress is managed by JCC Congress Consultancy & Events, which processes data on behalf of SSCN. We handle your personal data with care and comply with the General Data Protection Regulation (GDPR).
+      - Stichting Slaap Congres Nederland, Chopinlaan 44, 2394 GL Hazerswoude-Rijndijk, the Netherlands, Chamber of Commerce no. 65555937, info@slaapcongres.nl
+  - titel: What personal data do we process?
+    punten:
+      - "Data you provide through the contact form: name, email address, organisation and your message."
+      - "Data provided when submitting a proposal: name, position, organisation, email address, biography, conflict of interest declaration and the content of the proposal."
+      - "Data provided when registering: name, contact details, organisation, position, invoicing details and, if you request accreditation, your BIG number or other registration number."
+      - Photographs taken during the congress.
+  - titel: Why do we process your data, and on what legal basis?
+    punten:
+      - "Your registration, participation and invoicing, and the review and scheduling of proposals: necessary for the performance of our agreement with you."
+      - "Applying for and registering accreditation: necessary for the performance of our agreement, at your request."
+      - "Publishing speakers' names, positions, biographies and presentation titles in the programme, on the website and in the congress app: based on the consent given at submission."
+      - "Responding to enquiries and taking congress photographs for reporting and promotion: based on our legitimate interest. If you prefer not to be photographed, please let us know."
+      - "Keeping financial records: to comply with a legal obligation."
+  - titel: Who do we share your personal data with?
+    intro: "Only with parties involved in organising the congress:"
+    punten:
+      - Eventira, our platform for submissions and registration, and the payment provider that processes payments;
+      - PE-Online, for registering accreditation points;
+      - the congress venue, for example for speakers' hotel bookings;
+      - JCC Congress Consultancy & Events, as congress organiser.
+    tekst:
+      - We have agreements in place with these parties to protect your data. Your data is stored in the Netherlands. Some service providers used by our platform, for example for sending emails, are based outside the European Union. Data is only transferred to them with appropriate safeguards, such as the European Commission's standard contractual clauses. We never sell your personal data to third parties.
+  - titel: Cookies
+    tekst:
+      - This website does not use tracking or advertising cookies, nor analytics tools that follow you. To protect the contact form against spam, we use Cloudflare Turnstile. It uses technical data, such as your browser and IP address, to check that a message is sent by a person.
+  - titel: How long do we retain your personal data?
+    tekst:
+      - Congress and submission data are retained for up to two years after the congress. Financial data are retained for seven years, as required by law. After that, the data are deleted.
+  - titel: Your rights
+    tekst:
+      - You have the right to access, correct or delete your personal data, to restrict or object to its processing, and to data portability. Where you have given consent, you may withdraw it at any time. Please contact us at info@slaapcongres.nl. If you are not satisfied with how we handle your data, you can lodge a complaint with the Dutch Data Protection Authority (Autoriteit Persoonsgegevens).
+bijgewerkt: "Last updated: [December 2026]"

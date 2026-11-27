@@ -1,4 +1,5 @@
-# Pagina Symposium indienen (Call for Symposia). Teksten van Annick (23 november 2026).
+# Pagina Symposium indienen (Call for Symposia). Teksten van Annick (23 november 2026; wijzigingen 27 november 2026).
+# Op 1 december: abstracts.status op "open" en link_symposium invullen, dan verschijnt overal de knop naar het formulier.
 # De knoppen linken naar abstracts.link_symposium in Instellingen congres (Eventira-formulier, link volgt van Annick).
 seo:
   titel: Symposium indienen
@@ -22,33 +23,35 @@ data:
       datum: 1 februari 2027, 23.59 uur
     - activiteit: Bekendmaking selectie
       datum: Eind maart 2027
-kort:
-  titel: In het kort
-  punten:
-    - 75 of 90 minuten, met maximaal 3 of 4 sprekers
-    - De hoofdindiener is ook spreker en voorzitter
-    - Alle sprekers hebben vooraf hun deelname bevestigd
-    - Sprekers ontvangen gratis toegang op hun presentatiedag en maximaal €100 reiskosten, geen honorarium
-    - "Deadline: maandag 1 februari 2027, 23.59 uur"
 richtlijnen:
   titel: Richtlijnen voor symposiumvoorstellen
   blokken:
     - titel: Opzet en programma
       punten:
         - Een symposium duurt 75 of 90 minuten. De programmacommissie bepaalt de definitieve duur en plaatsing in het programma.
-        - Een symposium van 75 minuten heeft maximaal drie sprekers. Bij 90 minuten zijn maximaal vier sprekers toegestaan.
-        - De hoofdindiener is tevens spreker en voorzitter van het symposium.
+        - Een symposium van 75 minuten heeft maximaal drie sprekers, bij 90 minuten zijn maximaal vier sprekers toegestaan. Een voorzitter die zelf geen presentatie verzorgt, telt hierbij niet mee.
+        - Per symposium zijn maximaal twee voorzitters toegestaan.
+        - De hoofdindiener is het aanspreekpunt voor de programmacommissie en geeft berichten en besluiten door aan alle betrokkenen. De hoofdindiener kan voorzitter en/of spreker zijn, maar dit is niet verplicht.
+        - Iedereen kan maximaal twee symposia indienen als hoofdindiener en in maximaal twee symposia spreken.
         - Sprekers zijn bij voorkeur afkomstig uit verschillende instellingen en disciplines, zodat meerdere perspectieven aan bod komen.
         - De voertaal is Nederlands of Engels. Wanneer één of meer sprekers Engelstalig zijn, wordt het volledige symposium in het Engels verzorgd.
         - Wijzigingen in de sprekersbezetting na acceptatie zijn uitsluitend mogelijk in overleg met de programmacommissie.
         - Alle voorgestelde sprekers moeten vooraf zijn benaderd en hun deelname hebben bevestigd.
+      tekst:
+        - De programmacommissie bepaalt op welke dag en in welk tijdslot een symposium wordt geprogrammeerd. We vragen alle sprekers daarom op beide congresdagen beschikbaar te zijn. Kan een spreker op een van de dagen niet, geef dit dan aan in het indieningsformulier.
+        - Symposia zijn inhoudelijk onafhankelijk en bevatten geen commerciële of productgerichte inhoud. Gebruik in presentaties bij voorkeur generieke namen in plaats van merk- of productnamen.
+        - De programmacommissie kan een voorstel in overleg met de hoofdindiener aanpassen, samenvoegen met een ander voorstel of een andere duur toekennen.
     - titel: Voorwaarden voor sprekers
       intro: "Sprekers van geselecteerde symposia ontvangen:"
       punten:
-        - Gratis toegang tot het congres op de dag van hun presentatie.
-        - Een reiskostenvergoeding tot maximaal €100, op basis van een vlucht in economy class of een treinreis in de 2e klas.
-        - Eén hotelovernachting, geboekt door de congresorganisatie, wanneer de reisafstand meer dan 300 kilometer bedraagt.
-      slot: Er wordt geen honorarium verstrekt. Deelname aan het congresdiner is niet inbegrepen. Een (mede)voorzitter die zelf geen presentatie verzorgt, komt niet in aanmerking voor bovenstaande vergoedingen. We vragen je als hoofdindiener deze voorwaarden vooraf met alle betrokken sprekers en voorzitters af te stemmen.
+        - gratis toegang tot het congres op de dag van hun presentatie;
+        - een reiskostenvergoeding tot maximaal €100, op declaratiebasis en op basis van een vlucht in economy class of een treinreis in de 2e klas;
+        - één hotelovernachting, geboekt door de congresorganisatie, wanneer de reisafstand meer dan 300 kilometer (enkele reis) bedraagt.
+      tekst:
+        - Er wordt geen honorarium verstrekt. Deelname aan het congresdiner is niet inbegrepen. Voorzitters en hoofdindieners die zelf geen presentatie verzorgen, komen niet in aanmerking voor deze vergoedingen. We vragen je als hoofdindiener deze voorwaarden vooraf met alle betrokkenen af te stemmen.
+        - Sprekers ontvangen na selectie, in de eerste helft van 2027, een persoonlijke link om zich te registreren. Wil je als spreker ook de andere congresdag bijwonen, dan geldt daarvoor een gereduceerd tarief.
+        - Kan een spreker onverhoopt niet aanwezig zijn, meld dit dan zo snel mogelijk schriftelijk via info@slaapcongres.nl. Een vervangende spreker is alleen mogelijk in overleg met de programmacommissie.
+        - Met het indienen van een voorstel geef je toestemming om de titel, de beschrijving en de namen, functies en bio's van de sprekers te publiceren in het congresprogramma, op de website en in de congresapp.
     - titel: Hoe worden voorstellen beoordeeld?
       intro: "De programmacommissie beoordeelt alle ingediende voorstellen op basis van de volgende criteria:"
       punten:
@@ -59,14 +62,24 @@ richtlijnen:
         - "**Vernieuwing:** nieuwe inzichten, ontwikkelingen of invalshoeken, ook ten opzichte van SLAAP2025."
         - "**Multidisciplinariteit:** samenwerking tussen disciplines en spreiding van sprekers over verschillende instellingen."
         - "**Haalbaarheid:** een realistische programmaopzet en bevestigde beschikbaarheid van de sprekers."
+        - "**Samenhang:** de bijdragen vormen samen een logisch en samenhangend symposium."
+      tekst:
+        - Alle symposiumvoorstellen worden door meerdere beoordelaars beoordeeld. Op basis daarvan stelt de programmacommissie het definitieve programma samen.
       slot: De programmacommissie streeft naar een gevarieerd programma waarin zowel fundamenteel onderzoek als klinische toepassingen en verschillende doelgroepen vertegenwoordigd zijn.
     - titel: Wat gebeurt er als je voorstel niet wordt geselecteerd?
       tekst:
-        - Ook wanneer een symposiumvoorstel niet wordt geselecteerd, kan een afzonderlijke bijdrage interessant zijn voor het congresprogramma. De programmacommissie kan daarom één of meer sprekers uitnodigen om een individueel abstract in te dienen voor een mondelinge presentatie of poster.
-        - Een dergelijke uitnodiging betekent niet dat de bijdrage automatisch wordt geaccepteerd. Het abstract moet vóór de reguliere deadline worden ingediend en doorloopt de gebruikelijke beoordelingsprocedure. De sprekersvergoedingen voor geselecteerde symposia zijn niet van toepassing op individuele abstractpresentaties.
+        - Ook wanneer een symposiumvoorstel niet wordt geselecteerd, kan een afzonderlijke bijdrage interessant zijn voor het congresprogramma. In het formulier geeft elke spreker daarom aan of de programmacommissie zijn of haar bijdrage in dat geval los mag beoordelen. De commissie kan deze sprekers vervolgens uitnodigen een individueel abstract in te dienen voor een mondelinge presentatie of poster.
+        - Een dergelijke uitnodiging betekent niet dat de bijdrage automatisch wordt geaccepteerd. Het abstract moet vóór de deadline van de Call for Abstracts worden ingediend en doorloopt de gebruikelijke beoordelingsprocedure. De data van de Call for Abstracts worden later bekendgemaakt. De sprekersvergoedingen voor geselecteerde symposia gelden niet voor individuele abstractpresentaties.
 formulier:
   titel: Indienen via het online formulier
-  tekst: Je dient je voorstel in via het online formulier. Daar zie je precies welke gegevens we vragen, zoals de beschrijving, de leerdoelen en een korte bio per spreker. Je kunt tussentijds opslaan en je voorstel aanpassen tot de deadline.
+  tekst: "Je dient je voorstel in via het online formulier. Daarin vragen we:"
+  punten:
+    - een algemene beschrijving van het symposium (ca. 300 woorden);
+    - per spreker een korte beschrijving van de bijdrage (min. 50 en max. 100 woorden, geen volledig abstract);
+    - "een toelichting op de samenhang: hoe de afzonderlijke bijdragen samen één symposium vormen;"
+    - de leerdoelen en de beoogde doelgroep (bijvoorbeeld basis, verdieping of eerste lijn);
+    - per spreker een korte bio en een verklaring over mogelijke belangenverstrengeling.
+  slot: Deze gegevens gebruiken we ook voor de accreditatie van het congres. Je kunt tussentijds opslaan en je voorstel aanpassen tot de deadline. Na de deadline kunnen voorstellen niet meer worden gewijzigd.
   deadline: "**Deadline:** maandag 1 februari 2027 om 23.59 uur."
 vragen:
   titel: Vragen over je voorstel?

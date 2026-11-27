@@ -11,6 +11,7 @@ export const routes = {
   contact: { nl: '/contact/', en: '/en/contact/' },
   locatie: { nl: '/locatie/', en: '/en/venue/' },
   symposium: { nl: '/symposium-indienen/', en: '/en/submit-a-symposium/' },
+  privacy: { nl: '/privacyverklaring/', en: '/en/privacy-statement/' },
 } as const;
 
 export type RouteKey = keyof typeof routes;

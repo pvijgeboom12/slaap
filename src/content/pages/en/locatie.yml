@@ -1,4 +1,4 @@
-# Venue page. English texts from Annick (24 November 2026). Address and hotel link: congress settings.
+# Venue page. English texts from Annick (24 November 2026; changes 27 November 2026). Address and hotel link: congress settings.
 seo:
   titel: Venue
   omschrijving: SLAAP2027 takes place on 11 and 12 November 2027 at NH Conference Centre Koningshof in Veldhoven. Address, getting there and accommodation.
@@ -8,6 +8,7 @@ hero:
   tekst: From plenary lectures and symposia to the industry exhibition, congress dinner and evening party, everything takes place under one roof. On-site accommodation allows you to make the most of your congress experience.
 adres:
   titel: Address
+  website: "[Visit the hotel website](https://www.nh-hotels.com/en/hotel/nh-eindhoven-conference-centre-koningshof)"
   knop: Plan your route
   kaart_titel: Map of NH Conference Centre Koningshof
 bereikbaarheid:
@@ -19,8 +20,11 @@ bereikbaarheid:
       tekst: From Eindhoven Centraal station, bus 19/319 runs to NH Koningshof. The journey takes about 15 minutes.
     - titel: From Eindhoven Airport
       tekst: From Eindhoven Airport, you can travel to NH Koningshof by public transport via Eindhoven, or by taxi. The taxi ride usually takes about 15 minutes, depending on traffic.
+  toegankelijk: The congress venue is accessible to visitors with disabilities.
+# Parking: nothing about costs yet. Once confirmed, add to "By car": "Complimentary parking is available for congress participants."
+# Accommodation: once the congress rates are known, set "volgt" to: "Information on how to book a hotel room at the special congress rate will be available soon."
 overnachten:
   titel: Accommodation
-  tekst: Prefer not to travel home after a congress day, the dinner and the evening party? NH Koningshof has more than 500 hotel rooms on site.
+  tekst: Prefer not to travel home after a congress day, the dinner and the evening party? NH Koningshof has 509 guest rooms on site.
   volgt: ""
   knop: Book your hotel

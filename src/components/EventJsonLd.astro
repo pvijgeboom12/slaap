@@ -29,7 +29,7 @@ const data = {
     address: { '@type': 'PostalAddress', streetAddress: c.adres, postalCode: c.postcode, addressLocality: c.plaats, addressCountry: 'NL' },
   },
   organizer: [
-    { '@type': 'Organization', name: 'Stichting Slaapcongres Nederland', url: site.url },
+    { '@type': 'Organization', name: 'Stichting Slaap Congres Nederland', url: site.url },
   ],
   ...(s.registratie?.status === 'open' && s.registratie?.link_individueel
     ? { offers: { '@type': 'Offer', url: s.registratie.link_individueel, availability: 'https://schema.org/InStock', priceCurrency: 'EUR' } }

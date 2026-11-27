@@ -24,6 +24,7 @@ formulier:
   fout_email: Please check your email address, for example name@hospital.org.
   fout_verzenden: Sending failed. Please try again later or email us directly.
   fout_spam: Please confirm that you are not a robot first.
+  privacy: Please read our [privacy statement](/en/privacy-statement/) to learn how we process your personal data.
 zijbalk:
   organisatie_titel: Congress management
   snel_titel: Quick help
@@ -33,17 +34,21 @@ zijbalk:
     - Sponsorship and stands
     - Directions and hotel
 sponsoring:
-  titel: Sponsorship and exhibition
-  tekst: SLAAP2027 offers companies and organisations the opportunity to connect with professionals in sleep science and sleep medicine. The sponsorship and exhibition opportunities for 2027 are currently being put together.
-  oproep: Would you like to know more, or be the first to receive the sponsorship opportunities? Please contact us at
+  titel: Partner with SLAAP2027
+  tekst: |-
+    SLAAP2027 offers companies and organisations an opportunity to connect with researchers, clinicians and other professionals from across the Dutch sleep community.
+
+    Would you like to showcase your organisation, products or innovations and establish new professional connections?
+  oproep: Our 2027 sponsorship and exhibition packages will be available soon. Please feel free to contact us at
+  oproep_na: " to explore the opportunities."
   knop: Enquire about sponsorship
   onderwerp: Sponsorship opportunities SLAAP2027
 organisatie:
   titel: Organisation
   tekst: "SLAAP2027 is organised by the Dutch Sleep Congress Foundation (Stichting Slaap Congres Nederland, SSCN), a collaboration between:"
   leden:
-    - the Dutch Society for Sleep-Wake Research (NSWO)
-    - the Dutch Society for Sleep Medicine (SVNL)
+    - the Dutch Society for Sleep-Wake Research ([NSWO](https://www.nswo.nl/))
+    - the Dutch Society for Sleep Medicine ([SVNL](https://www.slaapgeneeskundevereniging.nl/))
   slot: The SSCN board also acts as the programme committee. The congress is organised by JCC Congress Consultancy & Events ([www.jcc-congress.com](https://www.jcc-congress.com)).
 op_de_hoogte:
   titel: Stay up to date

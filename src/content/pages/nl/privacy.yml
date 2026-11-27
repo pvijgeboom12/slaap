@@ -1,0 +1,42 @@
+# Pagina Privacyverklaring. Tekst van Annick (27 november 2026). Gelinkt vanuit de footer en het contactformulier.
+seo:
+  titel: Privacyverklaring
+  omschrijving: Hoe Stichting Slaap Congres Nederland (SSCN) omgaat met je persoonsgegevens rond SLAAP2027.
+titel: Privacyverklaring
+blokken:
+  - titel: Wie zijn wij?
+    tekst:
+      - Stichting Slaap Congres Nederland (SSCN) organiseert SLAAP2027 en is verantwoordelijk voor de verwerking van je persoonsgegevens. De praktische congresorganisatie is in handen van JCC Congress Consultancy & Events, dat gegevens verwerkt in opdracht van SSCN. We gaan zorgvuldig om met je persoonsgegevens en houden ons aan de Algemene Verordening Gegevensbescherming (AVG).
+      - Stichting Slaap Congres Nederland, Chopinlaan 44, 2394 GL Hazerswoude-Rijndijk, KvK 65555937, info@slaapcongres.nl
+  - titel: Welke gegevens verwerken we?
+    punten:
+      - "Gegevens die je invult via het contactformulier: naam, e-mailadres, organisatie en je bericht."
+      - "Gegevens bij het indienen van een voorstel: naam, functie, organisatie, e-mailadres, bio, verklaring over belangenverstrengeling en de inhoud van het voorstel."
+      - "Gegevens bij registratie: naam, contactgegevens, organisatie, functie, factuurgegevens en, als je accreditatie wilt, je BIG-nummer of ander registratienummer."
+      - Foto's die tijdens het congres worden gemaakt.
+  - titel: Waarvoor en op welke grondslag?
+    punten:
+      - "Je registratie, deelname, facturering en het beoordelen en programmeren van voorstellen: nodig voor de uitvoering van de overeenkomst met jou."
+      - "Het aanvragen en registreren van accreditatie: nodig voor de uitvoering van de overeenkomst, op jouw verzoek."
+      - "Het publiceren van namen, functies, bio's en presentatietitels van sprekers in het programma, op de website en in de congresapp: op basis van je toestemming bij het indienen."
+      - "Het beantwoorden van je vragen en het maken van congresfoto's voor verslag en promotie: op basis van ons gerechtvaardigd belang. Wil je niet op de foto, laat het ons dan weten."
+      - "Het bewaren van de financiële administratie: om te voldoen aan een wettelijke plicht."
+  - titel: Met wie delen we je gegevens?
+    intro: "Alleen met partijen die nodig zijn voor de organisatie:"
+    punten:
+      - Eventira, ons platform voor indieningen en registratie, en de betaalprovider die de betalingen verwerkt;
+      - PE-Online, voor het registreren van accreditatiepunten;
+      - de congreslocatie, bijvoorbeeld voor hotelboekingen van sprekers;
+      - JCC Congress Consultancy & Events, als congresorganisator.
+    tekst:
+      - Met deze partijen hebben we afspraken gemaakt over de bescherming van je gegevens. Je gegevens worden opgeslagen in Nederland. Enkele dienstverleners van ons platform, bijvoorbeeld voor het versturen van e-mail, zijn gevestigd buiten de Europese Unie. Gegevens worden daar alleen doorgegeven met passende waarborgen, zoals de standaardcontractbepalingen van de Europese Commissie. We verkopen je gegevens nooit aan derden.
+  - titel: Cookies
+    tekst:
+      - Deze website gebruikt geen tracking- of advertentiecookies en geen analysetools die je volgen. Om het contactformulier tegen spam te beschermen gebruiken we Cloudflare Turnstile. Dat controleert met technische gegevens, zoals je browser en IP-adres, of een bericht door een mens wordt verstuurd.
+  - titel: Hoe lang bewaren we je gegevens?
+    tekst:
+      - Congres- en indieningsgegevens bewaren we tot uiterlijk twee jaar na het congres. Financiële gegevens bewaren we zeven jaar, omdat de wet dat vereist. Daarna verwijderen we ze.
+  - titel: Jouw rechten
+    tekst:
+      - Je hebt het recht om je gegevens in te zien, te laten corrigeren of verwijderen, de verwerking te laten beperken, bezwaar te maken en je gegevens over te laten dragen. Heb je toestemming gegeven, dan kun je die altijd intrekken. Neem hiervoor contact op via info@slaapcongres.nl. Ben je niet tevreden over hoe we met je gegevens omgaan, dan kun je een klacht indienen bij de Autoriteit Persoonsgegevens.
+bijgewerkt: "Laatst bijgewerkt: [december 2026]"

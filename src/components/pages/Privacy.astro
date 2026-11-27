@@ -1,0 +1,17 @@
+---
+// Pagina Privacyverklaring / Privacy statement. Teksten: src/content/pages/{nl,en}/privacy.yml.
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import R from '../R.astro';
+import { type Lang } from '../../i18n/routes';
+import { page } from '../../lib/content';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const c = page(lang, 'privacy');
+type Blok = { titel: string; intro?: string; punten?: string[]; tekst?: string[] };
+---
+
+<BaseLayout lang={lang} page="privacy" title={c.seo.titel} description={c.seo.omschrijving}>
+<section class="night" style="padding-top:clamp(72px,9vw,128px);padding-bottom:clamp(48px,6vw,80px)"><div class="wrap"><h1 style="font-size:clamp(40px,5.6vw,72px);font-weight:800;color:#FFFFFF;max-width:920px">{c.titel}</h1></div></section>
+<section class="sec"><div class="wrap" style="display:flex;flex-direction:column;gap:36px;max-width:860px">{c.blokken.map((b: Blok) => <div style="display:flex;flex-direction:column;gap:12px"><h2 class="h3">{b.titel}</h2>{b.intro && <p><R t={b.intro} lang={lang} /></p>}{b.tekst && !b.punten && b.tekst.map((p) => <p class="muted"><R t={p} lang={lang} /></p>)}{b.punten && <ul style="display:flex;flex-direction:column;gap:8px;padding-left:20px">{b.punten.map((p) => <li><R t={p} lang={lang} /></li>)}</ul>}{b.tekst && b.punten && b.tekst.map((p) => <p class="muted"><R t={p} lang={lang} /></p>)}</div>)}<p class="muted" style="font-size:16px"><R t={c.bijgewerkt} lang={lang} /></p></div></section>
+</BaseLayout>

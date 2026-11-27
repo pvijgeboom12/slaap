@@ -1,4 +1,4 @@
-# Submit a symposium page (Call for Symposia). English texts from Annick (24 November 2026).
+# Submit a symposium page (Call for Symposia). English texts from Annick (24 November 2026; changes 27 November 2026).
 # The buttons link to abstracts.link_symposium in the congress settings (Eventira form, link to follow from Annick).
 seo:
   titel: Submit a symposium
@@ -8,7 +8,7 @@ hero:
   lead: The SLAAP2027 programme committee invites researchers, clinicians and other professionals to submit a symposium proposal for the congress on 11 and 12 November 2027.
   tekst: We are looking for strong, innovative and clinically relevant symposia that contribute to knowledge exchange and collaboration in sleep science and sleep medicine. Special attention goes to the link between scientific research and daily clinical practice. Proposals from all disciplines and fields within sleep are welcome.
   oproep: Do you have a topic that deserves a stage? Submit your proposal!
-knop: Submit your symposium
+knop: Submit symposium proposal
 knop_binnenkort: Submissions open on {opening_abstracts}.
 knop_gesloten: Symposium submissions are closed.
 data:
@@ -19,36 +19,38 @@ data:
     - activiteit: Call for Symposia opens
       datum: 1 December 2026
     - activiteit: Submission deadline
-      datum: 1 February 2027, 23:59 CET
+      datum: Monday, 1 February 2027, 23:59 CET
     - activiteit: Selection announced
       datum: End of March 2027
-kort:
-  titel: At a glance
-  punten:
-    - 75 or 90 minutes, with a maximum of 3 or 4 speakers
-    - The lead submitter is also a speaker and the chair
-    - All speakers have confirmed their participation in advance
-    - Speakers receive free access on the day of their presentation and up to €100 in travel costs, no fee
-    - "Deadline: Monday 1 February 2027, 23:59 CET"
 richtlijnen:
   titel: Guidelines for symposium proposals
   blokken:
     - titel: Format and programme
       punten:
-        - A symposium lasts 75 or 90 minutes. The programme committee decides on the final length and position in the programme.
-        - A 75-minute symposium has a maximum of three speakers. A 90-minute symposium may have up to four speakers.
-        - The lead submitter is also a speaker and chairs the symposium.
+        - Symposia last either 75 or 90 minutes. The programme committee determines the final duration and scheduling.
+        - A 75-minute symposium may include up to three speakers, while a 90-minute symposium may include up to four speakers. Chairs who do not give a presentation are not counted towards this maximum.
+        - Each symposium may have up to two chairs.
+        - The lead submitter serves as the main point of contact for the programme committee and is responsible for communicating all relevant information and decisions to those involved. The lead submitter may also act as a chair and/or speaker, but this is not mandatory.
+        - Each individual may submit up to two symposium proposals as lead submitter and present in up to two symposia.
         - Speakers should preferably come from different institutions and disciplines, so that several perspectives are represented.
         - The language is Dutch or English. If one or more speakers present in English, the entire symposium will be held in English.
         - Changes to the speaker line-up after acceptance are only possible in consultation with the programme committee.
         - All proposed speakers must have been approached in advance and have confirmed their participation.
-    - titel: Speaker conditions
-      intro: "Speakers in selected symposia receive:"
+      tekst:
+        - The programme committee determines the day and time slot of each symposium. We therefore ask all speakers to be available on both congress days. If a speaker is unavailable on either day, please indicate this in the submission form.
+        - Symposia must be scientifically independent and free from commercial or promotional content. Wherever possible, generic names should be used rather than brand or product names. Sponsored sessions are scheduled separately within the programme.
+        - In consultation with the lead submitter, the programme committee reserves the right to modify a proposal, combine it with another proposal or adjust its duration.
+    - titel: Speaker benefits and conditions
+      intro: "Speakers in selected symposia will receive:"
       punten:
-        - Free access to the congress on the day of their presentation.
-        - Reimbursement of travel costs up to €100, based on an economy class flight or a second-class train journey.
-        - One hotel night, booked by the congress organisation, if the travel distance is more than 300 kilometres.
-      slot: No speaker fee is paid. The congress dinner is not included. A (co-)chair who does not give a presentation is not eligible for the above reimbursements. As lead submitter, we ask you to agree these conditions in advance with all speakers and chairs involved.
+        - complimentary congress registration for the day of their presentation;
+        - reimbursement of travel expenses up to €100, upon submission of an expense claim, based on economy-class air travel or second-class rail travel;
+        - one night of hotel accommodation, booked by the congress organisers, if the travel distance exceeds 300 kilometres (one way).
+      tekst:
+        - No honorarium will be paid. Attendance at the congress dinner is not included. Chairs and lead submitters who do not give a presentation are not eligible for complimentary registration, travel reimbursement or hotel accommodation. The lead submitter is responsible for communicating and agreeing these conditions with everyone involved prior to submission.
+        - Following acceptance, speakers will receive a personal registration link in the first half of 2027. Speakers wishing to attend the other congress day may register at a reduced rate.
+        - If a speaker is unable to attend, please notify us in writing as soon as possible at info@slaapcongres.nl. Replacement speakers are subject to approval by the programme committee.
+        - By submitting a proposal, you agree to the publication of the symposium title and description, as well as the speakers' names, professional positions and biographies, in the congress programme, on the website and in the congress app.
     - titel: How are proposals assessed?
       intro: "The programme committee assesses all proposals on the following criteria:"
       punten:
@@ -59,15 +61,25 @@ richtlijnen:
         - "**Innovation:** new insights, developments or perspectives, also compared with SLAAP2025."
         - "**Multidisciplinarity:** collaboration between disciplines and a spread of speakers across institutions."
         - "**Feasibility:** a realistic programme and confirmed availability of the speakers."
+        - "**Coherence:** the individual contributions form a coherent and well-structured symposium."
+      tekst:
+        - All symposium proposals will be assessed by multiple reviewers. Based on these assessments, the programme committee will establish the final scientific programme.
       slot: The programme committee aims for a varied programme that represents fundamental research, clinical applications and a range of target audiences.
     - titel: What happens if your proposal is not selected?
       tekst:
-        - Even if a symposium proposal is not selected, an individual contribution may still be of interest for the congress programme. The programme committee may therefore invite one or more speakers to submit an individual abstract for an oral or poster presentation.
-        - Such an invitation does not mean the contribution will automatically be accepted. The abstract must be submitted before the regular deadline and goes through the standard review procedure. The speaker conditions for selected symposia do not apply to individual abstract presentations.
+        - Even if a symposium proposal is not selected, individual contributions may still be of interest to the scientific programme. In the submission form, each speaker is asked whether their contribution may be considered individually in the event that the symposium is not selected. The programme committee may subsequently invite these speakers to submit an individual abstract for an oral or poster presentation.
+        - Such an invitation does not guarantee acceptance. Abstracts must be submitted before the Call for Abstracts deadline and will undergo the standard review process. The dates of the Call for Abstracts will be announced at a later stage. The speaker benefits offered to selected symposium speakers do not apply to individual abstract presentations.
 formulier:
-  titel: Submit via the online form
-  tekst: You submit your proposal through the online form. It shows exactly what information we ask for, such as the description, the learning objectives and a short bio for each speaker. You can save your proposal as a draft and make changes until the deadline.
-  deadline: "**Deadline:** Monday 1 February 2027, 23:59 CET."
+  titel: Submit your proposal
+  tekst: "Symposium proposals must be submitted via the online submission form. You will be asked to provide:"
+  punten:
+    - an overall description of the symposium (approximately 300 words);
+    - a brief description of each speaker's contribution (approximately 100 words, rather than a full abstract);
+    - an explanation of how the individual contributions form a coherent symposium;
+    - the learning objectives and intended audience (e.g. introductory, advanced or primary care);
+    - a short biography and a conflict of interest declaration for each speaker.
+  slot: This information will also be used for congress accreditation purposes. You can save your proposal as a draft and make changes until the submission deadline. No further changes can be made after the deadline.
+  deadline: "**Deadline:** Monday, 1 February 2027, 23:59 CET."
 vragen:
   titel: Questions about your proposal?
   tekst: Do you have questions about the submission procedure, the conditions or the form? Please contact the congress secretariat at

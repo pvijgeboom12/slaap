@@ -12,9 +12,9 @@ const t = {
     home: 'SLAAP2027, naar de homepage',
     about: ['Slaapcongres Nederland'],
     orgBy: 'Georganiseerd door',
-    nswo: 'Nederlandse Vereniging voor Slaap-Waak Onderzoek (NSWO)',
-    svnl: 'Nederlandse Vereniging voor Slaapgeneeskunde (SVNL)',
-    under: 'onder Stichting Slaapcongres Nederland',
+    nswo: 'Nederlandse Vereniging voor Slaap- en Waakonderzoek (NSWO)',
+    svnl: 'Slaapgeneeskunde Vereniging Nederland (SVNL)',
+    under: 'verenigd in Stichting Slaap Congres Nederland (SSCN)',
     pco: 'Congresorganisatie',
     form: 'Contactformulier',
     quick: 'Snel naar',
@@ -31,7 +31,7 @@ const t = {
     orgBy: 'Organised by',
     nswo: 'Dutch Society for Sleep-Wake Research (NSWO)',
     svnl: 'Dutch Society for Sleep Medicine (SVNL)',
-    under: 'on behalf of Stichting Slaapcongres Nederland',
+    under: 'A joint initiative of NSWO and SVNL, organised by Stichting Slaap Congres Nederland (SSCN).',
     pco: 'Congress management',
     form: 'Contact form',
     quick: 'Quick links',
@@ -48,7 +48,7 @@ const fase1 = site.fase === 1;
 const plaats = [s.congres?.locatie_kort || s.congres?.locatie, s.congres?.plaats].filter(Boolean).join(', ');
 const quick = fase1
   ? [
-      { href: path(lang, 'symposium'), label: lang === 'nl' ? 'Symposium indienen' : 'Submit a symposium' },
+      { href: path(lang, 'symposium'), label: lang === 'nl' ? 'Symposium indienen' : 'Submit symposium proposal' },
       { href: path(lang, 'locatie'), label: lang === 'nl' ? 'Locatie' : 'Venue' },
       { href: path(lang, 'contact'), label: lang === 'nl' ? 'Contact' : 'Contact' },
     ]
@@ -61,7 +61,7 @@ const quick = fase1
 // Juridische links pas tonen als ze zijn ingevuld in Instellingen congres
 const legal = [
   { href: s.links?.algemene_voorwaarden, label: t.terms },
-  { href: s.links?.privacyverklaring, label: t.privacy },
+  { href: s.links?.privacyverklaring || path(lang, 'privacy'), label: t.privacy },
 ].filter((l) => fase1 ? l.href : true);
 const email = s.contact?.email ?? 'info@slaapcongres.nl';
 const h2 = 'font-family:inherit;font-size:16px;font-weight:700;color:#FFFFFF;letter-spacing:0';
@@ -77,8 +77,8 @@ const col = 'display:flex;flex-direction:column;gap:10px';
       </div>
       <div style={col}>
         <h2 style={h2}>{t.orgBy}</h2>
-        <a class="foot-link" href="https://www.nswo.nl">{t.nswo}</a>
-        <a class="foot-link" href="https://www.slaapgeneeskundevereniging.nl">{t.svnl}</a>
+        <a class="foot-link" href="https://www.nswo.nl/">{t.nswo}</a>
+        <a class="foot-link" href="https://www.slaapgeneeskundevereniging.nl/">{t.svnl}</a>
         <p class="soft" style="font-size:16px">{t.under}</p>
       </div>
       <div style={col}>
@@ -93,7 +93,7 @@ const col = 'display:flex;flex-direction:column;gap:10px';
       </div>
     </div>
     <div class="soft" style="margin-top:56px;padding-top:24px;border-top:1px solid rgba(233,234,244,0.14);display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;font-size:15px">
-      <span>© Stichting Slaapcongres Nederland 2027</span>
+      <span>© Stichting Slaap Congres Nederland 2026</span>
       <div style="display:flex;gap:24px;flex-wrap:wrap">
         {legal.map((l) => <a class="foot-link" href={l.href || '#'}>{l.label}</a>)}
       </div>

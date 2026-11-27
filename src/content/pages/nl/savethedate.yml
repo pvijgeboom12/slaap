@@ -1,4 +1,4 @@
-# Homepage in fase 1. Teksten van Annick (Websiteteksten SLAAP2027, 23 november 2026).
+# Homepage in fase 1. Teksten van Annick (Websiteteksten SLAAP2027, 23 november 2026; wijzigingen 27 november 2026).
 # Codes tussen accolades worden ingevuld vanuit Instellingen congres: {congresdatum}, {locatie}, {opening_abstracts}, {deadline_symposia}
 seo:
   titel: Slaapcongres Nederland
@@ -6,34 +6,57 @@ seo:
 hero:
   kicker: Slaapcongres Nederland
   label: Save the Date
-  lead: Het tweejaarlijkse congres voor iedereen die werkt in de slaapwetenschap en slaapgeneeskunde.
-  knop_symposia: Dien een symposium in
+  lead: Hét congres in Nederland waar slaapwetenschap en slaapgeneeskunde samenkomen.
+  knop_symposia: Call for Symposia
+  knop_locatie: Locatie
   link_locatie: Bekijk de locatie
 intro:
   titel: Waar slaaponderzoek en slaapzorg samenkomen
-  lead: Op 11 en 12 november 2027 komt het Nederlandse slaapveld opnieuw samen tijdens SLAAP2027. Twee dagen vol nieuwe inzichten, wetenschappelijke ontwikkelingen en praktische toepassingen. Van fundamenteel slaaponderzoek tot diagnostiek en behandeling in de dagelijkse praktijk.
-  tekst: SLAAP2027 brengt onderzoekers, artsen, psychologen, verpleegkundigen, technici en andere professionals samen die zich bezighouden met slaap en waak. Om kennis te delen, ervaringen uit te wisselen en elkaar te ontmoeten.
-  organisatie: Het congres wordt georganiseerd door Stichting Slaap Congres Nederland (SSCN), een samenwerking van de NSWO en de SVNL.
+  lead: Op 11 en 12 november 2027 komt het Nederlandse slaapveld opnieuw samen tijdens SLAAP2027. Twee dagen waarin de nieuwste wetenschappelijke inzichten en klinische ontwikkelingen centraal staan, van fundamenteel slaaponderzoek tot diagnostiek en behandeling.
+  tekst: SLAAP2027 biedt onderzoekers, artsen, psychologen, verpleegkundigen, technici en andere professionals op het gebied van slaap en waak een podium om kennis te delen, elkaar te inspireren en nieuwe verbindingen te leggen.
+  organisatie: Het congres wordt georganiseerd door Stichting Slaap Congres Nederland (SSCN), een samenwerking van de [NSWO](https://www.nswo.nl/) en de [SVNL](https://www.slaapgeneeskundevereniging.nl/).
 verwachten:
   titel: Wat kun je verwachten?
   lead: Een veelzijdig programma waarin wetenschap en praktijk elkaar versterken.
+  # icoon: keynote, symposia, presentatie, poster, eerstelijn, markt, avond
   punten:
-    - Inspirerende keynotes van vooraanstaande nationale en internationale sprekers.
-    - Symposia in drie parallelle tracks, met onderwerpen aangedragen door het slaapveld zelf.
-    - Twee sessies met mondelinge presentaties, waarin onder meer jonge onderzoekers en PhD-studenten hun onderzoek presenteren.
-    - Twee posterblitssessies, waarin onderzoekers hun werk kort en krachtig onder de aandacht brengen.
-    - Aandacht voor de eerste lijn, met onderwerpen die aansluiten op de dagelijkse huisartsenpraktijk.
-    - Een sponsormarkt, met ontwikkelingen op het gebied van slaapdiagnostiek, technologie en behandeling.
-    - Een feestelijke congresavond, met diner, live muziek en gelegenheid om collega's te ontmoeten.
-  taal: Het programma bestaat uit Nederlandstalige en Engelstalige sessies. In ieder tijdslot is minimaal één Engelstalige sessie beschikbaar.
+    - icoon: keynote
+      titel: Keynotes
+      tekst: Inspirerende keynotes van vooraanstaande nationale en internationale sprekers.
+    - icoon: symposia
+      titel: Symposia
+      tekst: Symposia in drie parallelle tracks, met onderwerpen aangedragen door het slaapveld zelf.
+    - icoon: presentatie
+      titel: Mondelinge presentaties
+      tekst: Twee sessies met mondelinge presentaties, waarin onder meer jonge onderzoekers en PhD-studenten hun onderzoek presenteren.
+    - icoon: poster
+      titel: Posterblitssessies
+      tekst: Twee posterblitssessies, waarin onderzoekers hun werk kort en krachtig onder de aandacht brengen.
+    - icoon: eerstelijn
+      titel: Slaap in de eerste lijn
+      tekst: Aandacht voor de eerste lijn, met onderwerpen die aansluiten op de dagelijkse huisartsenpraktijk.
+    - icoon: markt
+      titel: Sponsor- en exposantenmarkt
+      tekst: Een sponsormarkt, met ontwikkelingen op het gebied van slaapdiagnostiek, technologie en behandeling.
+    - icoon: avond
+      titel: Congresavond
+      tekst: Een feestelijke congresavond, met diner, live muziek en gelegenheid om collega's te ontmoeten.
+  taal: Het programma bestaat uit Nederlandstalige en Engelstalige sessies. In ieder tijdslot is minimaal één Engelstalig symposium beschikbaar.
 voor_wie:
   titel: Voor wie?
-  tekst: SLAAP2027 is er voor iedereen die zich professioneel bezighoudt met slaap, slaaponderzoek en slaapgeneeskunde. Van ervaren specialisten tot jonge onderzoekers en van de eerste lijn tot gespecialiseerde slaapcentra. Ook professionals die vanuit andere disciplines met slaapvraagstukken te maken hebben, zijn van harte welkom.
+  tekst: SLAAP2027 is er voor iedereen die zich professioneel bezighoudt met slaap en waak. Van jonge onderzoekers tot ervaren specialisten, van de eerste lijn tot gespecialiseerde slaapcentra. Ook professionals uit andere disciplines die in hun dagelijkse praktijk met slaapvraagstukken te maken hebben, zijn van harte welkom.
 programma:
-  titel: Denk mee over het programma
-  tekst: Heb jij een onderwerp dat een podium verdient? De Call for Symposia opent op {opening_abstracts}.
+  titel: Geef samen vorm aan SLAAP2027
+  # Vanaf de opening (1 december) de tekst vervangen door: "De Call for Symposia is geopend! Dien je voorstel uiterlijk 1 februari 2027 in." en knop: "Dien een symposium in"
+  tekst: |-
+    Welke onderwerpen verdienen een plek op het programma van SLAAP2027? We nodigen het slaapveld uit om symposiumvoorstellen in te dienen en zo bij te dragen aan een inhoudelijk sterk en veelzijdig congres.
+
+    De Call for Symposia opent binnenkort. Je kunt je voorstel indienen tot en met 1 februari 2027.
   knop: Bekijk de Call for Symposia
 locatie:
   titel: Twee dagen kennis delen én elkaar ontmoeten
-  tekst: SLAAP2027 vindt plaats in NH Conference Centre Koningshof in Veldhoven. Congres, sponsormarkt, diner en hotel bevinden zich op één locatie.
+  tekst: |-
+    Een congres is meer dan een inhoudelijk programma. Het is ook dé gelegenheid om collega's te ontmoeten, ervaringen uit te wisselen en nieuwe samenwerkingen te laten ontstaan.
+
+    Met het congres, de sponsormarkt, het congresdiner en het hotel op één locatie biedt NH Conference Centre Koningshof alle ruimte voor ontmoeting, ook buiten de congreszaal.
   knop: Bekijk de locatie
