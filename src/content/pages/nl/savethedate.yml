@@ -47,12 +47,17 @@ voor_wie:
   tekst: SLAAP2027 is er voor iedereen die zich professioneel bezighoudt met slaap en waak. Van jonge onderzoekers tot ervaren specialisten, van de eerste lijn tot gespecialiseerde slaapcentra. Ook professionals uit andere disciplines die in hun dagelijkse praktijk met slaapvraagstukken te maken hebben, zijn van harte welkom.
 programma:
   titel: Geef samen vorm aan SLAAP2027
-  # Vanaf de opening (1 december) de tekst vervangen door: "De Call for Symposia is geopend! Dien je voorstel uiterlijk 1 februari 2027 in." en knop: "Dien een symposium in"
+  # tekst_open en knop_open verschijnen vanzelf zodra abstracts.status in Instellingen congres op "open" staat.
   tekst: |-
     Welke onderwerpen verdienen een plek op het programma van SLAAP2027? We nodigen het slaapveld uit om symposiumvoorstellen in te dienen en zo bij te dragen aan een inhoudelijk sterk en veelzijdig congres.
 
     De Call for Symposia opent binnenkort. Je kunt je voorstel indienen tot en met 1 februari 2027.
   knop: Bekijk de Call for Symposia
+  tekst_open: |-
+    Welke onderwerpen verdienen een plek op het programma van SLAAP2027? We nodigen het slaapveld uit om symposiumvoorstellen in te dienen en zo bij te dragen aan een inhoudelijk sterk en veelzijdig congres.
+
+    De Call for Symposia is geopend! Dien je voorstel uiterlijk 1 februari 2027 in.
+  knop_open: Dien een symposium in
 locatie:
   titel: Twee dagen kennis delen én elkaar ontmoeten
   tekst: |-

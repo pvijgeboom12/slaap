@@ -7,8 +7,9 @@ hero:
   kicker: Dutch Sleep Congress
   label: Save the Date
   lead: The leading congress in the Netherlands bringing together sleep science and sleep medicine.
-  # From the opening (1 December): "Submit symposium proposal"
+  # knop_symposia_open appears automatically once abstracts.status is "open".
   knop_symposia: View the Call for Symposia
+  knop_symposia_open: Submit symposium proposal
   knop_locatie: Explore the venue
   link_locatie: Explore the venue
 intro:
@@ -50,12 +51,17 @@ voor_wie:
     Professionals from other disciplines who encounter sleep-related issues in their daily practice are also warmly invited to attend.
 programma:
   titel: Help shape SLAAP2027
-  # From 1 December replace the last paragraph with: "The Call for Symposia is now open! Submit your proposal by 1 February 2027." Button: "Submit symposium proposal"
+  # tekst_open and knop_open appear automatically once abstracts.status is "open" in the congress settings.
   tekst: |-
     Which topics deserve a place in the SLAAP2027 programme? We invite the sleep community to submit symposium proposals and contribute to a scientifically strong and diverse congress programme.
 
     The Call for Symposia will open soon. The submission deadline is 1 February 2027.
   knop: View the Call for Symposia
+  tekst_open: |-
+    Which topics deserve a place in the SLAAP2027 programme? We invite the sleep community to submit symposium proposals and contribute to a scientifically strong and diverse congress programme.
+
+    The Call for Symposia is now open! Submit your proposal by 1 February 2027.
+  knop_open: Submit symposium proposal
 locatie:
   titel: Two days to learn, share and connect
   tekst: |-

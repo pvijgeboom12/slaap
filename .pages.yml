@@ -215,6 +215,12 @@ content:
       - name: knop
         label: Knop
         type: string
+      - name: tekst_open
+        label: Tekst als indienen open is
+        type: text
+      - name: knop_open
+        label: Knop als indienen open is
+        type: string
     - name: locatie
       label: Locatie
       type: object
@@ -259,6 +265,9 @@ content:
         type: string
       - name: knop_symposia
         label: Knop Call for Symposia
+        type: string
+      - name: knop_symposia_open
+        label: Knop Call for Symposia (als indienen open is)
         type: string
       - name: knop_locatie
         label: Knop locatie
@@ -331,6 +340,12 @@ content:
         type: text
       - name: knop
         label: Knop
+        type: string
+      - name: tekst_open
+        label: Tekst als indienen open is
+        type: text
+      - name: knop_open
+        label: Knop als indienen open is
         type: string
     - name: locatie
       label: Locatie
