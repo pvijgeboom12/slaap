@@ -16,7 +16,7 @@ Alles wat live gaat of DNS wijzigt, gebeurt pas na akkoord van Pieter. Inloggen 
 
 - [ ] Turnstile: maak een widget aan voor `slaapcongres.nl` en het `workers.dev`-previewdomein.
 - [ ] Zet de sitekey in `src/lib/site.ts` (`turnstileSiteKey`).
-- [x] Zet de geheime sleutel als secret `TURNSTILE_SECRET` in de Worker. Gedaan door Pieter, 28 nov 2026. Let op: Cloudflare houdt secrets voor production en preview apart. Zet hem in beide.
+- [ ] Zet de geheime sleutel als secret `TURNSTILE_SECRET` in de Worker: Settings → **Runtime** variables and secrets → Add → Type Secret → Deploy. Dit kan pas nadat de Worker-code op `main` staat (livegang, stap D). Een Worker met alleen statische bestanden accepteert geen secrets, en previews gebruiken de runtime-secrets van productie. Let op: de waarden onder Builds → Variables and secrets zijn alleen voor de build en doen niets voor het formulier (28 nov 2026 daar per ongeluk gezet).
 - [ ] Email Routing: aan op het subdomein `post.slaapcongres.nl` (zone slaapcongres.nl, account Annick), niet op het hoofddomein. Daar staan de MX-records van Google Workspace.
 - [ ] Voeg `info@slaapcongres.nl` (eigen mailbox van de stichting) toe als destination address en laat Annick de verificatiemail bevestigen.
 - [ ] Controleer `wrangler.jsonc`: `CONTACT_FROM` = formulier@post.slaapcongres.nl, `CONTACT_TO` = info@slaapcongres.nl.
@@ -36,6 +36,7 @@ Alles wat live gaat of DNS wijzigt, gebeurt pas na akkoord van Pieter. Inloggen 
 - [ ] Worker → Settings → Domains & Routes: voeg `slaapcongres.nl` toe als custom domain.
 - [ ] Voeg `www.slaapcongres.nl` toe en stuur het door naar het domein zonder www, met een Redirect Rule.
 - [ ] Zet `indexable: true` in `src/lib/site.ts`. Commit dit op `main`.
+- [ ] Direct na de merge: `TURNSTILE_SECRET` als runtime-secret zetten (zie B) en Email Routing op `post.slaapcongres.nl` controleren. Daarna testinzending.
 - [ ] Controleer daarna `https://slaapcongres.nl/`: geen meta-noindex en geen X-Robots-Tag.
 - [ ] Cloudflare Web Analytics: voeg de site toe en zet het token in `src/lib/site.ts` (`cfAnalyticsToken`).
 - [ ] Google Search Console (akkoord Pieter 28 nov, op de livegangdag): maak in het account van Pieter een domeinproperty `slaapcongres.nl` aan. Zet het TXT-record `google-site-verification=…` dat Search Console geeft in de zone slaapcongres.nl in Annicks Cloudflare (DNS → Add record → TXT, naam `@`). Laat de bestaande Google Workspace-TXT staan. Klik op Verify.
