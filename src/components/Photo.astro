@@ -8,8 +8,10 @@ interface Props {
   style?: string;
   sizes?: string;
   priority?: boolean;
+  /** WebP-kwaliteit (1-100). Lager voor foto's onder een donkere laag, zoals de hero. */
+  quality?: number;
 }
-const { name, alt, class: cls, style, sizes = '100vw', priority = false } = Astro.props;
-const f = await foto(name);
+const { name, alt, class: cls, style, sizes = '100vw', priority = false, quality } = Astro.props;
+const f = await foto(name, quality);
 ---
 <img class={cls} src={f.src} srcset={f.srcset} sizes={sizes} alt={alt} width={f.width} height={f.height} style={style} loading={priority ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : undefined} decoding={priority ? undefined : 'async'}>

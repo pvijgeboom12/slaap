@@ -25,11 +25,11 @@ const fotos = import.meta.glob<{ default: ImageMetadata }>('/src/assets/foto/*.j
 const widths = [480, 800, 1200, 1600];
 
 /** WebP-varianten met srcset voor een foto uit src/assets/foto. */
-export async function foto(name: string) {
+export async function foto(name: string, quality?: number) {
   const meta = fotos[`/src/assets/foto/${name}`]?.default;
   if (!meta) throw new Error(`Foto niet gevonden: ${name}`);
   const ws = widths.filter((w) => w < meta.width).concat(meta.width);
-  const imgs = await Promise.all(ws.map((w) => getImage({ src: meta, width: w, format: 'webp' })));
+  const imgs = await Promise.all(ws.map((w) => getImage({ src: meta, width: w, format: 'webp', ...(quality ? { quality } : {}) })));
   return {
     src: imgs[Math.min(1, imgs.length - 1)].src,
     srcset: imgs.map((im, i) => `${im.src} ${ws[i]}w`).join(', '),

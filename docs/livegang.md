@@ -38,7 +38,10 @@ Alles wat live gaat of DNS wijzigt, gebeurt pas na akkoord van Pieter. Inloggen 
 - [ ] Zet `indexable: true` in `src/lib/site.ts`. Commit dit op `main`.
 - [ ] Controleer daarna `https://slaapcongres.nl/`: geen meta-noindex en geen X-Robots-Tag.
 - [ ] Cloudflare Web Analytics: voeg de site toe en zet het token in `src/lib/site.ts` (`cfAnalyticsToken`).
-- [ ] Google Search Console: voeg het domein toe en dien `https://slaapcongres.nl/sitemap-index.xml` in.
+- [ ] Google Search Console (akkoord Pieter 28 nov, op de livegangdag): maak in het account van Pieter een domeinproperty `slaapcongres.nl` aan. Zet het TXT-record `google-site-verification=…` dat Search Console geeft in de zone slaapcongres.nl in Annicks Cloudflare (DNS → Add record → TXT, naam `@`). Laat de bestaande Google Workspace-TXT staan. Klik op Verify.
+- [ ] Search Console → Sitemaps: dien `https://slaapcongres.nl/sitemap-index.xml` in.
+- [ ] Search Console → URL-inspectie: `https://slaapcongres.nl/` en `https://slaapcongres.nl/en/` → Indexering aanvragen.
+- [ ] robots.txt: controleer dat de regel `Sitemap: https://slaapcongres.nl/sitemap-index.xml` erin staat.
 - [ ] Verstuur een testbericht via het contactformulier, in NL en in EN. Controleer of beide adressen het bericht ontvangen en of antwoorden naar de afzender gaat.
 - [ ] Controleer de redirects: `/index-en` moet naar `/en/` gaan.
 - [ ] Doe een eindcheck op mobiel en desktop: menu, taalwissel, dagtabs in het programma en de ankers.
